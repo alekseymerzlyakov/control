@@ -1,306 +1,198 @@
 package main
 
 import (
-	_"bytes"
+	_ "bytes"
 	"fmt"
-	"github.com/magiconair/properties"
+	"github.com/plandem/xlsx"
+	"github.com/plandem/xlsx/format/styles"
 	"github.com/spf13/viper"
-	_"github.com/tinyhubs/properties"
-    "github.com/plandem/xlsx"
+	_ "github.com/tidwall/gjson"
+	_ "github.com/tinyhubs/properties"
 	"math/rand"
 	"os"
 	"strconv"
 	"strings"
 	"time"
-
 )
-//var ClientID string = GetString("ClientID")
 var CountryName = GetPropValue("countryname") + ".xlsx"
 
-type Conf struct {
-	Key interface{}
-	Value interface{}
+const (
+	startRowTest = 5
+	startColumn = 2
+	startBodyCol = 12
+	)
+
+
+type Cell struct {
+	columnNum int
+	rowNum int
 }
+var Dop_parseRes []string
+var valueTemp string
+var newelement string
 
-func Config(key,  value string)  {
 
-	ur := Path() + "/data.json"
 
-	viper.SetConfigFile(ur)
-	//// Searches for config file in given paths and read it
-	if err := viper.ReadInConfig(); err != nil {
-		fmt.Println("viper+++++++++++>>>>>>>>>>>>>          ", ur)
+//-------GetColumn----------------------------------------------------
+func GetColumn(column int, rownum int, a Data)  (map[int][]string) { //
+	a.empty = false
+	getNumTestLine := rownum
+	apiListMap := make(map[int][]string)
+
+	for cIdx := 0; cIdx < 3000; cIdx++ {
+		cell := a.sheet.Cell(cIdx+column, getNumTestLine)
+		if cell.Value() == "" {
+			a.empty = true
+			break
+		}
+		cellNew := Replace(cell.String())			//  Подмена переменных
+		apiListMap[cIdx] = []string{cellNew}
+		//fmt.Println(cellNew)
 	}
-	viper.AutomaticEnv()
-	//
-	//fmt.Println("viper+++++++++++>>>>>>>>>>>>>          ", viper.Get("CountryName"))
-	//viper.BindEnv("port", "PORT")
 
-	viper.Get(key)
-	viper.Set(key, value)
-
-	viper.WriteConfig()
+	return apiListMap
 }
 
 
+func (a Data) GetCell(i int, z int) string {
+	return a.sheet.Cell(i, z).Value()
+}
 
+func (a Data) SetSell(i int, z int, y string)  {
+	FillColor := "#ffffff"
+	if a.Error.errorCount > 0 && i == 7 {
+		FillColor = "#ff0000"
+	}
+	if a.Error.errorCount == 0 && i == 7 {
+		FillColor = "#7CFC00"
+	}
+
+	cell := a.sheet.Cell(i, z)
+	cell.SetValue(y)
+	cell.SetStyles(styles.New(
+		styles.Font.Bold,
+		styles.Font.Color("#000000"),
+		styles.Fill.Type(styles.PatternTypeSolid),
+		styles.Fill.Color(FillColor),
+		//styles.Border.Color("#009000"),
+		//styles.Border.Type(styles.BorderStyleMedium),
+	))
+
+}
 
 func GetPropValue(key string) string {
+	ur := Path() + "/data.json"
+	viper.SetConfigFile(ur)
+	viper.ReadInConfig()
+	viper.AutomaticEnv()
+	//viper.WriteConfig()
+	get := viper.GetString(key)
 
-	p := properties.MustLoadFile(Path()+"/testData.properties", properties.UTF8)
-	value := p.MustGet(key)
-	fmt.Println("GetPropValue -------->>>>>>>      ", value)
-	return value
+	//fmt.Println("Такой переменной нет в файле - data.json ->  ", key, err)
 
+	if get == "" {
+		msg := GetPropValue("countryname") + "\nТест остановлен \n Такой переменной нет в файле - data.json ->  " + key
+		telegram(msg)
+		os.Exit(0)
+	}
+
+	return get
 }
 
-//Open Properties file------------------------------
 func SetPropValue(key, value string)  {
+	ur := Path() + "/data.json"
+	viper.SetConfigFile(ur)
+	viper.ReadInConfig()
+	viper.AutomaticEnv()
+	viper.Set(key, string(value))
+	viper.WriteConfig()
 
-	p := properties.MustLoadFile(Path()+"/testData.properties", properties.UTF8)
-	p.Set(key, value)
-	p.SetValue("key", value)
-	fmt.Println("SetValue -------->>>>>>>      ", key)
 }
-
 
 //work
-func GetRow(ce int, ro int, apiSheetName string, ApiTestName string) (map[int][]string) {
+func GetRow2(ce int, ro int, apiSheetName string, rownum int) (map[int][]string) {
+	getNumTestLine := rownum
 	//Open XLSX file
 	xl, err := xlsx.Open(CountryName)
 	if err != nil {
-		fmt.Println("xlsx not opened")
+		fmt.Println("GetRow not opened")
 	}
-	getNumTestLine := GetNumTestLine(apiSheetName, ApiTestName)  //  поиск начала теста
+
+	//getNumTestLine := GetNumTestLine(apiSheetName, ApiTestName)  //  поиск начала теста
 	fmt.Println("getNumTestLine   ------    ", getNumTestLine)
 	sheet := xl.SheetByName(apiSheetName)
-
 	apiListMap := make(map[int][]string)
-
-	for rIdx := 0; rIdx < 100; rIdx++ {
+	for rIdx := 0; rIdx < 3000; rIdx++ {
 
 		cell := sheet.Cell(ro, getNumTestLine)
 		cell2 := sheet.Cell(ro+1, getNumTestLine)
-		//fmt.Println("xxxxxxxxxxx   ------    ",ro, getNumTestLine)
-		//fmt.Println("xxxxxxxxxxx   ------    ",ro+1, getNumTestLine)
-		//fmt.Println("qqqqqq   ------    ",apiSheetName ,cell.Value() , cell2.Value())
-
 		if cell.Value() == "" { break } //if cell == nil { break }
-
 		cellNew := Replace(cell2.String())
 		apiListMap[rIdx] = []string{cell.Value(), cellNew}
 		getNumTestLine++
 	}
+
 	return apiListMap
 }
 
 
-////work
-//func GetRow(ce int, ro int, apiSheetName string, ApiTestName string) (map[int][]string) {
-//	//Open XLSX file
-//	xl, err := xlsx.Open(CountryName)
-//	if err != nil {
-//	fmt.Println("xlsx not opened")
-//}
-//	getNumTestLine := GetNumTestLine(apiSheetName, ApiTestName)
-//
-//
-//
-//	sheet := xl.SheetByName(apiSheetName)
-//
-//	apiListMap := make(map[int][]string)
-//	//_, totalRows := sheet.Dimension()
-//		for rIdx := 0; rIdx < 100; rIdx++ {
-//		cell := sheet.Cell(getNumTestLine, rIdx+ro)
-//		cell2 := sheet.Cell(getNumTestLine+1, rIdx+ro)
-//			fmt.Println("xxxxxxxxxxx   ------    ",getNumTestLine)
-//			fmt.Println("qqqqqq   ------    ",apiSheetName ,cell.Value() , cell2)
-//
-//		if cell.Value() == "" { break } //if cell == nil { break }
-//		apiListMap[rIdx] = []string{cell.Value(), cell2.Value()}
-//}
-//	return apiListMap
-//}
+//work
+func GetRow(ce int, ro int, rownum int, a Data) (map[int][]string) {
+	getNumTestLine := rownum
 
+	apiListMap := make(map[int][]string)
+
+	for rIdx := 0; rIdx < 3000; rIdx++ {
+
+		cell := a.sheet.Cell(ro, getNumTestLine)
+		cell2 := a.sheet.Cell(ro+1, getNumTestLine)
+		if cell.Value() == "" { break } //if cell == nil { break }
+		cellNew := Replace(cell2.String())
+		apiListMap[rIdx] = []string{cell.Value(), cellNew}
+		getNumTestLine++
+	}
+
+	return apiListMap
+}
 
 // WORK
 func GetNumTestLine(apiSheetName string, apiTestName string)  int {
 	var getNumTestLine int
-	//Open XLSX file
-	xl := XlsxOpen()
-
+	xl, err := xlsx.Open(CountryName)
+	if err != nil {
+		fmt.Println("GetNumTestLine not opened")
+	}
+	var er string
 	sheet := xl.SheetByName(apiSheetName)
-	for cIdx := 0; cIdx < 100; cIdx++ {
+	for cIdx := 0; cIdx < 3000; cIdx++ {
 		cell := sheet.Cell(0, cIdx)
+		er = cell.Value()
 		if cell.Value() == apiTestName {getNumTestLine = cIdx
-		break } //if cell == nil { break }
+		break }
 	}
 
 	value := getNumTestLine+1
-	xl.Close()
+
+	if er == "" {
+		fmt.Println("Ошибка. В вкладке APIList есть ссылка на не существующий тест")
+		os.Exit(0)
+	}
+
 	return value
-}
-
-
-//-------GetColumn----------------------------------------------------
-func GetColumn( column int, apiSheetName string, apiTestName string)  (map[int][]string) { //
-	//Open XLSX file
-	xl := XlsxOpen()
-	//if err != nil {
-	//	fmt.Println("xlsx not opened")
-	//}
-
-	getNumTestLine := GetNumTestLine(apiSheetName, apiTestName)
-	sheet := xl.SheetByName(apiSheetName)
-	apiListMap := make(map[int][]string)
-
-	for cIdx := 0; cIdx < 200; cIdx++ {
-		cell := sheet.Cell(cIdx+column, getNumTestLine)
-		if cell.Value() == "" { break } //if cell == nil { break }
-		cellNew := Replace(cell.String())			//  Подмена переменных
-		apiListMap[cIdx] = []string{cellNew}
-		fmt.Println(cellNew)
-	}
-
-
-
-
-	//apiListMap := make(map[int][]string)
-	////_, totalRows := sheet.Dimension()
-	//	for cIdx := 0; cIdx < 100; cIdx++ {
-	//		cell := sheet.Cell(cIdx+ro, ce)
-	//		if cell.Value() == "" { break } //if cell == nil { break }
-	//		//fmt.Println("cell 2-3", cell)
-	//		apiListMap[cIdx] = []string{cell.Value()}
-	//		fmt.Printf(apiListMap[cIdx][0])
-	//	}
-	//
-	//
-	//for key, value := range apiListMap { // Order not specified
-	//	fmt.Println(key, value)
-	//}
-	return apiListMap
-}
-
-
-
-
-
-
-
-
-//------------------------------------------------------------
-func GetHeader(cf int, kz int, ap string) map[string]string {
-	//Open XLSX file
-	xl := XlsxOpen()
-
-	sheet := xl.SheetByName(ap)
-	apiListMap := make(map[string]string)
-
-	//totalCols, totalRows := sheet.Dimension()
-	var tem string
-	var cell string
-	for zIdx := cf; zIdx < cf+2; zIdx++ {
-
-		for fIdx := kz; fIdx < fIdx+2; fIdx++ {
-			tem = cell
-
-			cell = sheet.Cell(fIdx, zIdx).Value()
-			if cell == "" || len(cell) <= 1 {fIdx = 1000
-			break}
-			if cell != "" && tem != "" {apiListMap[tem] = cell}
-			if tem == "" && cell == "" {zIdx = 1000
-				fIdx = 1000
-				break}
-
-		}
-
-	}
-
-
-
-	for key, value := range apiListMap { // Order not specified
-		fmt.Println(key, value)
-	}
-	return apiListMap
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-func XlsxOpen() *xlsx.Spreadsheet {
-	//Open XLSX file
-	xl, err := xlsx.Open(CountryName)
-	if err != nil {
-		fmt.Println("xlsx not opened")
-	}
-	return xl
 }
 
 //var path string
 func Path() string {
 	path, err := os.Getwd()
 	if err != nil {
-		//	log.Println(err)
 	}
 	return path
 }
 
 
-
-
-//work
-//func GetRow2(ce int, ro int, apiSheetName string, ApiTestName string) (map[int][]string) {
-//	//Open XLSX file
-//	xl, err := xlsx.Open(CountryName)
-//	if err != nil {
-//		fmt.Println("xlsx not opened")
-//	}
-//	getNumTestLine := GetNumTestLine(apiSheetName, ApiTestName)
-//	fmt.Println("getNumTestLine   ------    ", getNumTestLine)
-//	sheet := xl.SheetByName(apiSheetName)
-//
-//	apiListMap := make(map[int][]string)
-//
-//	for rIdx := 0; rIdx < 100; rIdx++ {
-//
-//
-//		cell := sheet.Cell(ro, getNumTestLine)
-//		cell2 := sheet.Cell(ro+1, getNumTestLine)
-//		fmt.Println("xxxxxxxxxxx   ------    ",ro, getNumTestLine)
-//		fmt.Println("xxxxxxxxxxx   ------    ",ro+1, getNumTestLine)
-//		fmt.Println("qqqqqq   ------    ",apiSheetName ,cell.Value() , cell2.Value())
-//
-//		if cell.Value() == "" { break } //if cell == nil { break }
-//		apiListMap[rIdx] = []string{cell.Value(), cell2.Value()}
-//		getNumTestLine++
-//	}
-//	return apiListMap
-//}
-
 func Random(str string) string {
 	var letter[]rune
 	 data := strings.Split(str, "##")
-
 	i, _ := strconv.Atoi(data[1])
 	if i == 0 { i = 6 }
 
@@ -322,21 +214,28 @@ func Random(str string) string {
 	return string(b)
 }
 
-func GenerateData(generate map[int][]string)  {
-	generateTestData2 := strings.Split(generate[0][0], ";")
-	fmt.Println("generateTestData2  - >    ", len(generateTestData2))
+func (a Data) GenerateData(generate map[int][]string)  {
+	fmt.Println("generate  - ><><><>    ", generate[0])
 
-	// Выполнение теста - перебираем список Requests из вкладки
-	for rIdx := 0; rIdx < len(generateTestData2); rIdx++ {
-		//fmt.Println(header[rIdx][0],header[rIdx][1])
-		if string(generateTestData2[rIdx]) == "" { break } //if cell == nil { break }
-		fmt.Println("generateTestData2  - ><><><>    ", generateTestData2[rIdx])
-		generateMap := strings.Split(generateTestData2[rIdx], "##")
-		fmt.Println("generateMap  - ><><><>>>>>>>>>>>    ", generateMap[0])
-		fmt.Println("generateMap  - ><><><>>>>>>>>>>>    ", generateMap[1])
+	if a.empty {
 
+		generateTestData2 := strings.Split(generate[0][0], ";")
 
-		//SetPropValue(generateMap[0],generateMap[1])
+		// Выполнение теста - перебираем список Requests из вкладки
+		for rIdx := 0; rIdx < len(generateTestData2); rIdx++ {
+
+			if string(generateTestData2[rIdx]) == "" {
+				break
+			} //if cell == nil { break }
+
+			generateMap := strings.Split(generateTestData2[rIdx], "::")
+			fmt.Println("generateMap  - ><><><>>>>>>>>>>>    ", generateMap[0])
+			fmt.Println("generateMap  - ><><><>>>>>>>>>>>    ", generateMap[1])
+			SetPropValue(generateMap[0], Replace(generateMap[1]))
+			}
 	}
 
 }
+
+
+

@@ -2,34 +2,100 @@ package main
 
 import (
 	"fmt"
+	"github.com/plandem/xlsx"
 	_ "github.com/plandem/xlsx/types"
 )
 
 //
-//var ApiSheetName string
+type Data struct {
+	sheet xlsx.Sheet
+	empty bool
+	ApiSheetName string
+	ApiTestName string
+	Requestparam
+	Cell
+	Error
+}
+
+type Requestparam struct {
+	requestparam map[int][]string
+}
+
+var (
+	countryname string
+	developerKey string
+	imei string
+	apiversion string
+	rwandareport string
+	urlxlsxfile string
+)
+
+	var RendomData = new(Data)
 
 func main() {
+	SetPropValue("countryname","rwanda")
+	//SetPropValue("apiversion","1.113.0")
+	SetPropValue("wiatsms","30")
+	SetPropValue("phone","380711111111")
+	SetPropValue("phonenumber","711111111")
+	SetPropValue("email","alex.mywu.qa@gmail.com")
+	SetPropValue("password","Password_01")
+	SetPropValue("developerKey","30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6")
+	SetPropValue("developer_key","df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669")
+	SetPropValue("rwandareport","rwandaReport")
+	SetPropValue("urlxlsxfile","https://docs.google.com/spreadsheets/d/1vEomALrKNbteAE1uEr2iSyenRpDRQt06EVKi53vDiVU/export?format=xlsx")
+
+	//Payment
+	SetPropValue("payment.currency_get","RWF")
+	SetPropValue("payment.country_send_code","FR")
+	SetPropValue("payment.amount_get","11")
+
 
 	Downloading() //download xlsx file from google
+	UDID()
+	//drivers()
+	//telegram("dfgfrg")
+	//checkEmail() // check EMail
+	//telegram()
+
 	// ------------        выбираем список проверок // выборка row с нужной точки и до пустой ячейки
-	GetAPIList := GetRow(1, 1, "APIList", "")
+	GetAPIList := GetRow2(1, 1, "APIList", 1)
+
+	xl, err := xlsx.Open(CountryName)
+	if err != nil {
+		fmt.Println("xlsxmmmmmm not opened")
+	}
 
 	// Выполнение теста - перебираем список Requests из вкладки APIlist
 	for rIdx := 0; rIdx < len(GetAPIList); rIdx++ {
-		fmt.Println(GetAPIList[rIdx][0],GetAPIList[rIdx][1])
-		ApiSheetName, ApiTestName := GetAPIList[rIdx][0],GetAPIList[rIdx][1]
-		ApiTest(ApiSheetName, ApiTestName) //
+		//fmt.Println(GetAPIList[rIdx][0],GetAPIList[rIdx][1])
+		RendomData.ApiSheetName, RendomData.ApiTestName = GetAPIList[rIdx][0],GetAPIList[rIdx][1]
+		getNumTestLine := GetNumTestLine(RendomData.ApiSheetName, RendomData.ApiTestName)
+
+		SetPropValue("sheetname",RendomData.ApiSheetName)   // Сохраняем в дата файл
+		SetPropValue("apitestname",RendomData.ApiTestName)
+
+		RendomData.sheet = xl.SheetByName(GetPropValue("sheetname"))
+		RendomData.ApiTest(RendomData.ApiSheetName, getNumTestLine) //
 	}
 
 
+	xl.SaveAs("./" + GetPropValue("rwandaReport") + ".xlsx")
 
 
-	//cell := sheet.Cell(1, 2)
-	//cell2 := sheet.Cell(1, 3)
-	//cell3 := sheet.Cell(1, 4)
-	//cell4 := sheet.Cell(1, 5)
 
-	//fmt.Println("cell 2-3", cell, cell2, cell3 , cell4)
+	mail()  //Send Email with report
+
+	//get, err := viper.Get(key).(string)
+	//if get == "" {
+	//	msg := GetPropValue("countryname") + "\nТакой переменной нет в файле - data.json ->  " + key
+	//	telegram(msg)
+	//	fmt.Println("Такой переменной нет в файле - data.json ->  ", key, err)
+	//	//os.Exit(0)
+	//}
+
+
+
 
 
 
