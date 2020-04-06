@@ -12,7 +12,8 @@ var  (
 	OldValue string
 )
 
-func Replace(value string) (string)  {
+func (a Data) Replace(value string) (string)  {
+
 	Value := value
 	re := regexp.MustCompile(`([${{])(.*?){*}([}}])`)
 	submatchall := re.FindAllString(value, -1)
@@ -29,6 +30,11 @@ func Replace(value string) (string)  {
 				if GetPropValue(element) == "" {
 					fmt.Println("Такой переменной нет в файле data.json ->  ", element)
 					fmt.Println("Выполнение остановленно - Смотреть Replase.go", element)
+
+					msg := "Такой переменной нет в файле data.json ->  " +element
+					msg = msg + "\nВыполнение остановленно - Смотреть Replase.go\n"
+					msg = msg + a.Response.URL
+						telegram(msg)
 					os.Exit(0)
 				}
 				Value = strings.Replace(Value, OldValue, GetPropValue("udid"), -1)

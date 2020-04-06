@@ -1,4 +1,4 @@
-package Requests
+package main
 
 import (
 	"fmt"

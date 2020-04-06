@@ -45,7 +45,7 @@ func GetColumn(column int, rownum int, a Data)  (map[int][]string) { //
 			a.empty = true
 			break
 		}
-		cellNew := Replace(cell.String())			//  Подмена переменных
+		cellNew := a.Replace(cell.String())			//  Подмена переменных
 		apiListMap[cIdx] = []string{cellNew}
 		//fmt.Println(cellNew)
 	}
@@ -87,11 +87,13 @@ func GetPropValue(key string) string {
 	viper.AutomaticEnv()
 	//viper.WriteConfig()
 	get := viper.GetString(key)
-
-	//fmt.Println("Такой переменной нет в файле - data.json ->  ", key, err)
-
 	if get == "" {
-		msg := GetPropValue("countryname") + "\nТест остановлен \n Такой переменной нет в файле - data.json ->  " + key
+		msg := GetPropValue("countryname") +
+			"\nSheet Name:    " + GetPropValue("sheetname") + "\n" +
+			"\nAPI test name:    " + GetPropValue("apitestname") + "\n" +
+			"\nfunction name:   GetPropValue" + "\n\n" +
+			BodyRespons + "\n\n" +
+			"\nТест остановлен \n Такой переменной нет в файле - data.json ->  " + key
 		telegram(msg)
 		os.Exit(0)
 	}
@@ -110,7 +112,7 @@ func SetPropValue(key, value string)  {
 }
 
 //work
-func GetRow2(ce int, ro int, apiSheetName string, rownum int) (map[int][]string) {
+func (a Data) GetRow2(ce int, ro int, apiSheetName string, rownum int) (map[int][]string) {
 	getNumTestLine := rownum
 	//Open XLSX file
 	xl, err := xlsx.Open(CountryName)
@@ -127,7 +129,7 @@ func GetRow2(ce int, ro int, apiSheetName string, rownum int) (map[int][]string)
 		cell := sheet.Cell(ro, getNumTestLine)
 		cell2 := sheet.Cell(ro+1, getNumTestLine)
 		if cell.Value() == "" { break } //if cell == nil { break }
-		cellNew := Replace(cell2.String())
+		cellNew := a.Replace(cell2.String())
 		apiListMap[rIdx] = []string{cell.Value(), cellNew}
 		getNumTestLine++
 	}
@@ -147,7 +149,7 @@ func GetRow(ce int, ro int, rownum int, a Data) (map[int][]string) {
 		cell := a.sheet.Cell(ro, getNumTestLine)
 		cell2 := a.sheet.Cell(ro+1, getNumTestLine)
 		if cell.Value() == "" { break } //if cell == nil { break }
-		cellNew := Replace(cell2.String())
+		cellNew := a.Replace(cell2.String())
 		apiListMap[rIdx] = []string{cell.Value(), cellNew}
 		getNumTestLine++
 	}
@@ -231,7 +233,7 @@ func (a Data) GenerateData(generate map[int][]string)  {
 			generateMap := strings.Split(generateTestData2[rIdx], "::")
 			fmt.Println("generateMap  - ><><><>>>>>>>>>>>    ", generateMap[0])
 			fmt.Println("generateMap  - ><><><>>>>>>>>>>>    ", generateMap[1])
-			SetPropValue(generateMap[0], Replace(generateMap[1]))
+			SetPropValue(generateMap[0], a.Replace(generateMap[1]))
 			}
 	}
 

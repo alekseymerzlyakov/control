@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/plandem/xlsx"
-	_ "github.com/plandem/xlsx/types"
+	"os"
 )
 
 //
@@ -15,6 +15,7 @@ type Data struct {
 	Requestparam
 	Cell
 	Error
+	Response
 }
 
 type Requestparam struct {
@@ -33,8 +34,11 @@ var (
 	var RendomData = new(Data)
 
 func main() {
-	SetPropValue("countryname","rwanda")
-	//SetPropValue("apiversion","1.113.0")
+	SetPropValue("countryname",os.Getenv(countryname))
+	SetPropValue("urlxlsxfile","https://docs.google.com/spreadsheets/d/1vEomALrKNbteAE1uEr2iSyenRpDRQt06EVKi53vDiVU/export?format=xlsx")
+
+
+
 	SetPropValue("wiatsms","30")
 	SetPropValue("phone","380711111111")
 	SetPropValue("phonenumber","711111111")
@@ -42,15 +46,12 @@ func main() {
 	SetPropValue("password","Password_01")
 	SetPropValue("developerKey","30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6")
 	SetPropValue("developer_key","df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669")
-	SetPropValue("rwandareport","rwandaReport")
-	SetPropValue("urlxlsxfile","https://docs.google.com/spreadsheets/d/1vEomALrKNbteAE1uEr2iSyenRpDRQt06EVKi53vDiVU/export?format=xlsx")
+	//SetPropValue("rwandareport","rwandaReport")
 
 	//Payment
 	SetPropValue("payment.currency_get","RWF")
 	SetPropValue("payment.country_send_code","FR")
 	SetPropValue("payment.amount_get","11")
-
-
 	Downloading() //download xlsx file from google
 	UDID()
 	//drivers()
@@ -59,7 +60,7 @@ func main() {
 	//telegram()
 
 	// ------------        выбираем список проверок // выборка row с нужной точки и до пустой ячейки
-	GetAPIList := GetRow2(1, 1, "APIList", 1)
+	GetAPIList := RendomData.GetRow2(1, 1, "APIList", 1)
 
 	xl, err := xlsx.Open(CountryName)
 	if err != nil {
@@ -80,7 +81,7 @@ func main() {
 	}
 
 
-	xl.SaveAs("./" + GetPropValue("rwandaReport") + ".xlsx")
+	xl.SaveAs("./Report/" + GetPropValue("countryname") + "Report.xlsx")
 
 
 

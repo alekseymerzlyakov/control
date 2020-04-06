@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"github.com/alekseymerzlyakov/control/Requests"
 	"github.com/tidwall/gjson"
 	"regexp"
 	"strconv"
@@ -13,6 +12,8 @@ import (
 type Error struct {
 	errorCount int
 }
+
+var BodyRespons string
 
 
 // Функция по созданию запросов из XLSX
@@ -39,10 +40,10 @@ func (a Data) DataForRequest(rownum int,header map[int][]string, RequestParamete
 
 			if bodyROWdata == "" {
 				def := a.GetCell(startBodyColumnnew, defaultRow)
-				defData := Replace(def)
+				defData := a.Replace(def)
 				requestBody = strings.Replace(requestBody, template, defData, -1) // замены шаблонов на переменные
 			} else {
-				bodyROWdatarep := Replace(bodyROWdata)
+				bodyROWdatarep := a.Replace(bodyROWdata)
 				requestBody = strings.Replace(requestBody, template, bodyROWdatarep, -1) // замены шаблонов на переменные
 			}
 
@@ -56,7 +57,7 @@ func (a Data) DataForRequest(rownum int,header map[int][]string, RequestParamete
 			time.Sleep(30 * time.Second)
 		}
 		time.Sleep(1 * time.Second)
-		resp := Requests.Request(requestBody, header, RequestParameters)
+		resp := Request(requestBody, header, RequestParameters)
 
 		fmt.Println("---------------------------------------\n\n\n\n\n")
 		fmt.Println("a.ApiTestName        -->>>>>>>>>   ", a.ApiTestName)
@@ -69,7 +70,7 @@ func (a Data) DataForRequest(rownum int,header map[int][]string, RequestParamete
 		a.SetSell(4, startRownew, strconv.Itoa(resp.ResponseCode))
 		a.SetSell(3, startRownew, resp.ResponseBody)
 
-		BodyRespons := resp.ResponseBody
+		BodyRespons = resp.ResponseBody
 
 		////==============Вызываем функции обработки ответов=================
 		//// если в ответе есть определенный текст - вызываем функцию по его обработке

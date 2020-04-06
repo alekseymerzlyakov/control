@@ -7,7 +7,7 @@ import (
 
 func mail()  {
 	e := email.NewEmail()
-	e.AttachFile("rwandaReport.xlsx")
+	e.AttachFile("./Report/rwandaReport.xlsx")
 	e.From = "Aleks < alex.mywu.uae@gmail.com>"
 	e.To = []string{"natalka57m@gmail.com"}
 	//e.Bcc = []string{"test_bcc@example.com"}

@@ -1,29 +1,24 @@
-#имя базового образа
-FROM golang:1.9.6-alpine3.7
+FROM golang:1.12-alpine
 
-#создаем папку, где будет наша программа
-RUN mkdir -p /go/src/app
+RUN apk add --no-cache git
 
-#идем в папку
-WORKDIR /go/src/app
+# Set the Current Working Directory inside the container
+WORKDIR /app
 
-#копируем все файлы из текущего пути к файлу Docker на вашей системе в нашу новую папку образа
-COPY . /go/src/app
+# We want to populate the module cache based on the go.{mod,sum} files.
+COPY go.mod .
+COPY go.sum .
 
-# Install the  dependencies
-RUN go get github.com/go-telegram-bot-api/telegram-bot-api
+RUN go mod download
+
+COPY . .
+
+# Build the Go app
+RUN go build -o ./control .
 
 
-#скачиваем зависимые пакеты через скрипт, любезно разработанный командой docker
-RUN go-wrapper download
+# This container exposes port 8080 to the outside world
+EXPOSE 8080
 
-#инсталлируем все пакеты и вашу программу
-RUN go-wrapper install
-
-#запускаем вашу программу через тот же скрипт, чтобы не зависеть от ее скомпилированного имени
-#-web - это параметр, передаваемый вашей программе при запуске, таких параметров может быть сколько угодно
-#go-wrapper запускает set -x для того, чтобы отправить в stderr имя бинарника Вашей программы в момент ее запуска
-#CMD ["go-wrapper", "run", "-web"]
-
-#пробрасываем порт вашей программы наружу образа
-EXPOSE 8000
+# Run the binary program produced by `go install`
+CMD ["./control"]
