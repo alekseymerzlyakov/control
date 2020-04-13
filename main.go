@@ -27,19 +27,21 @@ var (
 	developerKey string
 	imei string
 	apiversion string
-	rwandareport string
 	urlxlsxfile string
 )
 
 	var RendomData = new(Data)
 
 func main() {
-	SetPropValue("countryname",os.Getenv(countryname))
+	SetPropValue("wiatsms","30")
+	fmt.Println(os.Getenv("COUNTRY"))
+	coun := os.Getenv("COUNTRY")
+	SetPropValue("countryname",coun)
+	//SetPropValue("countryname","rwanda")
+
 	SetPropValue("urlxlsxfile","https://docs.google.com/spreadsheets/d/1vEomALrKNbteAE1uEr2iSyenRpDRQt06EVKi53vDiVU/export?format=xlsx")
 
 
-
-	SetPropValue("wiatsms","30")
 	SetPropValue("phone","380711111111")
 	SetPropValue("phonenumber","711111111")
 	SetPropValue("email","alex.mywu.qa@gmail.com")
@@ -52,6 +54,8 @@ func main() {
 	SetPropValue("payment.currency_get","RWF")
 	SetPropValue("payment.country_send_code","FR")
 	SetPropValue("payment.amount_get","11")
+
+	upload()
 	Downloading() //download xlsx file from google
 	UDID()
 	//drivers()
@@ -86,6 +90,8 @@ func main() {
 
 
 	mail()  //Send Email with report
+	//telegram("mes string")
+
 
 	//get, err := viper.Get(key).(string)
 	//if get == "" {

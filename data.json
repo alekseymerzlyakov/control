@@ -1,22 +1,25 @@
 {
-  "apitestname": "send_id_web_send_money_review",
-  "apiversion": "1.116.0",
-  "challenge": "274ecbe9730f1d56a6be7c9432f0cd46780a2f4fa60380817de7fd20a4e264b0",
+  "apitestname": "Countries",
+  "apiversion": "",
+  "challenge": "087e844e940a342f6e3002a3580032b36ead0003154512ff1e2f6362f6af9929",
   "country_code": "RW",
   "country_name": "Rwanda",
   "countryname": "rwanda",
   "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
   "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
-  "devicekey": "475d4f4e499a2cad2ebc764c3d28909d0ff67b91dbfcae39eba2fbadffd9a6c2",
+  "devicekey": "8ccb33b39b47240f34c96aa590d07a07500776a08c5c57375c840d303aab545c",
   "email": "alex.mywu.qa@gmail.com",
+  "env": {
+    "countryname": "rwanda"
+  },
   "language_code": "en",
   "language_name": "English",
   "otp": {
     "otp1": {
-      "text": "3454"
+      "text": "5499"
     },
     "otp2": {
-      "text": "489"
+      "text": "9999"
     }
   },
   "password": "Password_01",
@@ -35,10 +38,9 @@
   },
   "phone": "380711111111",
   "phonenumber": "711111111",
-  "rwandareport": "rwandaReport",
-  "sheetname": "review",
-  "token": "16fe8ab4831d1eca5e14e5b3276d6df6671ab427b87e88a6cda961c07d3f9150",
-  "udid": "cc3dcbc4aace041f556ddc26cc572710cceade4edc1113311a1db5dcbe6b0bf6",
+  "sheetname": "registration",
+  "token": "c7bb811e1832b166aec02fe6ff7884e7a7f78dad9d05939e7342955089343bbe",
+  "udid": "a63afb81f3057443c03a96390c4bfa8e5cb3c055f47e0216fe0738de5785c2cc",
   "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1vEomALrKNbteAE1uEr2iSyenRpDRQt06EVKi53vDiVU/export?format=xlsx",
   "wiatsms": "30"
 }

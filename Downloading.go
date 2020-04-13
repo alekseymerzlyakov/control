@@ -10,8 +10,9 @@ import (
 
 
 func Downloading() {
+
 	url := GetPropValue("urlxlsxfile")
-	fileName := GetPropValue("countryname") + ".xlsx"
+	fileName := "APP/" + GetPropValue("countryname") + ".xlsx"
 	fmt.Println("Downloading file...")
 
 	output, err := os.Create(fileName)

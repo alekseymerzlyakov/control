@@ -33,7 +33,7 @@ func telegram(mes string) {
 
 
 
-		msg := tgbotapi.NewMessage(-467584122, mes)
+	msg := tgbotapi.NewMessage(-467584122, mes)
 		//msg.ReplyToMessageID = update.Message.MessageID
 
 		bot.Send(msg)

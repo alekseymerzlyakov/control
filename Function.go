@@ -14,14 +14,13 @@ import (
 	"strings"
 	"time"
 )
-var CountryName = GetPropValue("countryname") + ".xlsx"
+var CountryName = "APP/" + GetPropValue("countryname") + ".xlsx"
 
 const (
 	startRowTest = 5
 	startColumn = 2
 	startBodyCol = 12
 	)
-
 
 type Cell struct {
 	columnNum int
@@ -30,8 +29,6 @@ type Cell struct {
 var Dop_parseRes []string
 var valueTemp string
 var newelement string
-
-
 
 //-------GetColumn----------------------------------------------------
 func GetColumn(column int, rownum int, a Data)  (map[int][]string) { //
@@ -108,6 +105,7 @@ func SetPropValue(key, value string)  {
 	viper.AutomaticEnv()
 	viper.Set(key, string(value))
 	viper.WriteConfig()
+	viper.SafeWriteConfig()
 
 }
 

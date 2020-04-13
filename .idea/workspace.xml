@@ -2,22 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21536da0-b795-41ee-98c2-0a2e0c862937" name="Default Changelist" comment="wer 2.0">
-      <change afterPath="$PROJECT_DIR$/Report/rwandaReport.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP/qqq.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP/rwanda.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client_credentials.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client_id.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client_secret.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/credentials-new.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/secret_key.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/upload.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataForRequest.go" beforeDir="false" afterPath="$PROJECT_DIR$/DataForRequest.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Downloading.go" beforeDir="false" afterPath="$PROJECT_DIR$/Downloading.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Function.go" beforeDir="false" afterPath="$PROJECT_DIR$/Function.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Replase.go" beforeDir="false" afterPath="$PROJECT_DIR$/Replase.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Request.go" beforeDir="false" afterPath="$PROJECT_DIR$/Request.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Report/rwandaReport.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Report/rwandaReport.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkEmail.go" beforeDir="false" afterPath="$PROJECT_DIR$/checkEmail.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/control" beforeDir="false" afterPath="$PROJECT_DIR$/control" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credentials.json" beforeDir="false" afterPath="$PROJECT_DIR$/credentials.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credentials2.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drive.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/email.go" beforeDir="false" afterPath="$PROJECT_DIR$/email.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rwanda.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/rwanda.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rwandaReport.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/rwandaReport.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rwanda.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rwandaReport.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram.go" beforeDir="false" afterPath="$PROJECT_DIR$/telegram.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/token.json" beforeDir="false" afterPath="$PROJECT_DIR$/token.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +85,7 @@
       <recent name="$PROJECT_DIR$/API" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go">
+  <component name="RunManager" selected="Go Build.go build github.com/alekseymerzlyakov/control">
     <configuration name="go build github.com/alekseymerzlyakov/control" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="control" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -146,10 +158,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="533" y="167" key="#go_build_main.go/0.0.1680.1050@0.0.1680.1050" timestamp="1581357331583" />
-    <state x="326" y="125" key="CommitChangelistDialog2" timestamp="1585917981197">
+    <state x="326" y="125" key="CommitChangelistDialog2" timestamp="1586287605423">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="326" y="125" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1585917981197" />
+    <state x="326" y="125" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1586287605423" />
     <state width="562" height="442" key="Diff.GoToChangePopup" timestamp="1586085701049">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
