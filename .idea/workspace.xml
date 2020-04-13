@@ -1,36 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21536da0-b795-41ee-98c2-0a2e0c862937" name="Default Changelist" comment="wer 2.0">
-      <change afterPath="$PROJECT_DIR$/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/qqq.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/rwanda.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client_credentials.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client_id.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client_secret.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/credentials-new.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/secret_key.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upload.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Downloading.go" beforeDir="false" afterPath="$PROJECT_DIR$/Downloading.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Function.go" beforeDir="false" afterPath="$PROJECT_DIR$/Function.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/rwandaReport.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Report/rwandaReport.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkEmail.go" beforeDir="false" afterPath="$PROJECT_DIR$/checkEmail.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control" beforeDir="false" afterPath="$PROJECT_DIR$/control" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/credentials.json" beforeDir="false" afterPath="$PROJECT_DIR$/credentials.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/credentials2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drive.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/email.go" beforeDir="false" afterPath="$PROJECT_DIR$/email.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rwanda.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rwandaReport.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/telegram.go" beforeDir="false" afterPath="$PROJECT_DIR$/telegram.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/token.json" beforeDir="false" afterPath="$PROJECT_DIR$/token.json" afterDir="false" />
-    </list>
+    <list default="true" id="21536da0-b795-41ee-98c2-0a2e0c862937" name="Default Changelist" comment="wer 2.0" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
