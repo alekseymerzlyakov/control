@@ -2,130 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21536da0-b795-41ee-98c2-0a2e0c862937" name="Default Changelist" comment="wer 2.0">
-      <change afterPath="$PROJECT_DIR$/APP/.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/albania.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/aruba.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/bahamas.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/belarus.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/benin.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/brunei.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/burkinafaso.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/bvi.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/cameroun.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/caymanislands.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/cookislands.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/cotedivoire.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/dominicanrepublic.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/jordan.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/kenya_hosted.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/kuwait.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/oman.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/qatar.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/uae.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApiTestAdded.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/albania.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/aruba.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/bahamas.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/bahrain.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/belarus.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/benin.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/brunei.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/burkinafaso.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/bvi.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/cameroun.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/caymanislands.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/cookislands.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/cotedivoire.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/dominicanrepublic.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/easttimor.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/ecuador.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/fiji.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/gabon.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/georgia.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/guinea.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/haiti.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/jordan.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/kazakhstan.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/kenya_hosted.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/kuwait.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/lebanon.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/maldives.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/mali.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/marshallislands.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/moldova.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/montenegro.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/niger.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/nigeria.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/oman.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/paraguay.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/philippines.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/qatar.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/rdc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/rwanda.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/samoa.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/saudi.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/senegal.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/serbia.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/solomonislands.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/srilanka.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/stkittsandnevis.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/stlucia.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/stvincentandthegrenadines.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/thailand.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/togo.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/tonga.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/tt.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/turksandcaicos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/uae.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/uganda.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/uruguay.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/vanuatu.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataForRequestAdded.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Function2.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Replase2.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/arubaReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/bahrainReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/belarusReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/beninReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/bruneiReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/burkinafasoReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/bviReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/camerounReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/caymanislandsReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/cookislandsReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/cotedivoireReport.xlsx" afterPathEscaped="$PROJECT_DIR$/Report/cotedivoireReport#10#.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/cotedivoireReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/dominicanrepublicReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/jordanReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/kenya_hostedReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/kuwaitReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/omanReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/qatarReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/uaeReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Request2.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFunc.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logfile.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/start.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP/qqq.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP/rwanda.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiTest.go" beforeDir="false" afterPath="$PROJECT_DIR$/ApiTest.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataForRequest.go" beforeDir="false" afterPath="$PROJECT_DIR$/DataForRequest.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Downloading.go" beforeDir="false" afterPath="$PROJECT_DIR$/Downloading.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Function.go" beforeDir="false" afterPath="$PROJECT_DIR$/Function.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Replase.go" beforeDir="false" afterPath="$PROJECT_DIR$/Replase.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/rwandaReport.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Report/rwandaReport.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Request.go" beforeDir="false" afterPath="$PROJECT_DIR$/Request.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Token.go" beforeDir="false" afterPath="$PROJECT_DIR$/Token.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control" beforeDir="false" afterPath="$PROJECT_DIR$/control" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email.go" beforeDir="false" afterPath="$PROJECT_DIR$/email.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload.go" beforeDir="false" afterPath="$PROJECT_DIR$/upload.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Report/cotedivoireReport.xlsx" beforePathEscaped="$PROJECT_DIR$/Report/cotedivoireReport#10#.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Report/cotedivoireReport.xlsx" afterPathEscaped="$PROJECT_DIR$/Report/cotedivoireReport#10#.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,14 +55,14 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Function" />
-      <recent name="$PROJECT_DIR$/API" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Data" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/APP" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Function" />
+      <recent name="$PROJECT_DIR$/API" />
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build main.go">

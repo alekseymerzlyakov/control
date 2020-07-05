@@ -40,11 +40,7 @@ func (a *Data) DataForRequest(rownum int,header map[int][]string, RequestParamet
 
 		// After function
 		after := a.GetCell(BeforeColumn+1, startRownew)
-
-
 		if a.GetCell(0, startRownew) == "End" { break } //if cell == nil { break }
-
-
 
 		for xIdx := 0; xIdx < 30; xIdx++ {
 			template := a.GetCell(startBodyColumnnew, templateRow)
