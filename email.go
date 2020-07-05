@@ -5,9 +5,10 @@ import (
 	"net/smtp"
 )
 
-func mail()  {
+func mail(countryname string)  {
 	e := email.NewEmail()
-	e.AttachFile("./Report/" +  GetPropValue("countryname") + "Report.xlsx")
+	e.AttachFile("./Report/" +  Filename + "Report.xlsx")
+	e.AttachFile("./logfile.log")
 	e.From = "Aleks < alex.mywu.uae@gmail.com>"
 	e.To = []string{"natalka57m@gmail.com"}
 	//e.Bcc = []string{"test_bcc@example.com"}

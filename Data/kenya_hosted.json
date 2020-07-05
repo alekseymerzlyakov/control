@@ -1,47 +1,89 @@
 {
-  "apitestname": "siftscience_score_approv",
-  "apiversion": "1.118.0",
-  "challenge": "0b55eaf89ca74077400a34022b55bc1341beed4bd9877b66f03ed0b8306865d6",
-  "country_code": "BH",
-  "country_name": "Bahrain",
-  "countryname": "albania",
+  "access-token": "d03080f5c1864a5c804bfc3ed74bd64e",
+  "apitestname": "receive_reg_send_receiver",
+  "apiversion": "1.129.0",
+  "authorization": "S0U5MzIxNTA6eVFAY1RNbUNvS0NXc2h5QTYjRTd2MlYw",
+  "authorization_code": "6XQYVI1MBKB45487YYI55TQSXFM45N2L",
+  "challenge": "3ede9ce080e89d7dc2cd12444965ce7b8480966279c1bfb9d1e6b3d8d01e8cd8",
+  "clientid": "KE932150",
+  "close_url": "https://kenya.uat.wuamerigo.com/send_money/review/wait",
+  "country_code": "KE",
+  "country_name": "Kenya",
+  "countryname": "kenya",
+  "data": {
+    "country": {
+      "ukraine": {
+        "access-token": "14cd3b6ec1d54211ad3929c97db4c648",
+        "authorization": "VUE3MTM1NzU6dXpCQExJNHojckY2UU1pcUdybnhEcFBn",
+        "clientid": "UA713575",
+        "secret_key": "uzB@LI4z#rF6QMiqGrnxDpPg"
+      }
+    },
+    "receiver": {
+      "account_number": "223456177456",
+      "country_receive": "Kenya",
+      "currency_receive": "KES",
+      "currency_send": "UAH",
+      "customer_id": "111721116",
+      "expected_payout_amount": "12.00",
+      "mtcn": "4109078264",
+      "principal_amount": "3.00",
+      "receiver_first_name": "Oleksii",
+      "receiver_last_name": "Merzliakov",
+      "transaction_id": "188"
+    },
+    "sender": {
+      "city": "mvYG",
+      "customer_id": "362613889",
+      "first_name": "NyFgklJPjrb",
+      "id_number": "362613889",
+      "last_name": "GAOZMFZpQn",
+      "phone_number": "611030",
+      "street1": "mvYG",
+      "zip_code": "4472"
+    },
+    "systrans_path": "return_url=https%3A%2F%2Fpay.kenya.uat.wuamerigo.com%2Fapi%2F1%2Fpay%2Fcallback%3Fid%3D2086\u0026id=2086",
+    "url": "https://pay.kenya.uat.wuamerigo.com/api/1/pay/callback?return_url=https%3A%2F%2Fpay.kenya.uat.wuamerigo.com%2Fapi%2F1%2Fpay%2Fcallback%3Fid%3D2086\u0026id=2086"
+  },
   "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
   "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
-  "devicekey": "07c4a6973c7d72815ae8079d5a455681ea30823ae928430659b988283d476919",
+  "devicekey": "46c06ea1e52c75180c2b49449edd1ba42f642cc11a8f50a591be0bbdb0aa7543",
   "email": "alex.mywu.qa@gmail.com",
-  "env": {
-    "countryname": "rwanda"
-  },
-  "language_code": "en\",\"ar",
-  "language_name": "English\",\"العربية",
-  "otp": {
-    "otp1": {
-      "text": "2439"
-    },
-    "otp2": {
-      "text": "9999"
-    }
-  },
+  "first_name": "rNxDr",
+  "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRob3JpemF0aW9uX2NvZGUiOiI2WFFZVkkxTUJLQjQ1NDg3WVlJNTVUUVNYRk00NU4yTCJ9.JYPUhDOHOGs1hVxW5fafzq5+MNN9Ah4mXgT+qPpHBIQ=",
+  "language_code": "en",
+  "language_name": "English",
+  "last_name": "kenya",
+  "last_response": "{\"status\":\"error\",\"sessionData\":{\"user\":{\"phone_verified\":true,\"new_user\":true,\"last_name\":\"Merzliakov\",\"first_name\":\"Oleksii\",\"currencies\":[\"KES\"],\"country_name\":\"Kenya\",\"country_code\":\"KE\",\"account_verified\":true},\"timeout\":900,\"login\":\"mob-380-993611030\",\"limits\":[],\"id\":\"3083\",\"auth\":true,\"amplitude\":{\"wu_language\":\"en\",\"sender_country\":\"ke\",\"previous_page\":\"/btn/history\",\"phone_verified\":\"true\",\"page_name\":\"/btn/history\",\"marketing_opt-in\":\"false\",\"logged_in\":\"true\",\"account_verified\":\"true\",\"account_id\":\"3083\",\"TransactionID\":\"\"},\"_time_zone\":180},\"error_msg\":[{\"id\":\"web/btn/receive_money\",\"error_msg\":\"Please double check the expected amount\"}],\"code\":0}",
   "password": "Password_01",
   "payment": {
-    "amount_get": "11",
-    "country_get_code": "RW",
-    "country_get_name": "Rwanda",
-    "country_send_code": "FR",
-    "country_send_name": "France",
-    "county_tax": "810.00",
-    "currency_get": "RWF",
-    "currency_send": "EUR",
-    "expected_payout_amount": "0.01",
-    "gross_amount": "4511",
-    "principal_amount": "11"
+    "amount_get": "116",
+    "country_get_code": "KE",
+    "country_get_name": "Kenya",
+    "country_send_code": "UA",
+    "country_send_name": "Ukraine",
+    "county_tax": "",
+    "currencies": "KES",
+    "currency_get": "KES",
+    "currency_send": "USD",
+    "discount": "100.00",
+    "expected_payout_amount": "1.00",
+    "fee": "0.00",
+    "gross_amount": "116.00",
+    "principal_amount": "116.00"
   },
   "phone": "380711111111",
   "phonenumber": "711111111",
-  "reportfoldername": "1gpYiO3Qii998lI0e_4OXY3G0egXWf4MX",
-  "sheetname": "registration",
-  "token": "c9553df0a52bfea2e75ff18bc7ad1a1da8248e3d5c086287a37d81f755e0efe6",
-  "udid": "d4f6089775f52cc86fc2638e41c0ed1868e317d868406fc4347672a6704cb0c8",
-  "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1qkSFhXLBPGmDcbWCb938-phmfaoeNO9-iA5BMI4PivM/export?format=xlsx",
+  "public_key": "x2SZaJp",
+  "reportfoldername": "1Yl4nz1o6GFMW23IwR3ga3YmsIKBUbnJJ",
+  "secret_key": "yQ@cTMmCoKCWshyA6#E7v2V0",
+  "secretkey": "6xrw38YLfIc4e!J2dw5a1OeE8JZOrBCS",
+  "sheetname": "receive_money",
+  "systrans_id": "2086",
+  "token": "4226002cfd7b4b0af504b7465851880c7398bd65a9ffb44f7ce31643a87f2066",
+  "transaction_id": "2018603819102345",
+  "udid": "94934afe03783294a3ba361e49b8a562804a6111d5be1aa55c158d41b366666b",
+  "unixtime": "1593882572",
+  "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1sbgE5RRKkrQbneVgeu0x0efzmbstOBR9IueFbd4cI6U/export?format=xlsx",
   "wiatsms": "31"
 }

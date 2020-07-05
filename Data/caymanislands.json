@@ -1,19 +1,19 @@
 {
-  "apitestname": "siftscience_score_approv",
+  "apitestname": "REG",
   "apiversion": "1.118.0",
-  "challenge": "0b55eaf89ca74077400a34022b55bc1341beed4bd9877b66f03ed0b8306865d6",
-  "country_code": "BH",
-  "country_name": "Bahrain",
-  "countryname": "albania",
+  "challenge": "1f6b649e84db8d5f4d88f143f5c3a0b1d776a058eacb624e4fc1be5b333c9ce6",
+  "country_code": "KY",
+  "country_name": "Cayman Islands",
+  "countryname": "caymanislands",
   "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
   "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
-  "devicekey": "07c4a6973c7d72815ae8079d5a455681ea30823ae928430659b988283d476919",
+  "devicekey": "330c4b21be7dde6af54a9951e2bb438d3ac1c65d40e0dd84d2414d324f3c01b6",
   "email": "alex.mywu.qa@gmail.com",
   "env": {
     "countryname": "rwanda"
   },
-  "language_code": "en\",\"ar",
-  "language_name": "English\",\"العربية",
+  "language_code": "en",
+  "language_name": "English",
   "otp": {
     "otp1": {
       "text": "2439"
@@ -38,10 +38,10 @@
   },
   "phone": "380711111111",
   "phonenumber": "711111111",
-  "reportfoldername": "1gpYiO3Qii998lI0e_4OXY3G0egXWf4MX",
+  "reportfoldername": "1PTBKdgk0RSkYfYCoiMqxkJm3zbYQXTn6",
   "sheetname": "registration",
-  "token": "c9553df0a52bfea2e75ff18bc7ad1a1da8248e3d5c086287a37d81f755e0efe6",
-  "udid": "d4f6089775f52cc86fc2638e41c0ed1868e317d868406fc4347672a6704cb0c8",
-  "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1qkSFhXLBPGmDcbWCb938-phmfaoeNO9-iA5BMI4PivM/export?format=xlsx",
+  "token": "8e23b8a6547a48e37f227940be91c56f3722a2cd3cacb4defc8ebb090000f6e9",
+  "udid": "efd7db9f3ee76dfbc35eedcb5ef4e8953382b8621cec1a7746a2eff21b27ca48",
+  "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1RlFh-tKTyqGMLE6LIokw4tcA_r-3slCvXl-TfqctRH0/export?format=xlsx",
   "wiatsms": "31"
 }

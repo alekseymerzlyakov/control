@@ -1,46 +1,28 @@
 {
   "apitestname": "Countries",
-  "apiversion": "",
-  "challenge": "087e844e940a342f6e3002a3580032b36ead0003154512ff1e2f6362f6af9929",
+  "apiversion": "1.117.0",
+  "challenge": "3f455c91fc571a6022224d899efa7cb74978087a851c7cd30acbafdac2e483aa",
   "country_code": "RW",
   "country_name": "Rwanda",
   "countryname": "rwanda",
   "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
   "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
-  "devicekey": "8ccb33b39b47240f34c96aa590d07a07500776a08c5c57375c840d303aab545c",
+  "devicekey": "95881305014a0d0595d297bd886bca2196cc54fd434419830c0d5dda4277432a",
   "email": "alex.mywu.qa@gmail.com",
-  "env": {
-    "countryname": "rwanda"
-  },
   "language_code": "en",
   "language_name": "English",
-  "otp": {
-    "otp1": {
-      "text": "5499"
-    },
-    "otp2": {
-      "text": "9999"
-    }
-  },
   "password": "Password_01",
   "payment": {
     "amount_get": "11",
-    "country_get_code": "RW",
-    "country_get_name": "Rwanda",
     "country_send_code": "FR",
-    "country_send_name": "France",
-    "county_tax": "810.00",
-    "currency_get": "RWF",
-    "currency_send": "EUR",
-    "expected_payout_amount": "0.01",
-    "gross_amount": "4511",
-    "principal_amount": "11"
+    "currency_get": "RWF"
   },
   "phone": "380711111111",
   "phonenumber": "711111111",
+  "reportfoldername": "1weiJWHewtYR4AHp05XFTF7ggrj0xwGcw",
   "sheetname": "registration",
-  "token": "c7bb811e1832b166aec02fe6ff7884e7a7f78dad9d05939e7342955089343bbe",
-  "udid": "a63afb81f3057443c03a96390c4bfa8e5cb3c055f47e0216fe0738de5785c2cc",
+  "token": "292aa0191dc1fdc7439de3c0fa08f5c9e1471463fb030b982d463db004dc2129",
+  "udid": "cbee51d0d05d29a80b694a2c8cc34bc69dfcf144fa14807cecee5661aa09dc77",
   "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1vEomALrKNbteAE1uEr2iSyenRpDRQt06EVKi53vDiVU/export?format=xlsx",
-  "wiatsms": "30"
+  "wiatsms": "31"
 }

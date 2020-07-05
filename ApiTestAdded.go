@@ -6,29 +6,29 @@ import (
 )
 
 const (
-	startColumnReq int = 1
-	startColumnHeader int = 5
-	GenerateTestData int = 7
+	startColumnReq2 int = 1
+	startColumnHeader2 int = 5
+	GenerateTestData2 int = 7
 )
 
-func (a Data) ApiTest(ApiSheetName string, numTestLine int) {
-	startRow := numTestLine
+func (b Data) ApiTest2 (ApiSheetName string, numTestLine2 int) {
+	startRow2 := numTestLine2
 
 	// получаем данные  Metod	Protocol	Domain	Path
-	RequestParameters := GetColumn(startColumnReq, startRow, a) //MetodProtocolDomainPath := GetColumn(4, 1, ap)
-	fmt.Println(RequestParameters)
+	RequestParameters2 := GetColumn2(startColumnReq2, startRow2, b) //MetodProtocolDomainPath := GetColumn(4, 1, ap)
+	fmt.Println(RequestParameters2)
 
 	// получаем Header
-	getHeader := GetRow(0, startColumnHeader, startRow, a) // выбираем список проверок // выборка row с нужной точки и до пустой ячейки
-	fmt.Println("test1  --   ",getHeader)
+	getHeader2 := GetRow3(0, startColumnHeader2, startRow2, b) // выбираем список проверок // выборка row с нужной точки и до пустой ячейки
+	fmt.Println("test1  --   ",getHeader2)
 
 	//Generate test data
-	generateTestData := GetColumn(GenerateTestData, startRow, a) //
-	a.GenerateData(generateTestData) //генерация тестовых данных
+	generateTestData2 := GetColumn2(GenerateTestData2, startRow2, b) //
+	b.GenerateData(generateTestData2) //генерация тестовых данных
 
-	a.DataForRequest(numTestLine, getHeader, RequestParameters)  // создание запроса
+	b.DataForRequest2(numTestLine2, getHeader2, RequestParameters2)  // создание запроса
 
 	// Если в PATH есть }/reg? то генерируем токен
-	if strings.Contains(RequestParameters[3][0],"/reg?") {Token()}
+	if strings.Contains(RequestParameters2[3][0],"/reg?") {Token()}
 
 }

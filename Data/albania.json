@@ -1,10 +1,10 @@
 {
-  "apitestname": "REG",
+  "apitestname": "siftscience_score_approv",
   "apiversion": "1.118.0",
   "challenge": "0b55eaf89ca74077400a34022b55bc1341beed4bd9877b66f03ed0b8306865d6",
   "country_code": "BH",
   "country_name": "Bahrain",
-  "countryname": "bahrain",
+  "countryname": "albania",
   "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
   "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
   "devicekey": "07c4a6973c7d72815ae8079d5a455681ea30823ae928430659b988283d476919",
@@ -38,10 +38,10 @@
   },
   "phone": "380711111111",
   "phonenumber": "711111111",
-  "reportfoldername": "1fZCIHD3LSB4N02aQ-xJbDXOGRP4lb5fO",
+  "reportfoldername": "1gpYiO3Qii998lI0e_4OXY3G0egXWf4MX",
   "sheetname": "registration",
   "token": "c9553df0a52bfea2e75ff18bc7ad1a1da8248e3d5c086287a37d81f755e0efe6",
-  "udid": "c1cec418ee4de0c73f6ff41580a3677aef22d3b46107bf8bde8d222b12536f35",
-  "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1XFLdYIV--f6zBUJ4-R71Bh2CvpPpY96Rtk-9CZw4y-M/export?format=xlsx",
+  "udid": "d4f6089775f52cc86fc2638e41c0ed1868e317d868406fc4347672a6704cb0c8",
+  "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1qkSFhXLBPGmDcbWCb938-phmfaoeNO9-iA5BMI4PivM/export?format=xlsx",
   "wiatsms": "31"
 }

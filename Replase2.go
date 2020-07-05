@@ -8,55 +8,55 @@ import (
 )
 
 var  (
-	Value string
-	OldValue string
+	Value2 string
+	OldValue2 string
 )
 
-func (a Data) Replace(value string) (string)  {
+func (b Data) Replace2(value string) (string)  {
 
-	Value := value
+	Value2 := value
 	re := regexp.MustCompile(`([${{])(.*?){*}([}}])`)
 	submatchall := re.FindAllString(value, -1)
 
-	for _, element := range submatchall {
-		if strings.Contains(element, "${{") && strings.Contains(element, "}}") {
-			element = strings.Trim(element, "${{")
-			element = strings.Trim(element, "}}")
-			OldValue := "${{" + element + "}}"
+	for _, element2 := range submatchall {
+		if strings.Contains(element2, "${{") && strings.Contains(element2, "}}") {
+			element2 = strings.Trim(element2, "${{")
+			element2 = strings.Trim(element2, "}}")
+			OldValue2 := "${{" + element2 + "}}"
 
 			switch {
-			case strings.Contains(element, "udid"):
+			case strings.Contains(element2, "udid"):
 				//fmt.Println("Такой переменной нет в файле data.json ->  ", element)
-				if GetPropValue(element) == "" {
-					fmt.Println("Такой переменной нет в файле data.json ->  ", element)
-					fmt.Println("Выполнение остановленно - Смотреть Replase.go", element)
+				if GetPropValue2(element2) == "" {
+					fmt.Println("Такой переменной нет в файле data.json ->  ", element2)
+					fmt.Println("Выполнение остановленно - Смотреть Replase.go", element2)
 
-					msg := "Такой переменной нет в файле data.json ->  " +element
+					msg := "Такой переменной нет в файле data.json ->  " +element2
 					msg = msg + "\nВыполнение остановленно - Смотреть Replase.go\n"
-					msg = msg + a.Response.URL
+					msg = msg + b.Response2.URL2
 						telegram(msg)
 					os.Exit(0)
 				}
-				Value = strings.Replace(Value, OldValue, GetPropValue("udid"), -1)
+				Value2 = strings.Replace(Value2, OldValue2, GetPropValue2("udid"), -1)
 
-			case strings.Contains(element, "RanString"):
-				Value = strings.Replace(Value, OldValue, Random(element), -1) // замены шаблонов на переменные
-			case strings.Contains(element, "RanInt"):
-				Value = strings.Replace(Value, OldValue, Random(element), -1)
-			case strings.Contains(element, "RanStrInt"):
-				Value = strings.Replace(Value, OldValue, Random(element), -1)
+			case strings.Contains(element2, "RanString"):
+				Value2 = strings.Replace(Value2, OldValue2, Random2(element2), -1) // замены шаблонов на переменные
+			case strings.Contains(element2, "RanInt"):
+				Value2 = strings.Replace(Value2, OldValue2, Random2(element2), -1)
+			case strings.Contains(element2, "RanStrInt"):
+				Value2 = strings.Replace(Value2, OldValue2, Random2(element2), -1)
 
 			default:
-				Value = strings.Replace(Value, OldValue, GetPropValue(element), -1)
-				if GetPropValue(element) == "" {
-					fmt.Println("Такой переменной нет в файле data.json ->  ", element)
-					fmt.Println("Выполнение остановленно - Смотреть Replase.go", element)
+				Value2 = strings.Replace(Value2, OldValue2, GetPropValue2(element2), -1)
+				if GetPropValue2(element2) == "" {
+					fmt.Println("Такой переменной нет в файле data.json ->  ", element2)
+					fmt.Println("Выполнение остановленно - Смотреть Replase.go", element2)
 					os.Exit(0)
 				}
 			}
 		} else {
-			Value = element
+			Value2 = element2
 		}
 	}
-	return Value
+	return Value2
 }

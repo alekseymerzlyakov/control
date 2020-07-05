@@ -14,31 +14,31 @@ import (
 	"strings"
 	"time"
 )
-var CountryXlsx = "APP/" + GetPropValue("countryname") + ".xlsx"
+var CountryXlsx2 = "APP/" + Filename + ".xlsx"
 
 const (
-	startRowTest = 5
-	startColumn = 2
-	startBodyCol = 12
-	BeboreColumn = 9
+	startRowTest2 = 5
+	startColumn2 = 2
+	startBodyCol2 = 12
+	BeboreColumn2 = 9
 	)
 
-type Cell struct {
-	columnNum int
-	rowNum int
+type Cell2 struct {
+	columnNum2 int
+	rowNum2 int
 }
-var Dop_parseRes []string
-var valueTemp string
-var newelement string
+var Dop_parseRes2 []string
+var valueTemp2 string
+var newelement2 string
 
 //-------GetColumn----------------------------------------------------
-func GetColumn(column int, rownum int, a Data)  (map[int][]string) { //
+func GetColumn2(column int, rownum int, a Data)  (map[int][]string) { //
 	//a.empty = false
 	getNumTestLine := rownum
 	apiListMap := make(map[int][]string)
 
 	for cIdx := 0; cIdx < 3000; cIdx++ {
-		cell := a.sheet.Cell(cIdx+column, getNumTestLine)
+		cell := a.sheetBefoAftTest.Cell(cIdx+column, getNumTestLine)
 		if cell.Value() == "" {
 			//Empty = false
 			break
@@ -54,11 +54,11 @@ func GetColumn(column int, rownum int, a Data)  (map[int][]string) { //
 }
 
 
-func (a Data) GetCell(i int, z int) string {
-	return a.sheet.Cell(i, z).Value()
+func (a Data) GetCell2(i int, z int) string {
+	return a.sheetBefoAftTest.Cell(i, z).Value()
 }
 
-func (a Data) SetSell(i int, z int, y string)  {
+func (a Data) SetSell2(i int, z int, y string)  {
 	FillColor := "#ffffff"
 	if a.Error.errorCount > 0 && i == 7 {
 		FillColor = "#ff0000"
@@ -67,7 +67,7 @@ func (a Data) SetSell(i int, z int, y string)  {
 		FillColor = "#7CFC00"
 	}
 
-	cell := a.sheet.Cell(i, z)
+	cell := a.sheetBefoAftTest.Cell(i, z)
 	cell.SetValue(y)
 	cell.SetStyles(styles.New(
 		styles.Font.Bold,
@@ -80,29 +80,28 @@ func (a Data) SetSell(i int, z int, y string)  {
 
 }
 
-func GetPropValue(key string) string {
-	ur := Path() + "/Data/"+Countryname+".json"
+func GetPropValue2(key string) string {
+	ur := Path() + "/Data/"+Filename+".json"
 	viper.SetConfigFile(ur)
 	viper.ReadInConfig()
 	viper.AutomaticEnv()
 	//viper.WriteConfig()
 	get := viper.GetString(key)
-	if get == "" {
-		msg := GetPropValue("countryname") +
-			"\nSheet Name:    " + GetPropValue("sheetname") + "\n" +
-			"\nAPI test name:    " + GetPropValue("apitestname") + "\n" +
-			"\nfunction name:   GetPropValue" + "\n\n" +
-			BodyRespons + "\n\n" +
-			"\nТест остановлен \n Такой переменной нет в файле - /Data/" + Countryname + ".json ->  \n возможная проблема -> API вернуло не корректный ответ и небыли получены данные \n надо искать в отчете -> " + key
+	if len(get) == 0 {
+		msg :=
+			"\n function name:   GetPropValue" + "\n\n  Key ->  " + key +
+
+				"\nТест остановлен \n Ключа " +key+  " нет в файле - /Data/" + Filename + ".json ->  \n возможная проблема -> API вернуло не корректный ответ и небыли спаршены данные \n надо искать в отчете -> " + key
 		telegram(msg)
-		//os.Exit(0)
+		os.Exit(0)
 	}
 
+fmt.Println("get ========>>>>>>>     ", get)
 	return get
 }
 
-func SetPropValue(key, value string)  {
-	ur := Path() + "/Data/"+Countryname+".json"
+func SetPropValue2(key, value string)  {
+	ur := Path2() + "/Data/"+Filename+".json"
 
 	viper.ReadInConfig()
 	viper.AutomaticEnv()
@@ -113,43 +112,19 @@ func SetPropValue(key, value string)  {
 
 }
 
-//work
-func (a *Data) GetRow2(ce int, ro int, apiSheetName string, rownum int) (map[int][]string) {
-	getNumTestLine := rownum
-	//Open XLSX file
-	xl, err := xlsx.Open(CountryXlsx)
-	if err != nil {
-		fmt.Println("GetRow not opened")
-	}
 
-	//getNumTestLine := GetNumTestLine(apiSheetName, ApiTestName)  //  поиск начала теста
-	fmt.Println("getNumTestLine   ------    ", getNumTestLine)
-	sheet := xl.SheetByName(apiSheetName)
-	apiListMap := make(map[int][]string)
-	for rIdx := 0; rIdx < 3000; rIdx++ {
-
-		cell := sheet.Cell(ro, getNumTestLine)
-		cell2 := sheet.Cell(ro+1, getNumTestLine)
-		if cell.Value() == "" { break } //if cell == nil { break }
-		cellNew := a.Replace(cell2.String())
-		apiListMap[rIdx] = []string{cell.Value(), cellNew}
-		getNumTestLine++
-	}
-
-	return apiListMap
-}
 
 
 //work
-func GetRow(ce int, ro int, rownum int, a Data) (map[int][]string) {
+func GetRow3(ce int, ro int, rownum int, a Data) (map[int][]string) {
 	getNumTestLine := rownum
 
 	apiListMap := make(map[int][]string)
 
 	for rIdx := 0; rIdx < 3000; rIdx++ {
 
-		cell := a.sheet.Cell(ro, getNumTestLine)
-		cell2 := a.sheet.Cell(ro+1, getNumTestLine)
+		cell := a.sheetBefoAftTest.Cell(ro, getNumTestLine)
+		cell2 := a.sheetBefoAftTest.Cell(ro+1, getNumTestLine)
 		if cell.Value() == "" { break } //if cell == nil { break }
 		cellNew := a.Replace(cell2.String())
 		apiListMap[rIdx] = []string{cell.Value(), cellNew}
@@ -160,7 +135,7 @@ func GetRow(ce int, ro int, rownum int, a Data) (map[int][]string) {
 }
 
 // WORK
-func GetNumTestLine(apiSheetName string, apiTestName string)  int {
+func GetNumTestLine2(apiSheetName string, apiTestName string)  int {
 	var getNumTestLine int
 	xl, err := xlsx.Open(CountryXlsx)
 	if err != nil {
@@ -186,7 +161,7 @@ func GetNumTestLine(apiSheetName string, apiTestName string)  int {
 }
 
 //var path string
-func Path() string {
+func Path2() string {
 	path, err := os.Getwd()
 	if err != nil {
 	}
@@ -194,7 +169,7 @@ func Path() string {
 }
 
 
-func Random(str string) string {
+func Random2(str string) string {
 	var letter[]rune
 	 data := strings.Split(str, "##")
 	i, _ := strconv.Atoi(data[1])
@@ -218,13 +193,14 @@ func Random(str string) string {
 	return string(b)
 }
 
-func (a Data) GenerateData(generate map[int][]string)  {
+func (a Data) GenerateData2(generate map[int][]string)  {
 	fmt.Println("generate  - ><><><>---    ", generate[0])
 
 	if len(generate[0]) != 0 {
 	//if generate[0][0] != "" {
 
-		generateTestData2 := strings.Split(generate[0][0], ";")
+		generateTestData2_ := strings.Replace(generate[0][0], "\n", "", -1)
+		generateTestData2 := strings.Split(generateTestData2_, ";")
 
 		// Выполнение теста - перебираем список Requests из вкладки
 		for rIdx := 0; rIdx < len(generateTestData2); rIdx++ {

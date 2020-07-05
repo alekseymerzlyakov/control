@@ -36,7 +36,7 @@ func Token()  {
 }
 
 func UDID()  {
-	developerKey := GetPropValue("developerKey")
+	developerKey := GetPropValue("developerkey")
 	imei = Random("RanStrInt##10")
 	key := []byte(developerKey)
 	h := hmac.New(crypto.SHA256.New, key)

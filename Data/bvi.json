@@ -1,47 +1,54 @@
 {
-  "apitestname": "delete_user",
-  "apiversion": "1.118.0",
-  "challenge": "0b55eaf89ca74077400a34022b55bc1341beed4bd9877b66f03ed0b8306865d6",
-  "country_code": "BH",
-  "country_name": "Bahrain",
-  "countryname": "aruba",
+  "apitestname": "apiversion",
+  "apiversion": "1.124.0",
+  "challenge": "78a9d4cdb24ef250ee636f9cabf8ed671e38de6a91aca24ebe558a5176efdc99",
+  "country_code": "VG",
+  "country_name": "British Virgin Islands",
+  "countryname": "bvi",
   "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
   "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
-  "devicekey": "07c4a6973c7d72815ae8079d5a455681ea30823ae928430659b988283d476919",
+  "devicekey": "92d79ec2c5145c12bac8694215d8eb651b45f15e1e171816837c5d03bcf483c3",
   "email": "alex.mywu.qa@gmail.com",
   "env": {
-    "countryname": "rwanda"
+    "countryname": "bvi"
   },
-  "language_code": "en\",\"ar",
-  "language_name": "English\",\"العربية",
+  "first_name": "EzXIA",
+  "language_code": "en",
+  "language_name": "English",
+  "last_name": "bvi",
   "otp": {
     "otp1": {
-      "text": "2439"
+      "text": "243434"
     },
     "otp2": {
-      "text": "9999"
+      "text": "021"
     }
   },
   "password": "Password_01",
   "payment": {
     "amount_get": "11",
-    "country_get_code": "RW",
-    "country_get_name": "Rwanda",
+    "country_get_code": "VG",
+    "country_get_name": "British Virgin Islands",
     "country_send_code": "FR",
     "country_send_name": "France",
-    "county_tax": "810.00",
-    "currency_get": "RWF",
+    "county_tax": "0.77",
+    "currency_get": "USD",
     "currency_send": "EUR",
-    "expected_payout_amount": "0.01",
-    "gross_amount": "4511",
-    "principal_amount": "11"
+    "discount": "5.00",
+    "expected_payout_amount": "9.30",
+    "fee": "0.00",
+    "gross_amount": "11.77",
+    "principal_amount": "11.00",
+    "promocode": "A1588",
+    "state_tax": "0.31",
+    "total_debit": "12.08"
   },
   "phone": "380711111111",
   "phonenumber": "711111111",
-  "reportfoldername": "11_-itZPO8uVRM2SBU--opdKt7ksDVf6B",
+  "reportfoldername": "1t_3y1KncUUi6hlVOcVKABOC2tin9lLrw",
   "sheetname": "registration",
-  "token": "c9553df0a52bfea2e75ff18bc7ad1a1da8248e3d5c086287a37d81f755e0efe6",
-  "udid": "01df87358cdbf00f1640ccc8fb6a9617f8dde3bd7e5466f74d04a8116bf2e91c",
-  "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1GjgU86Tybyda0YuWGwaMKI5tAgTkkhkCw4BvSDjWWQ0/export?format=xlsx",
+  "token": "11217a8aae333aecbf5a5c574fb9d5f6a0a96863e262d4f165fdfbea847a4b7a",
+  "udid": "eb7769c35e00c6aa97afca6c04c212ce479df45342c6c35118b5d21a8a333c68",
+  "urlxlsxfile": "https://docs.google.com/spreadsheets/d/15I-rdxjiYbtvLjpa11V5D17Ws0mr4vpa7SaXxYnSETU/export?format=xlsx",
   "wiatsms": "31"
 }

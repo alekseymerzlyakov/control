@@ -1,19 +1,19 @@
 {
-  "apitestname": "Countries",
-  "apiversion": "",
-  "challenge": "0b55eaf89ca74077400a34022b55bc1341beed4bd9877b66f03ed0b8306865d6",
-  "country_code": "BH",
-  "country_name": "Bahrain",
-  "countryname": "bahamas",
+  "apitestname": "REG",
+  "apiversion": "1.118.0",
+  "challenge": "eeaff9e6ea34518ef1623a194057c07e1191ef2a7ddf7707afdd543a5abb606a",
+  "country_code": "BF",
+  "country_name": "Burkina Faso",
+  "countryname": "burkinafaso",
   "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
   "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
-  "devicekey": "07c4a6973c7d72815ae8079d5a455681ea30823ae928430659b988283d476919",
+  "devicekey": "95f8015b2baf0d17c278d6e533f209b5cea26e02e5ea45184d28e3c0a2942635",
   "email": "alex.mywu.qa@gmail.com",
   "env": {
     "countryname": "rwanda"
   },
-  "language_code": "en\",\"ar",
-  "language_name": "English\",\"العربية",
+  "language_code": "fr\",\"en",
+  "language_name": "Français\",\"English",
   "otp": {
     "otp1": {
       "text": "2439"
@@ -38,10 +38,10 @@
   },
   "phone": "380711111111",
   "phonenumber": "711111111",
-  "reportfoldername": "1gER5CgEN1_SwR_oBGVhbAOLTL7q94uBs",
+  "reportfoldername": "1JDOr8X5f5gSkCK2GvGDCFMJmqVmC9Z9f",
   "sheetname": "registration",
-  "token": "c9553df0a52bfea2e75ff18bc7ad1a1da8248e3d5c086287a37d81f755e0efe6",
-  "udid": "aae8410dbc9501a6d8d6658b2aba42811721a3e266a64fe8607477e197c3b10d",
-  "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1BLsr6KDHKaobhLGRLV80nv9kp7J0WBIssqfHuMuNbBg/export?format=xlsx",
+  "token": "3108a448b62d1a1298e90789272f2625d3f8ec940b85200a6843797df4333e6e",
+  "udid": "351e5af8f7a752a551a122c5e0751b7926102ced973ff71f1ca45e0b13084cc3",
+  "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1pHmlSyc--hd2ofqxgisfIn0qL3k0NWL8VtySOCN1LHA/export?format=xlsx",
   "wiatsms": "31"
 }

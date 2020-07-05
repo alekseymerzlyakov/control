@@ -1,19 +1,21 @@
 {
-  "apitestname": "delete_user",
-  "apiversion": "1.118.0",
-  "challenge": "0b55eaf89ca74077400a34022b55bc1341beed4bd9877b66f03ed0b8306865d6",
-  "country_code": "BH",
-  "country_name": "Bahrain",
-  "countryname": "aruba",
+  "apitestname": "get_web_configurations",
+  "apiversion": "1.125.0",
+  "challenge": "644fd611b76f447a30fe4728756b4d313043fc94392d4a7d77ce23f8c1ee74a6",
+  "country_code": "BN",
+  "country_name": "Brunei",
+  "countryname": "brunei",
   "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
   "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
-  "devicekey": "07c4a6973c7d72815ae8079d5a455681ea30823ae928430659b988283d476919",
+  "devicekey": "74c24a5238bdd4a30b04d33a5396374c37810891229bed6076e12353b45b75f4",
   "email": "alex.mywu.qa@gmail.com",
   "env": {
-    "countryname": "rwanda"
+    "countryname": "brunei"
   },
-  "language_code": "en\",\"ar",
-  "language_name": "English\",\"العربية",
+  "first_name": "xTTnz",
+  "language_code": "en",
+  "language_name": "English",
+  "last_name": "brunei",
   "otp": {
     "otp1": {
       "text": "2439"
@@ -38,10 +40,10 @@
   },
   "phone": "380711111111",
   "phonenumber": "711111111",
-  "reportfoldername": "11_-itZPO8uVRM2SBU--opdKt7ksDVf6B",
+  "reportfoldername": "1uXFXD3wH4jOW5flvcECfYjfUkLdnO3LL",
   "sheetname": "registration",
-  "token": "c9553df0a52bfea2e75ff18bc7ad1a1da8248e3d5c086287a37d81f755e0efe6",
-  "udid": "01df87358cdbf00f1640ccc8fb6a9617f8dde3bd7e5466f74d04a8116bf2e91c",
-  "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1GjgU86Tybyda0YuWGwaMKI5tAgTkkhkCw4BvSDjWWQ0/export?format=xlsx",
+  "token": "6cabedf68c60d440b5fd0040658212b878cca8aea587957718d2ff6d92a9a8ff",
+  "udid": "a4a91229e10167e95d49fa0d32308d0d689063ae6e1e7f2bdcac06584b5f0448",
+  "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1owGSEb2gfhsjGHlEHOw1lkHRhsbFxC6uB4FOz0OzKso/export?format=xlsx",
   "wiatsms": "31"
 }

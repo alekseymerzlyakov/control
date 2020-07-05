@@ -35,6 +35,7 @@ func (a Data) Replace(value string) (string)  {
 					msg = msg + "\nВыполнение остановленно - Смотреть Replase.go\n"
 					msg = msg + a.Response.URL
 						telegram(msg)
+					mail(RendomData.Filename)  //Send Email with report
 					os.Exit(0)
 				}
 				Value = strings.Replace(Value, OldValue, GetPropValue("udid"), -1)
@@ -51,6 +52,12 @@ func (a Data) Replace(value string) (string)  {
 				if GetPropValue(element) == "" {
 					fmt.Println("Такой переменной нет в файле data.json ->  ", element)
 					fmt.Println("Выполнение остановленно - Смотреть Replase.go", element)
+					msg := "Такой переменной нет в файле data.json ->  " +element
+					msg = msg + "\nВыполнение остановленно - Смотреть Replase.go\n"
+					msg = msg + a.Response.URL
+					telegram(msg)
+					XL.SaveAs("./Report/" + Filename + "Report.xlsx")
+					mail(RendomData.Filename)  //Send Email
 					os.Exit(0)
 				}
 			}

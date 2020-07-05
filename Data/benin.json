@@ -1,19 +1,19 @@
 {
-  "apitestname": "siftscience_score_approv",
+  "apitestname": "REG",
   "apiversion": "1.118.0",
-  "challenge": "0b55eaf89ca74077400a34022b55bc1341beed4bd9877b66f03ed0b8306865d6",
-  "country_code": "BH",
-  "country_name": "Bahrain",
-  "countryname": "albania",
+  "challenge": "0832d7a265404d34a816e0210f8a12b69e3322aaf4ac60d10e9fd6089fc14790",
+  "country_code": "BJ",
+  "country_name": "Benin",
+  "countryname": "benin",
   "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
   "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
-  "devicekey": "07c4a6973c7d72815ae8079d5a455681ea30823ae928430659b988283d476919",
+  "devicekey": "ca202a65f196b074ddef3cffb888c251d2836f866bae736fed636a600197e631",
   "email": "alex.mywu.qa@gmail.com",
   "env": {
     "countryname": "rwanda"
   },
-  "language_code": "en\",\"ar",
-  "language_name": "English\",\"العربية",
+  "language_code": "fr\",\"en",
+  "language_name": "Français\",\"English",
   "otp": {
     "otp1": {
       "text": "2439"
@@ -38,10 +38,10 @@
   },
   "phone": "380711111111",
   "phonenumber": "711111111",
-  "reportfoldername": "1gpYiO3Qii998lI0e_4OXY3G0egXWf4MX",
+  "reportfoldername": "1yHyVddh6FIX2uVOGySsA0Grx4sx2SOHc",
   "sheetname": "registration",
-  "token": "c9553df0a52bfea2e75ff18bc7ad1a1da8248e3d5c086287a37d81f755e0efe6",
-  "udid": "d4f6089775f52cc86fc2638e41c0ed1868e317d868406fc4347672a6704cb0c8",
-  "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1qkSFhXLBPGmDcbWCb938-phmfaoeNO9-iA5BMI4PivM/export?format=xlsx",
+  "token": "838b9f9a9d708a04d7d0fb73cec922de9c602c46b02c9cd0b1e933d22ebb4112",
+  "udid": "b50ff3c25e11dce7b597d4f79734699efa802ba84bf74de4572fd79a5095765d",
+  "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1V7f1JxK0wpoyvQ8VSjV2CuqM1HoZ_2_LJQuf4aLGvPY/export?format=xlsx",
   "wiatsms": "31"
 }

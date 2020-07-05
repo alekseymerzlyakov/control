@@ -8,11 +8,12 @@ import (
 	"os"
 )
 
+// Скачиваем шаблон
+func Downloading(s *Starts, country string) {
 
-func Downloading() {
-
-	url := GetPropValue("urlxlsxfile")
-	fileName := "APP/" + GetPropValue("countryname") + ".xlsx"
+	url := s.Urlxlsxfile
+	//url := GetPropValue("urlxlsxfile")
+	fileName := "APP/" + country + ".xlsx"
 	fmt.Println("Downloading file...")
 
 	output, err := os.Create(fileName)

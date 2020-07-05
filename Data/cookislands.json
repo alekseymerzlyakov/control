@@ -1,19 +1,19 @@
 {
   "apitestname": "REG",
   "apiversion": "1.118.0",
-  "challenge": "3d4909dec15cc1178409995e2221e7f0109919c71a9a77985b33b013bfc6cf18",
-  "country_code": "CM",
-  "country_name": "Cameroon",
-  "countryname": "cameroun",
+  "challenge": "062aabfd145c4be3cf4b000c6e07550204fe8bccd5f5f46551d0a1f347b835c2",
+  "country_code": "CK",
+  "country_name": "Cook Islands",
+  "countryname": "cookislands",
   "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
   "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
-  "devicekey": "726115d93f1da282a9f7e47a511d0086513797a6e95f33d6760602b5f6fd88ac",
+  "devicekey": "de9c3ad2bc9db26552e143972296228cd391ca02f7a45b460e665628572b4e10",
   "email": "alex.mywu.qa@gmail.com",
   "env": {
     "countryname": "rwanda"
   },
-  "language_code": "fr\",\"en",
-  "language_name": "Français\",\"English",
+  "language_code": "en",
+  "language_name": "English",
   "otp": {
     "otp1": {
       "text": "2439"
@@ -38,10 +38,10 @@
   },
   "phone": "380711111111",
   "phonenumber": "711111111",
-  "reportfoldername": "1HPFLOa-dtEhlaMU1g42LCMWVZST9fwSm",
+  "reportfoldername": "1NdGB8dNcwr5NR1PHkLcSjSqO46Oh27C3",
   "sheetname": "registration",
-  "token": "a4aac7d76d3ed9fb460cdd0e7946601114683b440ca5993a39cf4bb71efd11ca",
-  "udid": "38511024484b34cd6533dc4e87596aefa3f40f51a8dc5a8a4b1ace14c2d8cae8",
-  "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1c0FLyZLwxQZJfjj_mBG1q_XbSgA6IGEABEYLVQ1bttA/export?format=xlsx",
+  "token": "73c29c19e128f03ef914acea40fb2e227bd557b5831f0e2af849a942fcd46de6",
+  "udid": "c9d5f0614ede3db3a925c36694a16a1d83fbabdaf680998c43c379d7358df9d9",
+  "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1CrmcX0vYPoXlGnnsTZSApqWJaUk2ju45WUKWJUwRU5Q/export?format=xlsx",
   "wiatsms": "31"
 }

@@ -14,12 +14,14 @@ import (
 	"strings"
 	"time"
 )
-var CountryName = "APP/" + GetPropValue("countryname") + ".xlsx"
+
+var CountryXlsx = "APP/" + Filename + ".xlsx"
 
 const (
 	startRowTest = 5
 	startColumn = 2
 	startBodyCol = 12
+	BeforeColumn = 9
 	)
 
 type Cell struct {
@@ -30,20 +32,23 @@ var Dop_parseRes []string
 var valueTemp string
 var newelement string
 
+
 //-------GetColumn----------------------------------------------------
 func GetColumn(column int, rownum int, a Data)  (map[int][]string) { //
-	a.empty = false
+	//a.empty = false
 	getNumTestLine := rownum
 	apiListMap := make(map[int][]string)
 
 	for cIdx := 0; cIdx < 3000; cIdx++ {
 		cell := a.sheet.Cell(cIdx+column, getNumTestLine)
 		if cell.Value() == "" {
-			a.empty = true
+			//Empty = false
 			break
+		} else {
+			//Empty = true
+			cellNew := a.Replace(cell.String())			//  Подмена переменных
+			apiListMap[cIdx] = []string{cellNew}
 		}
-		cellNew := a.Replace(cell.String())			//  Подмена переменных
-		apiListMap[cIdx] = []string{cellNew}
 		//fmt.Println(cellNew)
 	}
 
@@ -55,13 +60,16 @@ func (a Data) GetCell(i int, z int) string {
 	return a.sheet.Cell(i, z).Value()
 }
 
+var FillColor = "#ffffff"
 func (a Data) SetSell(i int, z int, y string)  {
-	FillColor := "#ffffff"
-	if a.Error.errorCount > 0 && i == 7 {
+	FillColor = "#ffffff"
+	if ErrorCount >= 1 && i == 7 {
 		FillColor = "#ff0000"
+		styles.Fill.Color("#ff0000")
 	}
-	if a.Error.errorCount == 0 && i == 7 {
+	if ErrorCount == 0 && i == 7 {
 		FillColor = "#7CFC00"
+		styles.Fill.Color("#7CFC00")
 	}
 
 	cell := a.sheet.Cell(i, z)
@@ -74,23 +82,26 @@ func (a Data) SetSell(i int, z int, y string)  {
 		//styles.Border.Color("#009000"),
 		//styles.Border.Type(styles.BorderStyleMedium),
 	))
-
+	ErrorCount = 0
 }
 
 func GetPropValue(key string) string {
-	ur := Path() + "/data.json"
+
+	ur := Path() + "/Data/"+Filename+".json"
 	viper.SetConfigFile(ur)
 	viper.ReadInConfig()
 	viper.AutomaticEnv()
 	//viper.WriteConfig()
 	get := viper.GetString(key)
-	if get == "" {
-		msg := GetPropValue("countryname") +
-			"\nSheet Name:    " + GetPropValue("sheetname") + "\n" +
-			"\nAPI test name:    " + GetPropValue("apitestname") + "\n" +
-			"\nfunction name:   GetPropValue" + "\n\n" +
-			BodyRespons + "\n\n" +
-			"\nТест остановлен \n Такой переменной нет в файле - data.json ->  " + key
+	fmt.Println("key ========>>>>>>>     ", key)
+	fmt.Println("get ========>>>>>>>     ", get)
+	if len(get) == 0 {
+		msg :=
+			"\n function name:   GetPropValue" + "\n\n  Key ->  " + key +
+			"\n apitestname:   ->     "  + GetPropValue("apitestname") +
+			"\nТест остановлен \n Ключа " +key+  " нет в файле - /Data/" + Filename + ".json ->  " +
+			"\n\n возможная проблема -> API вернуло не корректный ответ и небыли спаршены данные в результате чего было записано пустое значение" +
+			" \n надо искать в отчете -> " + key + " \nAPI Response \n" + GetPropValue("last_response") + "\n\n"
 		telegram(msg)
 		os.Exit(0)
 	}
@@ -99,21 +110,22 @@ func GetPropValue(key string) string {
 }
 
 func SetPropValue(key, value string)  {
-	ur := Path() + "/data.json"
-	viper.SetConfigFile(ur)
+	ur := Path() + "/Data/"+Filename+".json"
+
 	viper.ReadInConfig()
 	viper.AutomaticEnv()
 	viper.Set(key, string(value))
+	viper.SetConfigFile(ur)
 	viper.WriteConfig()
 	viper.SafeWriteConfig()
 
 }
 
 //work
-func (a Data) GetRow2(ce int, ro int, apiSheetName string, rownum int) (map[int][]string) {
+func (a *Data) GetRow2(ce int, ro int, apiSheetName string, rownum int) (map[int][]string) {
 	getNumTestLine := rownum
 	//Open XLSX file
-	xl, err := xlsx.Open(CountryName)
+	xl, err := xlsx.Open(CountryXlsx)
 	if err != nil {
 		fmt.Println("GetRow not opened")
 	}
@@ -158,7 +170,7 @@ func GetRow(ce int, ro int, rownum int, a Data) (map[int][]string) {
 // WORK
 func GetNumTestLine(apiSheetName string, apiTestName string)  int {
 	var getNumTestLine int
-	xl, err := xlsx.Open(CountryName)
+	xl, err := xlsx.Open(CountryXlsx)
 	if err != nil {
 		fmt.Println("GetNumTestLine not opened")
 	}
@@ -191,7 +203,8 @@ func Path() string {
 
 
 func Random(str string) string {
-	var letter[]rune
+	letter := []rune{}
+
 	 data := strings.Split(str, "##")
 	i, _ := strconv.Atoi(data[1])
 	if i == 0 { i = 6 }
@@ -206,6 +219,7 @@ func Random(str string) string {
 	default:
 	}
 
+
 	rand.Seed(time.Now().UnixNano())
 	b := make([]rune,i)
 	for i := range b {
@@ -215,11 +229,12 @@ func Random(str string) string {
 }
 
 func (a Data) GenerateData(generate map[int][]string)  {
-	fmt.Println("generate  - ><><><>    ", generate[0])
+	fmt.Println("generate  - ><><><>---    ", generate[0])
 
-	if a.empty {
-
-		generateTestData2 := strings.Split(generate[0][0], ";")
+	if len(generate[0]) != 0 {
+	//if generate[0][0] != "" {
+		generateTestData2_ := strings.Replace(generate[0][0], "\n", "", -1)
+		generateTestData2 := strings.Split(generateTestData2_, ";")
 
 		// Выполнение теста - перебираем список Requests из вкладки
 		for rIdx := 0; rIdx < len(generateTestData2); rIdx++ {

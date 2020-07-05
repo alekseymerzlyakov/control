@@ -1,5 +1,7 @@
 package main
 
+	// Сохраняем отчет в gdrive
+
 import (
 	"context"
 	"encoding/json"
@@ -102,14 +104,6 @@ func getService() (*drive.Service, error) {
 }
 
 
-
-
-
-
-
-
-
-
 func createDir(service *drive.Service, name string, parentId string) (*drive.File, error) {
 	d := &drive.File{
 		Name:     name,
@@ -126,14 +120,6 @@ func createDir(service *drive.Service, name string, parentId string) (*drive.Fil
 
 	return file, nil
 }
-
-
-
-
-
-
-
-
 
 
 func createFile(service *drive.Service, name string, mimeType string, content io.Reader, parentId string) (*drive.File, error) {
@@ -157,10 +143,10 @@ func createFile(service *drive.Service, name string, mimeType string, content io
 
 
 
-func upload() () {
+func upload(startData *Starts, t string) () {
 
 	// Step 1. Open the file
-	f, err := os.Open("./Report/rwandaReport.xlsx")
+	f, err := os.Open("./Report/" + Filename + "Report.xlsx")
 
 	if err != nil {
 		panic(fmt.Sprintf("cannot open file: %v", err))
@@ -182,7 +168,7 @@ func upload() () {
 
 	// Step 4. Create the file and upload its content
 	//file, err := createFile(service, "rwandaReport.xlsx", "xls", f, dir.Id)
-	file, err := createFile(service, "rwandaReport.xlsx", "application/excel .xls .xlsx", f, "1eNH3kCdH6j-ndKx5MMyTGe8r4x9uT6jL")
+	file, err := createFile(service, Filename + "_Report_"+ t + ".xlsx", "application/excel .xls .xlsx", f, startData.ReportFolderName)
 	if err != nil {
 		panic(fmt.Sprintf("Could not create file: %v\n", err))
 	}

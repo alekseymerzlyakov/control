@@ -1,10 +1,10 @@
 {
-  "apitestname": "siftscience_score_approv",
-  "apiversion": "1.118.0",
+  "apitestname": "Countries",
+  "apiversion": "",
   "challenge": "0b55eaf89ca74077400a34022b55bc1341beed4bd9877b66f03ed0b8306865d6",
   "country_code": "BH",
   "country_name": "Bahrain",
-  "countryname": "albania",
+  "countryname": "bahamas",
   "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
   "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
   "devicekey": "07c4a6973c7d72815ae8079d5a455681ea30823ae928430659b988283d476919",
@@ -38,10 +38,10 @@
   },
   "phone": "380711111111",
   "phonenumber": "711111111",
-  "reportfoldername": "1gpYiO3Qii998lI0e_4OXY3G0egXWf4MX",
+  "reportfoldername": "1gER5CgEN1_SwR_oBGVhbAOLTL7q94uBs",
   "sheetname": "registration",
   "token": "c9553df0a52bfea2e75ff18bc7ad1a1da8248e3d5c086287a37d81f755e0efe6",
-  "udid": "d4f6089775f52cc86fc2638e41c0ed1868e317d868406fc4347672a6704cb0c8",
-  "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1qkSFhXLBPGmDcbWCb938-phmfaoeNO9-iA5BMI4PivM/export?format=xlsx",
+  "udid": "aae8410dbc9501a6d8d6658b2aba42811721a3e266a64fe8607477e197c3b10d",
+  "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1BLsr6KDHKaobhLGRLV80nv9kp7J0WBIssqfHuMuNbBg/export?format=xlsx",
   "wiatsms": "31"
 }

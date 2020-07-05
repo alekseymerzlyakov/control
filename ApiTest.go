@@ -11,9 +11,21 @@ const (
 	GenerateTestData int = 7
 )
 
+func (a Data) ApiTest(ApiSheetName string, numTestLine int) {
+	startRow := numTestLine
 
-func (a Data) ApiTest(ApiSheetName string, rownum int) {
-	startRow := rownum
+
+
+	before_header := a.GetCell(BeforeColumn, startRow)
+	before_after(before_header)
+	before_header = ""
+
+	// After function
+	after_header := a.GetCell(BeforeColumn+1, startRow)
+	before_after(after_header)
+	after_header = ""
+
+
 
 	// получаем данные  Metod	Protocol	Domain	Path
 	RequestParameters := GetColumn(startColumnReq, startRow, a) //MetodProtocolDomainPath := GetColumn(4, 1, ap)
@@ -27,8 +39,7 @@ func (a Data) ApiTest(ApiSheetName string, rownum int) {
 	generateTestData := GetColumn(GenerateTestData, startRow, a) //
 	a.GenerateData(generateTestData) //генерация тестовых данных
 
-
-	a.DataForRequest(rownum, getHeader, RequestParameters)  // создание запроса
+	a.DataForRequest(numTestLine, getHeader, RequestParameters)  // создание запроса
 
 	// Если в PATH есть }/reg? то генерируем токен
 	if strings.Contains(RequestParameters[3][0],"/reg?") {Token()}

@@ -1,19 +1,19 @@
 {
-  "apitestname": "siftscience_score_approv",
+  "apitestname": "apiversion",
   "apiversion": "1.118.0",
-  "challenge": "0b55eaf89ca74077400a34022b55bc1341beed4bd9877b66f03ed0b8306865d6",
-  "country_code": "BH",
-  "country_name": "Bahrain",
-  "countryname": "albania",
+  "challenge": "2bdcd3965da0a584e58b377cb1f543b034fbe5ea02313d61234b8231dd8d61c0",
+  "country_code": "DO",
+  "country_name": "Dominican Republic",
+  "countryname": "dominicanrepublic",
   "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
   "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
-  "devicekey": "07c4a6973c7d72815ae8079d5a455681ea30823ae928430659b988283d476919",
+  "devicekey": "8eaadd77afcefcd2a7f2c804f8ce8c10c7ffa6c604e8e77504e00b7ef030a019",
   "email": "alex.mywu.qa@gmail.com",
   "env": {
     "countryname": "rwanda"
   },
-  "language_code": "en\",\"ar",
-  "language_name": "English\",\"العربية",
+  "language_code": "es\",\"en\",\"ht",
+  "language_name": "Español\",\"English\",\"Haitian, Haitian Creole",
   "otp": {
     "otp1": {
       "text": "2439"
@@ -38,10 +38,10 @@
   },
   "phone": "380711111111",
   "phonenumber": "711111111",
-  "reportfoldername": "1gpYiO3Qii998lI0e_4OXY3G0egXWf4MX",
+  "reportfoldername": "1tFXvxC1EHxWTpvkBbI3S_tU1b91s09NZ",
   "sheetname": "registration",
-  "token": "c9553df0a52bfea2e75ff18bc7ad1a1da8248e3d5c086287a37d81f755e0efe6",
-  "udid": "d4f6089775f52cc86fc2638e41c0ed1868e317d868406fc4347672a6704cb0c8",
-  "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1qkSFhXLBPGmDcbWCb938-phmfaoeNO9-iA5BMI4PivM/export?format=xlsx",
+  "token": "dedaea9892b624911ce3df6220f295d43ef03dad51166791335f2023177b0afc",
+  "udid": "1109ea6efe67c85e2e6bf7be7b53bddddcf96ec6506bc3e233e82526d4057aab",
+  "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1Bl1yNn1M_avb2LHfXIGlqz3Z6GB_AmjGvcK7x-tlc0w/export?format=xlsx",
   "wiatsms": "31"
 }
