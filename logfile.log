@@ -1,0 +1,4 @@
+time="23-04-2020 20:49:43" level=info msg="Some info. Earth is not flat"
+time="23-04-2020 20:49:43" level=warning msg="This is a warning"
+time="23-04-2020 20:49:43" level=error msg="Not fatal. An error. Won't stop execution"
+time="23-04-2020 20:49:43" level=fatal msg="MAYDAY MAYDAY MAYDAY"
