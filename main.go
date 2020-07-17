@@ -234,31 +234,31 @@ func main() {
 
 
 
-	//
+
 	//fmt.Fprintf (os.Stderr,"*** 開始 ***\n")
 	//driver := agouti.ChromeDriver()
 	//driver.Start()
 	//page, _ := driver.NewPage()
-	//url := GetPropValue("paymentprocessor.url")
+	//url := "google.com"
 	//page.Navigate(url)
 	//log.Printf(page.Title())
-	////
-	////tag := page.FindByID("reserve_month")
-	////tag.Clear()
-	////tag.SendKeys("11")
-	////
-	////tag = page.FindByID("reserve_day")
-	////tag.Clear()
-	////tag.SendKeys("10")
-	////
+	//
+	//tag := page.FindByID("reserve_month")
+	//tag.Clear()
+	//tag.SendKeys("11")
+
+	//tag = page.FindByID("reserve_day")
+	//tag.Clear()
+	//tag.SendKeys("10")
+	//
 	//tag := page.FindByXPath("//input[@id='Ecom_Payment_Card_Number_id']")
-	////tag.Clear()
+	//tag.Clear()
 	//tag.Fill("5554555455545555")
-	////
-	////tag = page.FindByID("headcount")
-	////tag.Clear()
-	////tag.SendKeys("2")
-	////
+	//
+	//tag = page.FindByID("headcount")
+	//tag.Clear()
+	//tag.SendKeys("2")
+	//
 	//tag = page.FindByXPath("//input[contains(@id,'Ecom_Payment_Card_Name_id')]")
 	////tag.Clear()
 	//tag.Fill("5554555455545511")

@@ -1,0 +1,59 @@
+{
+  "access-token": "3aa2e0df54034693af1934876676ec3b",
+  "apitestname": "gettransactions_api",
+  "apiversion": "1.131.1",
+  "authorization": "VUE3MTM1NzU6dXpCQExJNHojckY2UU1pcUdybnhEcFBn",
+  "authorization_code": "6EYDKN5S18Z9DUOIVL7NNN95XEIPCIXV",
+  "challenge": "662b5fd37784e39df65779c316d31cf69d35b226eb826d2eba00806265133120",
+  "clientid": "UA713575",
+  "country_code": "UA",
+  "country_name": "Ukraine",
+  "countryname": "ukraine",
+  "data": {
+    "country": {
+      "kenya": {
+        "access-token": "368c1db374374f808d9fd7682c18c06a",
+        "authorization": "S0U5MzIxNTA6eVFAY1RNbUNvS0NXc2h5QTYjRTd2MlYw",
+        "clientid": "KE932150",
+        "secret_key": "yQ@cTMmCoKCWshyA6#E7v2V0"
+      }
+    },
+    "sender": {
+      "city": "AQQv",
+      "customer_id": "705012438",
+      "first_name": "weUDBoWaKnk",
+      "id_number": "705012438",
+      "last_name": "IUwkDOvdXx",
+      "phone_number": "361129",
+      "street1": "AQQv",
+      "zip_code": "8708"
+    }
+  },
+  "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
+  "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
+  "devicekey": "bacb74994ba91c85790cd17c0b4c9297c6b14d37c00956d48759eed977f13eb7",
+  "email": "alex.mywu.qa@gmail.com",
+  "first_name": "tEmcO",
+  "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRob3JpemF0aW9uX2NvZGUiOiI2RVlES041UzE4WjlEVU9JVkw3Tk5OOTVYRUlQQ0lYViJ9.XsGRhKvOGtjAPUyhP6nVPutJa+BZCB54gGQ0is67zPk=",
+  "language_code": "en\",\"uk\",\"ru",
+  "language_name": "English\",\"Українська\",\"Русский",
+  "last_name": "ukraine",
+  "last_response": "{\"status\":\"ok\",\"sessionData\":{\"user\":{\"phone_verified\":true,\"new_user\":true,\"last_name\":\"IUwkDOvdXx\",\"first_name\":\"weUDBoWaKnk\",\"currencies\":[\"UAH\"],\"country_name\":\"Ukraine\",\"country_code\":\"UA\",\"account_verified\":true},\"timeout\":900,\"login\":\"mob-380-993361129\",\"limits\":[],\"id\":610,\"auth\":true,\"amplitude\":{\"wu_language\":\"en\",\"sender_country\":\"ua\",\"previous_page\":\"/btn/tac\",\"phone_verified\":\"true\",\"page_name\":\"/btn/tac\",\"marketing_opt-in\":\"false\",\"logged_in\":\"true\",\"account_verified\":\"true\",\"account_id\":610,\"TransactionID\":\"\"},\"_time_zone\":180},\"data\":{\"next_page\":\"web/btn/history\",\"grid\":{\"type\":\"one_column\",\"header\":\"HeaderStart\",\"components\":{\"center\":[\"web/btn/history\"]}},\"forms\":[{\"type\":\"body\",\"title\":\" \",\"sections\":[{\"visibility\":\"visible\",\"header\":[],\"footer\":[],\"content\":[{\"visibility\":\"visible\",\"value\":\"[size=18]Dear, weUDBoWaKnk IUwkDOvdXx[/size]\",\"id\":\"history_label\",\"class\":\"label\",\"align\":\"left\"},{\"visibility\":\"visible\",\"value\":\"[size=14]Your current limits:[/size]\",\"id\":\"history_label_limit_1\",\"class\":\"label\",\"align\":\"left\"},{\"visibility\":\"visible\",\"value\":\"[size=14]149 999 UAH per transaction[/size]\",\"id\":\"history_label_limit_1\",\"class\":\"label\",\"align\":\"left\"},{\"visibility\":\"visible\",\"value\":\"[size=14]149 999 UAH aggregated per 1 calendar day[/size]\",\"id\":\"history_label_limit_2\",\"class\":\"label\",\"align\":\"left\"},{\"visibility\":\"visible\",\"value\":\"[size=14]299 999.99 UAH Per 1 calendar month[/size]\",\"id\":\"history_label_limit_3\",\"class\":\"label\",\"align\":\"left\"}]},{\"visibility\":\"visible\",\"header\":[{\"visibility\":\"visible\",\"type\":\"submit\",\"title\":\"Send money\",\"row\":\"1\",\"id\":\"send_money\",\"class\":\"button\"},{\"visibility\":\"visible\",\"type\":\"submit\",\"title\":\"Receive money\",\"row\":\"1\",\"id\":\"receive_money\",\"class\":\"button\"}],\"footer\":[],\"content\":[]},{\"visibility\":\"visible\",\"header\":[{\"visibility\":\"hidden\",\"value\":\"[size=20]History[/size]\",\"id\":\"history_label\",\"class\":\"label\",\"align\":\"left\"},{\"value\":\"sent\",\"options\":[{\"value\":\"sent\",\"title\":\"Sent transactions\"},{\"value\":\"received\",\"title\":\"Received transactions\"}],\"id\":\"tabs\",\"class\":\"tabs\",\"actions\":[{\"url\":\"/items/select_history\",\"oper\":\"validate\"}]},{\"visibility\":\"hidden\",\"type\":\"send\",\"options\":[],\"id\":\"history_send\",\"class\":\"history\",\"actions\":[{\"url\":\"/items/transaction_history\",\"oper\":\"init\"}]},{\"visibility\":\"hidden\",\"type\":\"receive\",\"options\":[],\"id\":\"history_receive\",\"extra\":{\"buttons\":[\"receipt\"]},\"class\":\"history\",\"actions\":[{\"url\":\"/items/pickup_history\",\"oper\":\"init\"}]}],\"footer\":[],\"content\":[]}],\"id\":\"web/btn/history\"}]},\"code\":8}",
+  "password": "Password_01",
+  "payment": {
+    "amount_get": "1",
+    "country_send_code": "KE"
+  },
+  "phone": "380711111111",
+  "phonenumber": "711111111",
+  "public_key": "CFe8x4Z",
+  "reportfoldername": "1FmVA85w-jsd74AcGo7zKKXiaLzRpAWaU",
+  "secret_key": "uzB@LI4z#rF6QMiqGrnxDpPg",
+  "secretkey": "GVVFf7OevQ_tPuoMXFvm5vgGFQpgjFmq",
+  "sheetname": "send_review",
+  "token": "05c6f27dcaa9dabc25358a985f9dc9fff8aed8e12dfd7e6753e7faeab791362c",
+  "udid": "f0b0bdd96389d38e90aab051385f3250910104415f828ee722c78a6be4fae67f",
+  "unixtime": "1594913640",
+  "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1KwvG7gvu9711I6ASe3GlavdQxWOcLjHk8VipHSwY8BI/export?format=xlsx",
+  "wiatsms": "31"
+}

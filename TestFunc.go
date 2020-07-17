@@ -36,6 +36,11 @@ func Authorization_ozer (get string) {
 		msg := GetPropValue("data.country.ukraine.clientid") + ":" + GetPropValue("data.country.ukraine.secret_key")
 		SetPropValue("data.country.ukraine.authorization", base64.StdEncoding.EncodeToString([]byte(msg)))
 
+	case strings.Contains(get, "Kenya"):
+		msg := GetPropValue("data.country.kenya.clientid") + ":" + GetPropValue("data.country.kenya.secret_key")
+		SetPropValue("data.country.kenya.authorization", base64.StdEncoding.EncodeToString([]byte(msg)))
+
+
 	default:
 		fmt.Println("Authorization_ozer -> default")
 	}

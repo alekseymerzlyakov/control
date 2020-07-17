@@ -24,6 +24,29 @@ func Start(country string) *Starts {
 
 	switch {
 
+	case  country == "ukraine_hosted":
+		DataStart.Urlxlsxfile = "https://docs.google.com/spreadsheets/d/1KwvG7gvu9711I6ASe3GlavdQxWOcLjHk8VipHSwY8BI/export?format=xlsx"
+		SetPropValue("urlxlsxfile",DataStart.Urlxlsxfile)
+		DataStart.ReportFolderName = "1FmVA85w-jsd74AcGo7zKKXiaLzRpAWaU"
+		SetPropValue("reportfoldername",DataStart.ReportFolderName)
+		RendomData.Countryname = "ukraine"
+		//admin
+		SetPropValue("clientid","UA713575")
+		SetPropValue("secret_key","uzB@LI4z#rF6QMiqGrnxDpPg")
+
+		//admin credential for Kenya
+		SetPropValue("data.country.kenya.clientid","KE932150")
+		SetPropValue("data.country.kenya.secret_key","yQ@cTMmCoKCWshyA6#E7v2V0")
+
+		//Merchant
+		SetPropValue("public_key","CFe8x4Z")
+		SetPropValue("secretkey","GVVFf7OevQ_tPuoMXFvm5vgGFQpgjFmq")
+
+		SetPropValue("payment.country_send_code","KE") // код страны получателя
+		SetPropValue("payment.amount_get","1")  //сумма отправления
+
+
+
 	case  country == "kenya_hosted":
 		DataStart.Urlxlsxfile = "https://docs.google.com/spreadsheets/d/1sbgE5RRKkrQbneVgeu0x0efzmbstOBR9IueFbd4cI6U/export?format=xlsx"
 		SetPropValue("urlxlsxfile",DataStart.Urlxlsxfile)
