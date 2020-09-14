@@ -111,6 +111,7 @@ github.com/onsi/gomega v1.9.0 h1:R1uwffexN6Pr340GtYRIdZmAiN4J+iw6WG4wog1DUXg=
 github.com/onsi/gomega v1.9.0/go.mod h1:Ho0h+IUsWyvy1OpqCwxlQ/21gkhVunqlU8fDGcoTdcA=
 github.com/pelletier/go-toml v1.2.0 h1:T5zMGML61Wp+FlcbWjRDT7yAxhJNAiPPLOFECq181zc=
 github.com/pelletier/go-toml v1.2.0/go.mod h1:5z9KED0ma1S8pY6P1sdut58dfprrGBbd/94hg7ilaic=
+github.com/pkg/errors v0.8.0 h1:WdK/asTD0HN+q6hsWO3/vpuAkAr+tw6aNJNDFFf0+qw=
 github.com/pkg/errors v0.8.0/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/plandem/ooxml v1.1.2 h1:f/ML/k501oeQiODK5O7YRheFWLvdgP3X5hzyaKakcnE=
 github.com/plandem/ooxml v1.1.2/go.mod h1:6ZGylBk9B60EDlMS2DjcXt5laACXuY2huRgQME1KX2A=
@@ -261,6 +262,8 @@ gopkg.in/alecthomas/kingpin.v2 v2.2.6/go.mod h1:FMv+mEhP44yOT+4EoQTLFTRgOQ1FBLks
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 h1:qIbj1fsPNlZgppZ+VLlY7N33q108Sa+fhmuc+sWQYwY=
 gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
+gopkg.in/ezzarghili/recaptcha-go.v4 v4.2.0 h1:vRLQxQfE85Y7uOb7rrEW90CNqxUSmfkPVrHrdQSEbc8=
+gopkg.in/ezzarghili/recaptcha-go.v4 v4.2.0/go.mod h1:mIOiLZufgLoZcJqbqyYWb3r3dA2huwHZP2uM3RhxjoU=
 gopkg.in/fsnotify.v1 v1.4.7 h1:xOHLXZwVvI9hhs+cLKq5+I5onOuwQLhQwiu63xxlHs4=
 gopkg.in/fsnotify.v1 v1.4.7/go.mod h1:Tz8NjZHkW78fSQdbUxIjBTcgA1z1m8ZHf0WmKUhAMys=
 gopkg.in/h2non/gentleman.v2 v2.0.4 h1:Qq4Sk2jY7GoYBu8C5rZF/+RU9GdcnzPN9v3z5aBBGg8=
@@ -268,6 +271,8 @@ gopkg.in/h2non/gentleman.v2 v2.0.4/go.mod h1:A1c7zwrTgAyyf6AbpvVksYtBayTB4STBUGm
 gopkg.in/ini.v1 v1.51.0 h1:AQvPpx3LzTDM0AjnIRlVFwFFGC+npRopjZxLJj6gdno=
 gopkg.in/ini.v1 v1.51.0/go.mod h1:pNLf8WUiyNEtQjuu5G5vTm06TEv9tsIgeAvK8hOrP4k=
 gopkg.in/resty.v1 v1.12.0/go.mod h1:mDo4pnntr5jdWRML875a/NmxYqAlA73dVijT2AXvQQo=
+gopkg.in/romanyx/recaptcha.v1 v1.1.1 h1:KFKTa72SpC2JYM1gOpm5WeoDXUwsBsvZyfTg317ZH+8=
+gopkg.in/romanyx/recaptcha.v1 v1.1.1/go.mod h1:PcLG21Oc5NCtdDzPtoC74bty7FNOKgP8jnpcWtu6wyw=
 gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 h1:uRGJdciOHaEIrze2W8Q3AKkepLTh2hOroT7a+7czfdQ=
 gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7/go.mod h1:dt/ZhP58zS4L8KSrWDmTeBkI65Dw0HsyUHuEVlX15mw=
 gopkg.in/yaml.v2 v2.0.0-20170812160011-eb3733d160e7/go.mod h1:JAlM8MvJe8wmxCU4Bli9HhUf9+ttbYbLASfIpnQbh74=

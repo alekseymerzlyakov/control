@@ -28,12 +28,12 @@ func (a Data) Replace(value string) (string)  {
 			case strings.Contains(element, "udid"):
 				//fmt.Println("Такой переменной нет в файле data.json ->  ", element)
 				if GetPropValue(element) == "" {
-					fmt.Println("Такой переменной нет в файле data.json ->  ", element)
-					fmt.Println("Выполнение остановленно - Смотреть Replase.go", element)
+					fmt.Println("Такой переменной ---> " + element + " нет в файле data.json\n")
+					fmt.Println("Выполнение остановленно - (сработала проверка в файле  Replase.go)")
 
-					msg := "Такой переменной нет в файле data.json ->  " +element
-					msg = msg + "\nВыполнение остановленно - Смотреть Replase.go\n"
-					msg = msg + a.Response.URL
+					msg := "Такой переменной ---> " + element + " нет в файле data.json\n"
+					msg = msg + "\nВыполнение остановленно - (сработала проверка в файле  Replase.go)\n"
+					msg = msg + "Страна --->   " + a.Countryname + "\n"
 						telegram(msg)
 					mail(RendomData.Filename)  //Send Email with report
 					os.Exit(0)

@@ -5,6 +5,8 @@ import (
 	"net/smtp"
 )
 
+var passFail string
+
 func mail(countryname string)  {
 	e := email.NewEmail()
 	e.AttachFile("./Report/" +  Filename + "Report.xlsx")
@@ -13,7 +15,20 @@ func mail(countryname string)  {
 	e.To = []string{"natalka57m@gmail.com"}
 	//e.Bcc = []string{"test_bcc@example.com"}
 	//e.Cc = []string{"test_cc@example.com"}
-	e.Subject = "Report"
+
+
+
+
+	switch {
+	case ErrorCount > 0:
+		passFail = "FAILL"
+
+	default:
+		passFail = "PASS"
+	}
+
+
+		e.Subject = "Report " + countryname + " - " + passFail
 	e.Text = []byte("Text Body is, of course, supported!")
 	e.HTML = []byte("<h1>Report API testing!</h1>")
 	e.Send("smtp.gmail.com:587", smtp.PlainAuth("", " alex.mywu.uae@gmail.com", "zxczxc12", "smtp.gmail.com"))

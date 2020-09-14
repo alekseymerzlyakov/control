@@ -1,27 +1,19 @@
 {
-  "apitestname": "get_page_web_send_money_review",
-  "apiversion": "1.124.0",
-  "challenge": "65b00dad1b3aefa0c72c60ed5ebd7d1d5a650a5a16f2446b325c8aaccbe48159",
+  "apitestname": "smo_send_web_send_money",
+  "apiversion": "1.134.0",
+  "challenge": "6ba93e82ab5240f9b7e5bfb4464b31180846a233c1434e288e2ff8e815a4710d",
   "country_code": "OM",
   "country_name": "Oman",
   "countryname": "oman",
   "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
   "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
-  "devicekey": "7dc499906ebd3b8910572160157016a6f2900268f61e3182b07a1cf9518bbf48",
+  "devicekey": "180be1eb8bcc341140d519a3e3a27335d95bfad74503a1e65ccf745d5e34dffa",
   "email": "alex.mywu.qa@gmail.com",
-  "env": {
-    "countryname": "oman"
-  },
+  "first_name": "FXgTB",
   "language_code": "en",
   "language_name": "English",
-  "otp": {
-    "otp1": {
-      "text": "2439"
-    },
-    "otp2": {
-      "text": "9999"
-    }
-  },
+  "last_name": "oman",
+  "last_response": "{\"status\":\"ok\",\"sessionData\":{\"user\":{\"resident\":true,\"phone_verified\":false,\"new_user\":true,\"mywu_error\":true,\"mywu\":\"\",\"last_name\":\"Merzliakov\",\"id_issuer_date\":\"1956-01-01\",\"first_name\":\"Oleksii\",\"currencies\":[\"OMR\"],\"country_name\":\"Oman\",\"country_code\":\"OM\",\"account_verified\":false},\"timeout\":900,\"payment\":{\"unit\":\"1.000\",\"service_pay\":\"1-2 Business days\",\"received_as\":\"Cash at a WU agent location\",\"promocode\":\"A1588\",\"principal_amount\":\"10.000\",\"payment_by\":\"Bank transfer\",\"gross_amount\":\"10.000\",\"fundsout\":\"cash\",\"fundsin\":\"bank_transfer\",\"fee\":\"0.000\",\"expected_payout_amount\":\"21.85\",\"exchange_rate\":\"2.1847515\",\"discount\":\"2.500\",\"currency_send\":\"EUR\",\"currency_get\":\"OMR\",\"country_send_name\":\"France\",\"country_send_code\":\"FR\",\"country_get_name\":\"Oman\",\"country_get_code\":\"OM\"},\"login\":\"alex.mywu.qa@gmail.com\",\"limits\":[\"If you verify face to face at an agent location, your transaction limits would be:\",\"2 000.000 OMR Per transaction\",\"2 000.000 OMR Limit per 3 days\",\"If you verify by sending documents via email or WhatsApp, your transaction limits would be:\",\"2 000.000 OMR Per transaction\",\"2 000.000 OMR Limit per 3 days\",\"3 000.000 OMR Per month\",\"3 transactions Limit per month\"],\"id\":\"3540\",\"auth\":true,\"amplitude\":{\"wu_language\":\"en\",\"transfer_fee_currency\":\"OMR\",\"transfer_fee\":\"0.000\",\"sender_country\":\"om\",\"send_currency\":\"OMR\",\"send_amount\":\"10.000\",\"receiver_country\":\"FR\",\"receive_currency\":\"EUR\",\"receive_amount\":\"21.85\",\"previous_page\":\"/profile\",\"phone_verified\":\"false\",\"page_name\":\"/send_money\",\"marketing_opt-in\":true,\"logged_in\":\"true\",\"funds_out\":\"cash\",\"funds_in\":\"bank_transfer\",\"exchange_rate\":\"2.1847515\",\"account_verified\":\"false\",\"account_id\":\"3540\",\"TransactionID\":\"\"},\"_time_zone\":120},\"data\":[{\"type\":\"resp\",\"data\":\"ok\"},{\"type\":\"set\",\"item_id\":\"promocode\",\"form_id\":\"web/send_money\",\"field\":\"extra\",\"data\":{\"disabled\":true,\"button_title\":\"Remove\",\"api_check\":\"/items/sendmoney_promocode_del_web\"}},{\"type\":\"set\",\"item_id\":\"label_promo\",\"form_id\":\"web/send_money\",\"field\":\"value\",\"data\":\"[color=#7FC76C]Promo code A1588 has been applied to your transfer[/color]\"},{\"type\":\"set\",\"item_id\":\"label_promo\",\"form_id\":\"web/send_money\",\"field\":\"visibility\",\"data\":\"visible\"}],\"code\":0}",
   "password": "Password_01",
   "payment": {
     "amount_get": "11",
@@ -30,18 +22,17 @@
     "country_send_code": "FR",
     "country_send_name": "France",
     "county_tax": "",
-    "currency_get": "OMR",
     "currency_send": "EUR",
-    "expected_payout_amount": "23.65",
+    "expected_payout_amount": "21.85",
     "gross_amount": "12.500",
     "principal_amount": "10.000"
   },
   "phone": "380711111111",
   "phonenumber": "711111111",
   "reportfoldername": "1flG3ar91RUXNhQZPwCAZR7SVySKOFWqX",
-  "sheetname": "receipt",
-  "token": "5c10ad6e134b531a844c284a142fb603f668f0ccd45838ada1a6bd71e3cd378e",
-  "udid": "c8985d39322fd689af4fc66e5270909ffadab529c081d2b7c53423fee6f33611",
+  "sheetname": "SMO",
+  "token": "df71682dd1f0b432cf1036e5758dacf3b1f2a6d790f43dd1c36b871cf7b907db",
+  "udid": "b0948194ecb572abf80180e270089c5bee51e755a5b8f1f9dbb620085f9d53de",
   "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1Wzx2J_dMkoJw45pBcDPEhKoZzkM40NMW_InK1BworLA/export?format=xlsx",
   "wiatsms": "31"
 }

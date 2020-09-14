@@ -30,17 +30,17 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1FmVA85w-jsd74AcGo7zKKXiaLzRpAWaU"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "ukraine"
-		//admin
+		//admin Agent API
 		SetPropValue("clientid","UA713575")
-		SetPropValue("secret_key","uzB@LI4z#rF6QMiqGrnxDpPg")
+		SetPropValue("secret_key","GPBqjL2Fa4evxT9TMH#n3G0l")
 
-		//admin credential for Kenya
+		//admin credential for Kenya Agent API
 		SetPropValue("data.country.kenya.clientid","KE932150")
-		SetPropValue("data.country.kenya.secret_key","yQ@cTMmCoKCWshyA6#E7v2V0")
+		SetPropValue("data.country.kenya.secret_key","JWorVd7A#Qk@aK936D3ZOmn!")
 
 		//Merchant
-		SetPropValue("public_key","CFe8x4Z")
-		SetPropValue("secretkey","GVVFf7OevQ_tPuoMXFvm5vgGFQpgjFmq")
+		SetPropValue("public_key","vRpwp")
+		SetPropValue("secretkey","SvgcnbWOd9dkYRuJ@g5HMkQ2qwq7ih")
 
 		SetPropValue("payment.country_send_code","KE") // код страны получателя
 		SetPropValue("payment.amount_get","1")  //сумма отправления
@@ -53,19 +53,19 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1Yl4nz1o6GFMW23IwR3ga3YmsIKBUbnJJ"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "kenya"
-		//admin
+		//admin Agent API
 		SetPropValue("clientid","KE932150")
-		SetPropValue("secret_key","yQ@cTMmCoKCWshyA6#E7v2V0")
-		//admin credential for Urkaine
+		SetPropValue("secret_key","JWorVd7A#Qk@aK936D3ZOmn!")
+		//admin credential for Urkaine  Agent API
 		SetPropValue("data.country.ukraine.clientid","UA713575")
-		SetPropValue("data.country.ukraine.secret_key","uzB@LI4z#rF6QMiqGrnxDpPg")
+		SetPropValue("data.country.ukraine.secret_key","GPBqjL2Fa4evxT9TMH#n3G0l")
 
 		//Merchant
-		SetPropValue("public_key","x2SZaJp")
-		SetPropValue("secretkey","6xrw38YLfIc4e!J2dw5a1OeE8JZOrBCS")
+		SetPropValue("public_key","iW0HE")
+		SetPropValue("secretkey","BCfPeJcSuk!WBuRZbF#WmQgyil6dz8")
 
 		SetPropValue("payment.country_send_code","UA") // код страны получателя
-		SetPropValue("payment.amount_get","116")  //сумма отправления
+		SetPropValue("payment.amount_get","118")  //сумма отправления
 
 
 
@@ -85,6 +85,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1fZCIHD3LSB4N02aQ-xJbDXOGRP4lb5fO"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "bahrain"
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "albania":
@@ -93,8 +94,8 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1gpYiO3Qii998lI0e_4OXY3G0egXWf4MX"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "albania"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
-		SetPropValue("payment.amount_get","11")  //сумма отправления
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
+		SetPropValue("payment.amount_get","222")  //сумма отправления
 
 	case  country == "aruba":
 		DataStart.Urlxlsxfile = "https://docs.google.com/spreadsheets/d/1GjgU86Tybyda0YuWGwaMKI5tAgTkkhkCw4BvSDjWWQ0/export?format=xlsx"
@@ -120,7 +121,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1yHyVddh6FIX2uVOGySsA0Grx4sx2SOHc"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "benin"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "bvi":
@@ -129,7 +130,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1t_3y1KncUUi6hlVOcVKABOC2tin9lLrw"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "bvi"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "belarus":
@@ -147,7 +148,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1uXFXD3wH4jOW5flvcECfYjfUkLdnO3LL"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "brunei"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "burkinafaso":
@@ -156,7 +157,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1JDOr8X5f5gSkCK2GvGDCFMJmqVmC9Z9f"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "burkinafaso"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "cameroun":
@@ -174,7 +175,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1PTBKdgk0RSkYfYCoiMqxkJm3zbYQXTn6"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "caymanislands"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "cookislands":
@@ -183,7 +184,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1NdGB8dNcwr5NR1PHkLcSjSqO46Oh27C3"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "cookislands"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "cotedivoire":
@@ -192,7 +193,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1_TP3uSWeAZPgrKfvAj5kZVhd9Z1xQQtp"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "cotedivoire"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "dominicanrepublic":
@@ -201,7 +202,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1tFXvxC1EHxWTpvkBbI3S_tU1b91s09NZ"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "dominicanrepublic"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "rdc":
@@ -219,7 +220,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1UtpPcvBC-On0Aqo7oZc05BZw3tLz2dij"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "easttimor"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "ecuador":
@@ -228,7 +229,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "19O0uFGXalYkBsdSpnK9vjUNL-WQN5qFA"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "ecuador"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "fiji":
@@ -246,7 +247,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1nf5iJi8_Tzo8E7ZAqDr-cZk9pw7FDWhd"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "gabon"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "georgia":
@@ -255,7 +256,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1KXzWJGDUGANZKJESJnT9riKnWlYA69e5"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "georgia"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "guinea":
@@ -273,7 +274,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "16BqLWB6NQtEC6hTV3_DjXEXqvYqD9vBi"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "guineabissau"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "haiti":
@@ -292,7 +293,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1Qqy7XQlpYCY16UtwkMwqmAFwXugrCfHu"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "jordan"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 
@@ -312,7 +313,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1lxVUhfZu5FokRY_y5PWNTkzSztBjQ_m6"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "kuwait"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "lebanon":
@@ -321,7 +322,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1gSOUGsaNxOSN_hLDpbKTezJArvIamhm8"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "lebanon"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "maldives":
@@ -330,7 +331,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1SV-YGTTrHQbeqUsAMXNUZYuh-Qd8fbMC"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "maldives"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "mali":
@@ -339,7 +340,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1-0s4mlWTg9RjwjcbSwnSZUrEEBuSPfIQ"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "mali"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "marshallislands":
@@ -348,7 +349,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1I4ARThmr6JNoL8foSA_7oMorm7Ucl4bB"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "marshallislands"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "moldova":
@@ -366,7 +367,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1w7AwhmIomv-20IwCNmXLduKH0OBmSR1G"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "montenegro"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "niger":
@@ -375,7 +376,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "17p_Bg96JA5wyIsGsikUCboSeOHVRKdRW"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "niger"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "nigeria":
@@ -384,7 +385,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1735Q4LGpk5ePmFfRgTgULzwnux10PRI1"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "nigeria"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "oman":
@@ -393,7 +394,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1flG3ar91RUXNhQZPwCAZR7SVySKOFWqX"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "oman"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "paraguay":
@@ -411,7 +412,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1s-oi4wzkZlQnuNU7CSlzG-O7kByH1wn0"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "philippines"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "qatar":
@@ -420,7 +421,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1yMySdfkuBGXUOG9Pl0sUGqeQ5Rvploz1"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "qatar"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "samoa":
@@ -429,7 +430,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1eLLsbqi0XhZx3905XG8eVa_Dw4ff6Xjg"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "samoa"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "saudi":
@@ -447,7 +448,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1bGxhc0PwZy4V1ORjOpjx8QidyrL_PSBI"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "senegal"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "serbia":
@@ -456,7 +457,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1qy14zSJZzl8iGIr7T0dkevZndxO21yia"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "serbia"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "solomonislands":
@@ -465,7 +466,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1euAcruWUI_BItBhvybDNv7C3rosANyhm"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "solomonislands"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "srilanka":
@@ -474,7 +475,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1znDg-IIJ2OpYewt2fhLMyIx8Z7kYs9YG"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "srilanka"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "stkittsandnevis":
@@ -483,7 +484,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1B4uxMYwOyaR_6yGm0bmsz3svb_s0Hj3k"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "stkittsandnevis"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "stlucia":
@@ -492,7 +493,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1e9lHRvm48L_5bfHMyAdmesNYxFenrecM"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "stlucia"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "stvincentandthegrenadines":
@@ -501,7 +502,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1CU5CAXeU1WeGO3_wy9mK3FXPBDdTp3zB"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "stvincentandthegrenadines"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "thailand":
@@ -510,17 +511,9 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1BNPphnq4EvQIDUJ3JL0y4B6O1tsdI5Mi"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "thailand"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
-	case  country == "thailand":
-		DataStart.Urlxlsxfile = "https://docs.google.com/spreadsheets/d/11utSGeVeqmHtC-gMolVMi0QFRJq4GTHGyl4-YRQx3H4/export?format=xlsx"
-		SetPropValue("urlxlsxfile",DataStart.Urlxlsxfile)
-		DataStart.ReportFolderName = "1BNPphnq4EvQIDUJ3JL0y4B6O1tsdI5Mi"
-		SetPropValue("reportfoldername",DataStart.ReportFolderName)
-		RendomData.Countryname = "thailand"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
-		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "togo":
 		DataStart.Urlxlsxfile = "https://docs.google.com/spreadsheets/d/1k38N9ms-_fyjyz7TseLJDHRM_0YDi1vOdV7GkVscZKs/export?format=xlsx"
@@ -528,7 +521,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "11l1Otoze-yBckYtIcdQiciQrGmmkit46"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "togo"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "tonga":
@@ -537,7 +530,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1N3vE23vwE4DY6umCx2nPQ3iGnNsP4tLt"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "tonga"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "tt":
@@ -546,7 +539,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1jNk7gBryk3rVevCVQuXVzDx7_fR5jPQo"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "tt"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "turksandcaicos":
@@ -555,7 +548,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1K_OXdc7vq7E2bkEcdLChc_GZRE_4Szes"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "turksandcaicos"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "uae":
@@ -564,7 +557,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1QAxSGEWwhPYeIwbFPBzynxLUEhtovkad"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "uae"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 	case  country == "uganda":
@@ -582,7 +575,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1lh_dTPUYXN6F88kI8wRO9vGS8LiPxCPj"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "uruguay"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 
@@ -592,7 +585,7 @@ func Start(country string) *Starts {
 		DataStart.ReportFolderName = "1tZKRFvVHSRIP_9U6g3RtPHCnkAei0pSh"
 		SetPropValue("reportfoldername",DataStart.ReportFolderName)
 		RendomData.Countryname = "vanuatu"
-		SetPropValue("payment.country_send_code","UA") // код страны получателя
+		SetPropValue("payment.country_send_code","FR") // код страны получателя
 		SetPropValue("payment.amount_get","11")  //сумма отправления
 
 

@@ -1,47 +1,54 @@
 {
-  "apitestname": "REG",
-  "apiversion": "1.118.0",
-  "challenge": "eeaff9e6ea34518ef1623a194057c07e1191ef2a7ddf7707afdd543a5abb606a",
+  "apitestname": "reg_transaction_history",
+  "apiversion": "1.138.0",
+  "challenge": "6ea1d835f99037644216011426d0c2271ab5b3274a7604c26779fda5bedece60",
   "country_code": "BF",
   "country_name": "Burkina Faso",
   "countryname": "burkinafaso",
   "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
   "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
-  "devicekey": "95f8015b2baf0d17c278d6e533f209b5cea26e02e5ea45184d28e3c0a2942635",
+  "devicekey": "928d56f6c51a90801ebe66e45da9ebc0bdc6c5de1909232c276204ab680285ae",
   "email": "alex.mywu.qa@gmail.com",
-  "env": {
-    "countryname": "rwanda"
-  },
+  "first_name": "vmoJV",
   "language_code": "fr\",\"en",
   "language_name": "Français\",\"English",
+  "last_name": "burkinafaso",
+  "last_response": "{\"status\":\"ok\",\"sessionData\":{\"user\":{\"phone_verified\":true,\"new_user\":true,\"mywu_error\":false,\"last_name\":\"Merzliakov\",\"first_name\":\"Oleksii\",\"currencies\":[\"XOF\"],\"country_name\":\"Burkina Faso\",\"country_code\":\"BF\",\"account_verified\":false},\"timeout\":900,\"login\":\"mob-380-711111111\",\"limits\":[\"Bank transfer limits:\",\"500 000 XOF per transaction;\",\" \",\"Pay cash in-store limits:\",\"3 000 000 XOF per transaction;\"],\"id\":2610,\"auth\":true,\"amplitude\":{\"wu_language\":\"en\",\"sender_country\":\"bf\",\"previous_page\":\"/sign_up/form\",\"phone_verified\":\"true\",\"page_name\":\"/profile\",\"marketing_opt-in\":true,\"logged_in\":\"true\",\"account_verified\":\"false\",\"account_id\":2610,\"TransactionID\":\"\"},\"_time_zone\":120},\"data\":[{\"type\":\"resp\",\"data\":[]}],\"code\":0}",
   "otp": {
+    "apilogin": "8",
+    "apisecret": "WAgDZFXgM753LUyb5joMwntN8j3ueDl2Ess7qR3kIuTGFPtsB3",
+    "body": "{\"ops\":[{\"limit\":10,\"offset\":0,\"type\":\"list\",\"obj\":\"node\",\"conv_id\":\"50\",\"obj_id\":\"5f048df609a8af26c1e4f34b\"}]}",
+    "conv_id": "50",
+    "epoch": "1599222117426",
+    "hex": "0aaaa1eb82393953ea0ec21c277be5e29a670b97",
+    "obj_id": "5f048df609a8af26c1e4f34b",
     "otp1": {
-      "text": "2439"
-    },
-    "otp2": {
-      "text": "9999"
+      "text": "7595"
     }
   },
   "password": "Password_01",
   "payment": {
     "amount_get": "11",
-    "country_get_code": "RW",
-    "country_get_name": "Rwanda",
-    "country_send_code": "FR",
-    "country_send_name": "France",
-    "county_tax": "810.00",
-    "currency_get": "RWF",
-    "currency_send": "EUR",
-    "expected_payout_amount": "0.01",
-    "gross_amount": "4511",
-    "principal_amount": "11"
+    "country_send_code": "UA"
   },
   "phone": "380711111111",
   "phonenumber": "711111111",
   "reportfoldername": "1JDOr8X5f5gSkCK2GvGDCFMJmqVmC9Z9f",
   "sheetname": "registration",
-  "token": "3108a448b62d1a1298e90789272f2625d3f8ec940b85200a6843797df4333e6e",
-  "udid": "351e5af8f7a752a551a122c5e0751b7926102ced973ff71f1ca45e0b13084cc3",
+  "testdata": {
+    "country_code": "380",
+    "email": "alex.mywu.qa@gmail.com",
+    "first_name": "Oleksii",
+    "first_name_receiver": "JUCb",
+    "id_number": "6883079",
+    "last_name": "Merzliakov",
+    "last_name_receiver": "HeD",
+    "phone": "711111111",
+    "phone_full": "mob-380-711111111",
+    "pkey": "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+  },
+  "token": "b8f12eb215e6f40472227bd88b1304867956a6c41dbcd4b484593a12cfabb687",
+  "udid": "0d38192d916fc4db59d824eee1bb331d3579eb4973112af39f4e97e2e3abf112",
   "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1pHmlSyc--hd2ofqxgisfIn0qL3k0NWL8VtySOCN1LHA/export?format=xlsx",
   "wiatsms": "31"
 }

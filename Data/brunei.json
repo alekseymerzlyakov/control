@@ -1,49 +1,42 @@
 {
-  "apitestname": "get_web_configurations",
-  "apiversion": "1.125.0",
-  "challenge": "644fd611b76f447a30fe4728756b4d313043fc94392d4a7d77ce23f8c1ee74a6",
+  "apitestname": "smo_set_fundsin",
+  "apiversion": "1.138.0",
+  "challenge": "bc244fdc03f8e0da482302d69b8f496bd3a94c574d7af3750c73cc54ce339e78",
   "country_code": "BN",
   "country_name": "Brunei",
   "countryname": "brunei",
   "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
   "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
-  "devicekey": "74c24a5238bdd4a30b04d33a5396374c37810891229bed6076e12353b45b75f4",
+  "devicekey": "797561d4190665bf71e1fd0390e748a3bc2d25a2759d4b7ee26e450f66df06da",
   "email": "alex.mywu.qa@gmail.com",
-  "env": {
-    "countryname": "brunei"
-  },
-  "first_name": "xTTnz",
+  "first_name": "GROdp",
   "language_code": "en",
   "language_name": "English",
   "last_name": "brunei",
-  "otp": {
-    "otp1": {
-      "text": "2439"
-    },
-    "otp2": {
-      "text": "9999"
-    }
-  },
+  "last_response": "{\"status\":\"error\",\"sessionData\":{\"user\":{\"phone_verified\":true,\"new_user\":true,\"mywu_error\":false,\"last_name\":\"Merzliakov\",\"first_name\":\"Oleksii\",\"currencies\":[\"BND\"],\"country_name\":\"Brunei\",\"country_code\":\"BN\",\"account_verified\":\"true\"},\"timeout\":900,\"payment\":{\"service_pay\":\"In minutes\",\"received_as\":\"Cash at a WU agent location\",\"payment_by\":\"Pay cash in store\",\"fundsout\":\"cash\",\"fundsin\":\"stage_and_pay\"},\"login\":\"mob-380-711111111\",\"limits\":[\"10 000.00 BND per transaction;\",\"10 000.00 BND per day\"],\"id\":\"484\",\"auth\":true,\"amplitude\":{\"wu_language\":\"en\",\"sender_country\":\"bn\",\"previous_page\":\"/profile\",\"phone_verified\":\"true\",\"page_name\":\"/send_money\",\"marketing_opt-in\":true,\"logged_in\":\"true\",\"funds_out\":\"cash\",\"funds_in\":\"stage_and_pay\",\"account_verified\":\"true\",\"account_id\":\"484\",\"TransactionID\":\"\"},\"_time_zone\":120},\"error_msg\":[{\"id\":\"web/send_money\",\"error_msg\":\"Due to a technical error we are unable to proceed with your request. Please try again later.\",\"error_code\":\"NORMALIZER STEP  SERVER NOT AVAILABLE\"}],\"code\":0}",
   "password": "Password_01",
   "payment": {
     "amount_get": "11",
-    "country_get_code": "RW",
-    "country_get_name": "Rwanda",
-    "country_send_code": "FR",
-    "country_send_name": "France",
-    "county_tax": "810.00",
-    "currency_get": "RWF",
-    "currency_send": "EUR",
-    "expected_payout_amount": "0.01",
-    "gross_amount": "4511",
-    "principal_amount": "11"
+    "country_get_code": "",
+    "country_get_name": "",
+    "country_send_code": "",
+    "country_send_name": "",
+    "county_tax": "",
+    "currencies": "BND",
+    "currency_get": "",
+    "currency_send": "",
+    "discount": "",
+    "expected_payout_amount": "",
+    "fee": "",
+    "gross_amount": "",
+    "principal_amount": ""
   },
   "phone": "380711111111",
   "phonenumber": "711111111",
   "reportfoldername": "1uXFXD3wH4jOW5flvcECfYjfUkLdnO3LL",
-  "sheetname": "registration",
-  "token": "6cabedf68c60d440b5fd0040658212b878cca8aea587957718d2ff6d92a9a8ff",
-  "udid": "a4a91229e10167e95d49fa0d32308d0d689063ae6e1e7f2bdcac06584b5f0448",
+  "sheetname": "SMO",
+  "token": "70d6a64bf8a5f1b09f4bca6fe4127bd6a23645cc6586c135726ed9bb9cb5e5f1",
+  "udid": "78e56675299ea60b11d8440b4d0f83832d608b18bac98fd23f3d98a641b931a8",
   "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1owGSEb2gfhsjGHlEHOw1lkHRhsbFxC6uB4FOz0OzKso/export?format=xlsx",
   "wiatsms": "31"
 }

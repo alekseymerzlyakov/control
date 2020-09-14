@@ -96,7 +96,7 @@ func GetPropValue2(key string) string {
 		os.Exit(0)
 	}
 
-fmt.Println("get ========>>>>>>>     ", get)
+	//fmt.Println("get ========>>>>>>>     ", get)
 	return get
 }
 
@@ -194,7 +194,7 @@ func Random2(str string) string {
 }
 
 func (a Data) GenerateData2(generate map[int][]string)  {
-	fmt.Println("generate  - ><><><>---    ", generate[0])
+	fmt.Println("generate test data --->   ", generate[0])
 
 	if len(generate[0]) != 0 {
 	//if generate[0][0] != "" {

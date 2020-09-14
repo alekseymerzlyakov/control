@@ -5,10 +5,10 @@ import (
 	"github.com/antchfx/htmlquery"
 	log "github.com/sirupsen/logrus"
 	"github.com/tidwall/gjson"
+	"os"
 	"regexp"
 	"strconv"
 	"strings"
-	"time"
 )
 
 type Error struct {
@@ -61,13 +61,16 @@ func (a *Data) DataForRequest(rownum int,header map[int][]string, RequestParamet
 
 		//==============Вызываем функции ожидания OTP=================
 		// если в ответе есть определенный текст - вызываем функцию по его обработке
-		if strings.Contains(requestBody,"{\"ops\":[{\"limit\":10,\"offset\":0,\"type\":\"list\",\"obj\":\"node\"") {
-			time.Sleep(30 * time.Second)
-		}
-		//time.Sleep(1 * time.Second)
+		//if strings.Contains(requestBody,"{\"ops\":[{\"limit\":10,\"offset\":0,\"type\":\"list\",\"obj\":\"node\"") {
+		//	time.Sleep(30 * time.Second)
+		//}
+
+
+
 		resp := Request(requestBody, header, RequestParameters)  //Request
-		fmt.Println("ApiTest Name  	-->      ", a.ApiTestName)
-		log.Info("ApiTest Name        -->      ", a.ApiTestName)
+
+		fmt.Println("ApiSheetName + ApiTest Name  	-->      ",a.ApiSheetName, a.ApiTestName)
+		log.Info("ApiSheetName + ApiTest Name  	-->      ",a.ApiSheetName, a.ApiTestName)
 		fmt.Println("Request URL         -->      ", resp.URL)
 		log.Info("Request URL         -->      ", resp.URL)
 		fmt.Println("Request Body        -->      ", requestBody)
@@ -76,7 +79,23 @@ func (a *Data) DataForRequest(rownum int,header map[int][]string, RequestParamet
 		log.Info("Response Code       -->       ", resp.ResponseCode)
 		fmt.Println("Response Body       -->     ", resp.ResponseBody)
 		log.Info("Response Body       -->     ", resp.ResponseBody)
+		//fmt.Println("Response Cookies       -->     ", resp.Cookies)
+		//log.Info("Response Cookies       -->     ", resp.Cookies)
 		SetPropValue("last_response", resp.ResponseBody)
+		//SetPropValue("testdata.Cookies", resp.Cookies)
+
+
+		if resp.ResponseCode == 502 || resp.ResponseCode == 500  {
+			fmt.Println("GW is DOWN resp.ResponseCode  ->  ", resp.ResponseCode)
+			fmt.Println("Выполнение теста остановленно resp.ResponseBody  ->    ", resp.ResponseBody)
+			msg := "GW is DOWN resp.ResponseCode  ->    " + string(resp.ResponseCode)
+			msg = msg + "\nВыполнение теста остановленно resp.ResponseBody  ->    \n" + string(resp.ResponseBody)
+			msg = msg + a.Response.URL
+			telegram(msg)
+			XL.SaveAs("./Report/" + Filename + "Report.xlsx")
+			mail(RendomData.Filename)  //Send Email
+			os.Exit(0)
+		}
 
 		log.Info("------------------------------------------------------------------")
 		fmt.Println("---------------------------------------\n\n")
@@ -117,6 +136,7 @@ func (a *Data) DataForRequest(rownum int,header map[int][]string, RequestParamet
 			assertMessage = assertMessage + "ResponseCode - FAILL\n"
 			ErrorCount++
 			a.errorCount++
+			fmt.Println("ErrorCount       ----->             ", string(ErrorCount))
 		}
 
 
@@ -124,20 +144,41 @@ func (a *Data) DataForRequest(rownum int,header map[int][]string, RequestParamet
 		parseAssertion := a.GetCell(6, startRownew)
 		if parseAssertion != "" {
 			parseAssert := strings.Replace(parseAssertion, "\n", "", -1)
-			fmt.Println("parseAssert   :::::::::::>>>>>>>>>>>>>>>>>             ", parseAssert)
+			fmt.Println("parseAssert       ----->             ", parseAssert)
 			parseAssertArr := strings.Split(parseAssert, "##")
 
 			for mIdx := 0; mIdx < len(parseAssertArr); mIdx++ {
 				tempArr := parseAssertArr[mIdx]
 				if parseAssertArr[mIdx] == ""  { break }
-				fmt.Println("parseAssert   :::::::::::>>>>>>>>>>>>>>>>>             ", parseAssertArr[mIdx])
+				fmt.Println("parseAssert       ----->             ", parseAssertArr[mIdx])
 
-				if strings.Contains(BodyRespons, tempArr) {
+				assertRequired := strings.Split(tempArr, "<<")
+
+
+				if strings.Contains(BodyRespons, assertRequired[0]) {
 					//assertMessage = assertMessage + tempArr + " - PASS\n"
 				} else {
 					assertMessage = assertMessage + tempArr + " - FAIL\n"
 					ErrorCount++
 					a.errorCount++
+
+
+						if strings.Contains(tempArr, "Required") {
+							fmt.Println("Нет обязательного assertion в ответе ->  ", assertRequired[0])
+							fmt.Println("Выполнение теста остановленно")
+
+							msg := "Нет обязательного assertion в ответе ->  " + assertRequired[0]
+							msg = msg + "\nВыполнение теста остановленно\n\n"
+							msg = msg + " - ApiTestName --->  " + a.ApiTestName
+							msg = msg + a.Response.URL + "\n"
+
+							//msg = msg + " ResponseBody    --->>>    " + resp.ResponseBody + "\n"
+							msg = msg + "Страна --->   " + a.Countryname + "\n"
+							telegram(msg)
+							//XL.SaveAs("./Report/IssueReport.xlsx")
+							//mail2(RendomData.Filename)  //Send Email
+							os.Exit(0)
+						}
 				}
 				}
 			}
@@ -344,7 +385,7 @@ func (a *Data) DataForRequest(rownum int,header map[int][]string, RequestParamet
 		//
 
 		before_after(after)
-		fmt.Println("after -> ", after)
+		//fmt.Println("after -> ", after)
 		after = ""
 	}
 
@@ -399,6 +440,21 @@ func before_after(bef_aft string) {
 
 			case strings.Contains(beforeArr[fIdx], "<<Authorization_ozer>>"):
 				Authorization_ozer(beforeArr[fIdx])
+
+			case strings.Contains(beforeArr[fIdx], "<<OTP>>"):
+				Otp()
+
+			case strings.Contains(beforeArr[fIdx], "<<ParseIntFromText>>"):
+				ParseIntFromText(beforeArr[fIdx])
+
+			case strings.Contains(beforeArr[fIdx], "<<Wait>>"):
+				Wait(beforeArr[fIdx])
+
+			case strings.Contains(beforeArr[fIdx], "<<ReCaptcha>>"):
+				ReCaptcha(beforeArr[fIdx])
+
+
+
 
 			default:
 				fmt.Println("switch выбора функций   ----------->>>  отработал default - значит не нашли функцию -->>   ", beforeArr[fIdx])

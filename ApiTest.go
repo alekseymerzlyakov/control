@@ -20,10 +20,6 @@ func (a Data) ApiTest(ApiSheetName string, numTestLine int) {
 	before_after(before_header)
 	before_header = ""
 
-	// After function
-	after_header := a.GetCell(BeforeColumn+1, startRow)
-	before_after(after_header)
-	after_header = ""
 
 
 
@@ -40,6 +36,11 @@ func (a Data) ApiTest(ApiSheetName string, numTestLine int) {
 	a.GenerateData(generateTestData) //генерация тестовых данных
 
 	a.DataForRequest(numTestLine, getHeader, RequestParameters)  // создание запроса
+
+	// After function
+	after_header := a.GetCell(BeforeColumn+1, startRow)
+	before_after(after_header)
+	after_header = ""
 
 	// Если в PATH есть }/reg? то генерируем токен
 	if strings.Contains(RequestParameters[3][0],"/reg?") {Token()}

@@ -5,10 +5,10 @@ import (
 	"github.com/antchfx/htmlquery"
 	log "github.com/sirupsen/logrus"
 	"github.com/tidwall/gjson"
+	"os"
 	"regexp"
 	"strconv"
 	"strings"
-	"time"
 )
 
 //type Error struct {
@@ -66,12 +66,7 @@ func (b *Data) DataForRequest2 (rownum2 int,header2 map[int][]string, RequestPar
 			startBodyColumnnew2++
 		}
 
-		//==============Вызываем функции ожидания OTP=================
-		// если в ответе есть определенный текст - вызываем функцию по его обработке
-		if strings.Contains(requestBody2,"{\"ops\":[{\"limit\":10,\"offset\":0,\"type\":\"list\",\"obj\":\"node\"") {
-			time.Sleep(30 * time.Second)
-		}
-		//time.Sleep(1 * time.Second)
+		//==============Вызываем API =================
 
 		resp2 := Request2(requestBody2, header2, RequestParameters2)  //Request
 		fmt.Println("ApiTest Name  	-->      ", b.ApiTestName)
@@ -89,6 +84,19 @@ func (b *Data) DataForRequest2 (rownum2 int,header2 map[int][]string, RequestPar
 		b.SetSell2(2, startRownew2, requestBody2)
 		b.SetSell2(4, startRownew2, strconv.Itoa(resp2.ResponseCode2))
 		b.SetSell2(3, startRownew2, resp2.ResponseBody2)
+
+
+		if resp2.ResponseCode2 == 502 || resp2.ResponseCode2 == 500  {
+			fmt.Println("GW is DOWN resp.ResponseCode  ->  ", resp2.ResponseCode2)
+			fmt.Println("Выполнение теста остановленно resp.ResponseBody  ->    ", resp2.ResponseBody2)
+			msg := "GW is DOWN resp.ResponseCode  ->    " + string(resp2.ResponseCode2)
+			msg = msg + "\nВыполнение теста остановленно resp.ResponseBody  ->    \n" + string(resp2.ResponseBody2)
+			msg = msg + b.Response.URL
+			telegram(msg)
+			XL.SaveAs("./Report/" + Filename + "Report.xlsx")
+			mail(RendomData.Filename)  //Send Email
+			os.Exit(0)
+		}
 
 		BodyRespons = resp2.ResponseBody2
 
@@ -130,13 +138,15 @@ func (b *Data) DataForRequest2 (rownum2 int,header2 map[int][]string, RequestPar
 		parseAssertion := b.GetCell2(6, startRownew2)
 		if parseAssertion != "" {
 			parseAssert := strings.Replace(parseAssertion, "\n", "", -1)
-			fmt.Println("parseAssert   :::::::::::>>>>>>>>>>>>>>>>>             ", parseAssert)
+			fmt.Println("parseAssert   ------->>>>             ", parseAssert)
 			parseAssertArr := strings.Split(parseAssert, "##")
 
 			for mIdx := 0; mIdx < len(parseAssertArr); mIdx++ {
 				tempArr2 := parseAssertArr[mIdx]
 				if parseAssertArr[mIdx] == ""  { break }
-				fmt.Println("parseAssert   :::::::::::>>>>>>>>>>>>>>>>>             ", parseAssertArr[mIdx])
+				fmt.Println("parseAssert   ------->>>>             ", parseAssertArr[mIdx])
+
+				assertRequired2 := strings.Split(tempArr2, "<<")
 
 				if strings.Contains(BodyRespons2, tempArr2) {
 					//assertMessage = assertMessage + tempArr + " - PASS\n"
@@ -144,6 +154,23 @@ func (b *Data) DataForRequest2 (rownum2 int,header2 map[int][]string, RequestPar
 					assertMessage2 = assertMessage2 + tempArr2 + " - FAIL\n"
 					ErrorCount++
 					b.errorCount++
+
+					if strings.Contains(tempArr2, "Required") {
+						fmt.Println("Нет обязательного assertion в ответе ->  ", assertRequired2[0])
+						fmt.Println("Выполнение теста остановленно")
+
+						msg := "Нет обязательного assertion в ответе ->  " +assertRequired2[0]
+						msg = msg + "\nВыполнение теста остановленно\n\n"
+						msg = msg + " - ApiTestName --->  " + b.ApiTestName
+						msg = msg + b.Response.URL + "\n"
+
+						//msg = msg + " ResponseBody    --->>>    " + resp2.ResponseBody2 + "\n"
+						msg = msg + "Страна --->   " + b.Countryname + "\n"
+						telegram(msg)
+						//XL.SaveAs("./Report/IssueReport.xlsx")
+						//mail2(RendomData.Filename)  //Send Email
+						os.Exit(0)
+					}
 				}
 				}
 			}

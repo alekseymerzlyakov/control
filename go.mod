@@ -21,6 +21,8 @@ require (
 	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
 	golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543 // indirect
 	google.golang.org/api v0.21.0
+	gopkg.in/ezzarghili/recaptcha-go.v4 v4.2.0
 	gopkg.in/h2non/gentleman.v2 v2.0.4
+	gopkg.in/romanyx/recaptcha.v1 v1.1.1
 	gopkg.in/yaml.v2 v2.2.8 // indirect
 )

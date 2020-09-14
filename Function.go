@@ -93,15 +93,15 @@ func GetPropValue(key string) string {
 	viper.AutomaticEnv()
 	//viper.WriteConfig()
 	get := viper.GetString(key)
-	fmt.Println("key ========>>>>>>>     ", key)
-	fmt.Println("get ========>>>>>>>     ", get)
+	//fmt.Println("GetPropValue key --- >>>     ", key)
+	//fmt.Println("GetPropValue get --- >>>     ", get)
 	if len(get) == 0 {
 		msg :=
 			"\n function name:   GetPropValue" + "\n\n  Key ->  " + key +
 			"\n apitestname:   ->     "  + GetPropValue("apitestname") +
 			"\nТест остановлен \n Ключа " +key+  " нет в файле - /Data/" + Filename + ".json ->  " +
 			"\n\n возможная проблема -> API вернуло не корректный ответ и небыли спаршены данные в результате чего было записано пустое значение" +
-			" \n надо искать в отчете -> " + key + " \nAPI Response \n" + GetPropValue("last_response") + "\n\n"
+			" \n надо искать в log console -> " + key + " \nAPI Response \n  GetPropValue(\"last_response\")  \n\n"+ "Страна --->   " + GetPropValue("country_name") + "\n"
 		telegram(msg)
 		os.Exit(0)
 	}
@@ -229,7 +229,7 @@ func Random(str string) string {
 }
 
 func (a Data) GenerateData(generate map[int][]string)  {
-	fmt.Println("generate  - ><><><>---    ", generate[0])
+	fmt.Println("generate test data --->    ", generate[0])
 
 	if len(generate[0]) != 0 {
 	//if generate[0][0] != "" {
@@ -251,6 +251,7 @@ func (a Data) GenerateData(generate map[int][]string)  {
 	}
 
 }
+
 
 
 

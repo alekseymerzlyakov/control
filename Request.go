@@ -27,14 +27,15 @@ func Request(requestBody string, header map[int][]string, RequestParameters map[
 
 
 	// Define base URL
-	fmt.Println("UR    -->     ", UR)
+	fmt.Println("Request URL    -->     ", UR)
 	cli.URL(UR)
 	cli.Method(RequestParameters[0][0])
 	cli.Use(body.JSON(requestBody))
+
 	req := cli.Request()
 
 	//ur := RequestParameters[3][0]
-	fmt.Println("RequestParameters[3][0]: %s\n         ", RequestParameters[3][0])
+	//fmt.Println("RequestParameters[3][0]: %s\n         ", RequestParameters[3][0])
 
 	// Выполнение теста - перебираем список Requests из вкладки APIlist
 	for rIdx := 0; rIdx < len(header); rIdx++ {
@@ -54,6 +55,22 @@ func Request(requestBody string, header map[int][]string, RequestParameters map[
 	//	fmt.Printf("Invalid server response: %d\n", res.StatusCode)
 	//	//return
 	//}
+
+	Cookies :=res.RawResponse.Cookies()
+
+
+	if len(Cookies) > 0 {
+		Cookie := Cookies[0]
+		fmt.Println("Cookie.Name     ----------------SSSSSSSSSSSSSSS>>>>>>>>>>>>", Cookie.Name)
+		fmt.Println("Cookie.Raw     ----------------SSSSSSSSSSSSSSS>>>>>>>>>>>>", Cookie.Raw)
+		fmt.Println("Cookie.Value     ----------------SSSSSSSSSSSSSSS>>>>>>>>>>>>", Cookie.Value)
+		fmt.Println("Cookie.String()     ----------------SSSSSSSSSSSSSSS>>>>>>>>>>>>", Cookie.String())
+		SetPropValue("testdata.cookies", Cookie.String())
+	}
+
+
+
+
 
 	respons.ResponseBody = res.String()
 	respons.ResponseCode = res.StatusCode

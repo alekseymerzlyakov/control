@@ -1,47 +1,65 @@
 {
-  "apitestname": "siftscience_score_approv",
-  "apiversion": "1.118.0",
-  "challenge": "0b55eaf89ca74077400a34022b55bc1341beed4bd9877b66f03ed0b8306865d6",
-  "country_code": "BH",
-  "country_name": "Bahrain",
+  "apitestname": "receipt_get",
+  "apiversion": "1.138.0",
+  "challenge": "fd4c4fbf223c6b983a4535e684b1c6ba777c1e60102337b321e363e847b94f60",
+  "country_code": "AL",
+  "country_name": "Albania",
   "countryname": "albania",
   "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
   "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
-  "devicekey": "07c4a6973c7d72815ae8079d5a455681ea30823ae928430659b988283d476919",
+  "devicekey": "2c7b91baa2870f47e14fb36a6d5c3ea81dae411fc140d9c1547e6e1ceecf3102",
   "email": "alex.mywu.qa@gmail.com",
-  "env": {
-    "countryname": "rwanda"
-  },
-  "language_code": "en\",\"ar",
-  "language_name": "English\",\"العربية",
+  "first_name": "mhaTc",
+  "language_code": "sq\",\"en",
+  "language_name": "Shqip\",\"English",
+  "last_name": "albania",
+  "last_response": "{\"status\":\"ok\",\"sessionData\":{\"user\":{\"phone_verified\":true,\"new_user\":true,\"last_name\":\"MvPxfwmFQ\",\"id_issuer_date\":\"1952-01-01\",\"first_name\":\"sdHkRAQe\",\"currencies\":[\"ALL\"],\"country_name\":\"Albania\",\"country_code\":\"AL\",\"account_verified\":true},\"timeout\":900,\"payment_result\":{\"received_as\":\"Cash at a WU agent location\",\"transaction_date\":\"1599144218\",\"wu_product\":{\"routingCode\":\"WADSFR000\",\"name\":\"MONEY IN MINUTES\",\"code\":\"000\"},\"promocode\":\"A1588\",\"currency_get\":\"ALL\",\"id\":1076,\"relation\":\"Family\",\"user_id\":\"1073\",\"fundsin\":\"bank_transfer\",\"exchange_rate\":\"0.0080784\",\"hostBasedTaxes\":\"N\",\"unit\":\"1.00\",\"expected_payout_amount\":\"1.79\",\"country_send_name\":\"France\",\"sender_first_name\":\"sdHkRAQe\",\"oper\":\"skip\",\"country_get_code\":\"AL\",\"promotion\":{\"status\":0,\"message\":\"T3001 Valid promotion with discount. THANKS FOR USING WESTERN UNION\",\"discount\":50000,\"code\":\"A1588\"},\"api_type\":\"BIS\",\"status\":\"PENDING\",\"payment_id\":\"\",\"principal_amount\":\"222.00\",\"discount\":\"500.00\",\"transaction_id\":\"2024783999120028\",\"mtcn\":\"\",\"transaction_type\":\"WMN\",\"contact_id\":1075,\"country_send_code\":\"FR\",\"ref_no\":\"AL000381\",\"payment_digest\":\"03660109AAI0399970205222000301004036UK0503FRZ06030000703FRZ0803WMN09000373100012055000013010140101505722001605500001705500001805A15881901020002101Y0312220023002400\",\"fee\":\"0.00\",\"fundsout\":\"cash\",\"taxes\":{\"taxAmount\":0},\"amount_send\":\"\",\"gross_amount\":\"222.00\",\"country_get_name\":\"Albania\",\"currency_send\":\"EUR\",\"_error\":\"ok\",\"amount_get\":\"222\",\"c\":0.0074371546640253205,\"transaction_date_fmt\":\"03/09/2020 16:43:38\",\"service_pay\":\"1-2 Business days\",\"payment_by\":\"Bank transfer\",\"sender_last_name\":\"MvPxfwmFQ\",\"receiver\":{\"temporary_expander\":\"true\",\"template_type\":\"\",\"state\":\"\",\"relation\":\"Family\",\"receivers\":\"1075\",\"purpose\":\"Family Support/Living Expenses\",\"phone_obj\":{\"type\":\"\",\"plus\":\"\",\"number\":\"\",\"country_code\":\"\"},\"phone\":\"mob--\",\"middle_name\":\"\",\"last_name\":\"jLRNjKBSaX\",\"first_name\":\"TLqSRaI\",\"fio\":\"TLqSRaIjLRNjKBSaX\",\"expander\":\"true\",\"email\":\"\",\"city_mx\":\"\",\"city\":\"\",\"button_submit\":\"submit\"},\"uft_ref_no\":\"\",\"ss_score\":0.0074371546640253205,\"error_reason\":\"\",\"purpose\":\"Family Support/Living Expenses\"},\"login\":\"mob-370-67138528\",\"limits\":[\"330 000.00 ALL per transaction;\",\"830 000.00 ALL per day;\",\"1 650 000.00 ALL per month\"],\"id\":\"1073\",\"auth\":true,\"amplitude\":{\"wu_language\":\"en\",\"transfer_fee_currency\":\"ALL\",\"transfer_fee\":\"0.00\",\"sender_country\":\"al\",\"send_currency\":\"ALL\",\"send_amount\":\"222.00\",\"receiver_country\":\"FR\",\"receive_currency\":\"EUR\",\"receive_amount\":\"1.79\",\"previous_page\":\"/send_money/review\",\"phone_verified\":\"true\",\"page_name\":\"/send_money/rejected\",\"marketing_opt-in\":true,\"logged_in\":\"true\",\"funds_out\":\"cash\",\"funds_in\":\"bank_transfer\",\"exchange_rate\":\"0.0080784\",\"account_verified\":\"true\",\"account_id\":\"1073\",\"TransactionID\":\"2024783999120028\"},\"_time_zone\":120},\"data\":{\"next_page\":\"web/send_money/rejected\",\"grid\":{\"type\":\"one_column\",\"header\":\"HeaderStart\",\"components\":{\"center\":[\"web/send_money/rejected\"]}},\"forms\":[{\"type\":\"body\",\"sections\":[{\"header\":[{\"type\":\"SendReject\",\"id\":\"divider_91738\",\"extra\":{\"title\":\"Your money transfer was rejected\",\"info\":\"Your Western Union transfer was rejected. We apologize for the inconvenience. If you require more information, please email westernunion@uft.al or call us at 0800 44 55.\"},\"class\":\"divider\"}],\"footer\":[],\"content\":[]},{\"header\":[{\"type\":\"Review\",\"id\":\"divider_20598\",\"class\":\"divider\"}],\"footer\":[{\"visibility\":\"visible\",\"type\":\"submit\",\"title\":\"Start another transaction\",\"id\":\"submit\",\"class\":\"button\"}],\"content\":[]},{\"id\":\"sections_legal\",\"header\":[{\"visibility\":\"visible\",\"value\":true,\"title\":\"Legal disclaimers and important info:\",\"id\":\"temporary_expander\",\"extra\":{\"toggleVisible\":\"adaptive\"},\"class\":\"expander\",\"actions\":[{\"value\":true,\"type\":\"on\",\"oper\":\"toggleVisible\",\"items\":[\"disclaimer1\",\"disclaimer2\",\"disclaimer6\",\"disclaimer7\",\"disclaimer9\",\"\"],\"id\":\"expander_disclaimers\",\"class\":\"expander\"}]},{\"visibility\":\"hidden\",\"value\":\"[size=11][color=#767676][sup]1[/sup] Service and funds may be delayed or unavailable depending on certain factors including the Service selected, the selection of delayed delivery options, amount sent, destination country, currency availability, regulatory issues, consumer protection issues, identification requirements, delivery restrictions, agent location hours, and differences in time zones (collectively, “Restrictions”).  Additional restrictions may apply. See [url=https://www.westernunion.com/al/en/legal/terms-conditions.html]online terms and conditions[/url] for details.[/color][/size]\",\"id\":\"disclaimer1\",\"class\":\"label\"},{\"visibility\":\"hidden\",\"value\":\"[size=11][color=#767676][sup]2[/sup] Western Union also makes money from currency exchange. When choosing a money transmitter, carefully compare both transfer fees and exchange rates. Fees and foreign exchange rates may vary by brand, channel and location based on a number of factors. Fees and rates subject to change without notice. Subject to applicable taxes (if any). Money transfers sent to Lebanon are subject to a 2% cash handling fee which will be collected from the principal amount during payout in USD at the agent location.[/color][/size]\",\"id\":\"disclaimer2\",\"class\":\"label\"},{\"visibility\":\"hidden\",\"value\":\"@{expander_label_3}\",\"id\":\"disclaimer3\",\"class\":\"label\"},{\"visibility\":\"hidden\",\"value\":\"@{expander_label_4}\",\"id\":\"disclaimer4\",\"class\":\"label\"},{\"visibility\":\"hidden\",\"value\":\"@{expander_label_5}\",\"id\":\"disclaimer5\",\"class\":\"label\"},{\"visibility\":\"hidden\",\"value\":\"[size=11][color=#767676][sup]6[/sup] Your Receiver can pick up your money transfer at any of our Agent Locations in France[/color][/size]\",\"id\":\"disclaimer6\",\"class\":\"label\"},{\"visibility\":\"hidden\",\"value\":\"[size=11][color=#767676][sup]7[/sup] Please type exact receiver’s name as it appears on his/her ID. They will need to present this ID to pick up the funds[/color][/size]\",\"id\":\"disclaimer7\",\"class\":\"label\"},{\"visibility\":\"hidden\",\"value\":\"[size=11][color=#767676][sup]8[/sup] Reduced transfer fee shall take effect from November 2018. Western Union has a right to cancel or extend campaign without additional notice.[/color][/size]\",\"id\":\"disclaimer8\",\"class\":\"label\"},{\"visibility\":\"hidden\",\"value\":\"[size=11][color=#767676][sup]9[/sup] The transaction will be released only if the payment is received during bank working days; Any transfers which are done thereafter will be only released on the next working day.[/color][/size]\",\"id\":\"disclaimer9\",\"class\":\"label\"},{\"visibility\":\"hidden\",\"value\":\"[size=11][color=#767676][sup]10[/sup] Please use care when providing bank account information. Funds will be paid into in the bank account corresponding to account number you provide. Please Note: The receiver's account must be a local currency payout account.[/color][/size]\",\"id\":\"disclaimer10\",\"class\":\"label\"},{\"visibility\":\"hidden\",\"value\":\"[size=11][color=#767676][sup]11[/sup] Excludes receiver's bank holidays.[/color][/size]\",\"id\":\"disclaimer11\",\"class\":\"label\"},{\"visibility\":\"hidden\",\"value\":\"[size=11][color=#767676][sup]12[/sup] Please use care when providing bank account and/or eWallet information ; funds will be paid into the bank or eWallet account corresponding to the information you provide. Please note: the Receiver’s bank /eWallet account must be a local currency payout account. Additional charges, including SMS and account cash-out fees, may be applied to the Final Receiver's mobile wallet account by the mobile network operator.[/color][/size]\",\"id\":\"disclaimer12\",\"class\":\"label\"},{\"visibility\":\"hidden\",\"value\":\"[size=11][color=#767676][sup]14[/sup] The actual exchange rate and your total amount will be determined at the time of payout.[/color][/size]\",\"id\":\"disclaimer14\",\"class\":\"label\"},{\"visibility\":\"hidden\",\"value\":\"@{expander_label_a}\",\"id\":\"disclaimer_a\",\"class\":\"label\"},{\"visibility\":\"hidden\",\"value\":\"@{expander_label_b}\",\"id\":\"disclaimer_b\",\"class\":\"label\"},{\"visibility\":\"hidden\",\"value\":\"@{disclaimer_fiscal}\",\"id\":\"disclaimer_fiscal\",\"class\":\"label\"},{\"type\":\"Partners\",\"id\":\"divider_11148\",\"class\":\"divider\"}],\"footer\":[],\"content\":[]}],\"id\":\"web/send_money/rejected\"}]},\"code\":0}",
   "otp": {
+    "apilogin": "8",
+    "apisecret": "WAgDZFXgM753LUyb5joMwntN8j3ueDl2Ess7qR3kIuTGFPtsB3",
+    "body": "{\"ops\":[{\"limit\":10,\"offset\":0,\"type\":\"list\",\"obj\":\"node\",\"conv_id\":\"50\",\"obj_id\":\"5f048df609a8af26c1e4f348\"}]}",
+    "conv_id": "50",
+    "epoch": "1599144200819",
+    "hex": "20edbf6474b425ec5488e0bb31a415816dc4df42",
+    "obj_id": "5f048df609a8af26c1e4f34b",
     "otp1": {
-      "text": "2439"
-    },
-    "otp2": {
-      "text": "9999"
+      "text": "4943"
     }
   },
   "password": "Password_01",
   "payment": {
-    "amount_get": "11",
-    "country_get_code": "RW",
-    "country_get_name": "Rwanda",
+    "amount_get": "222",
+    "country_get_code": "AL",
+    "country_get_name": "Albania",
     "country_send_code": "FR",
     "country_send_name": "France",
-    "county_tax": "810.00",
-    "currency_get": "RWF",
+    "county_tax": "",
+    "currency_get": "ALL",
     "currency_send": "EUR",
-    "expected_payout_amount": "0.01",
-    "gross_amount": "4511",
-    "principal_amount": "11"
+    "discount": "500.00",
+    "expected_payout_amount": "1.79",
+    "fee": "0.00",
+    "gross_amount": "222.00",
+    "principal_amount": "222.00"
   },
   "phone": "380711111111",
   "phonenumber": "711111111",
   "reportfoldername": "1gpYiO3Qii998lI0e_4OXY3G0egXWf4MX",
-  "sheetname": "registration",
-  "token": "c9553df0a52bfea2e75ff18bc7ad1a1da8248e3d5c086287a37d81f755e0efe6",
-  "udid": "d4f6089775f52cc86fc2638e41c0ed1868e317d868406fc4347672a6704cb0c8",
+  "sheetname": "receipt",
+  "testdata": {
+    "email": "alex.mywu.qa@gmail.com",
+    "first_name": "sdHkRAQe",
+    "first_name_receiver": "TLqSRaI",
+    "id_number": "5189390",
+    "last_name": "MvPxfwmFQ",
+    "last_name_receiver": "jLRNjKBSaX",
+    "next_page": "web/send_money/rejected",
+    "phone": "67138528",
+    "phone_full": "mob-370-67138528",
+    "pkey": "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+  },
+  "token": "8e503e3b861db9644b36ab65b9c6cce22e33885839d5d38599b9350fba569f19",
+  "udid": "51f013d42fb571b90603bdf2dc83e816f25efd59171254fe6306ef86ee0c4f2d",
   "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1qkSFhXLBPGmDcbWCb938-phmfaoeNO9-iA5BMI4PivM/export?format=xlsx",
   "wiatsms": "31"
 }

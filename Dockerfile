@@ -13,7 +13,8 @@ COPY . .
 # Build the Go app
 #RUN go build -o .control .
 #RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags '-extldflags "-static"' -o control .
-#RUN GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o control .
+RUN GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o control .
+
 # This container exposes port 8080 to the outside world
 EXPOSE 8080
 # Run the binary program produced by `go install`
