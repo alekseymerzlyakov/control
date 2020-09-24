@@ -8,7 +8,7 @@ import (
 	"encoding/hex"
 	"fmt"
 	log "github.com/sirupsen/logrus"
-   "gopkg.in/ezzarghili/recaptcha-go.v4"
+	"gopkg.in/ezzarghili/recaptcha-go.v4"
 	"os"
 	"regexp"
 	_ "regexp"
@@ -16,7 +16,6 @@ import (
 	"strings"
 	"time"
 )
-
 
 //switch {
 //case FuncName == "ParseOtp":
@@ -31,10 +30,9 @@ import (
 //
 //}
 
-
 var waitTime string
 
-func Authorization_ozer (get string) {
+func Authorization_ozer(get string) {
 
 	switch {
 
@@ -46,20 +44,18 @@ func Authorization_ozer (get string) {
 		msg := GetPropValue("data.country.kenya.clientid") + ":" + GetPropValue("data.country.kenya.secret_key")
 		SetPropValue("data.country.kenya.authorization", base64.StdEncoding.EncodeToString([]byte(msg)))
 
-
 	default:
 		fmt.Println("Authorization_ozer -> default")
 	}
 }
 
-func Authorization () {
-		msg := GetPropValue("clientid") + ":" + GetPropValue("secret_key")
-		SetPropValue("Authorization", base64.StdEncoding.EncodeToString([]byte(msg)))
+func Authorization() {
+	msg := GetPropValue("clientid") + ":" + GetPropValue("secret_key")
+	SetPropValue("Authorization", base64.StdEncoding.EncodeToString([]byte(msg)))
 }
 
-
 //
-func ApiTest (get string) {
+func ApiTest(get string) {
 	fmt.Println("<<ApiTest>>   ----------->>>    ", get)
 	apiTestName := strings.Split(get, ">>")
 	getNumTestLine2 := GetNumTestLine2("BefoAftTest", apiTestName[1]) // поиск номера строки начала теста
@@ -68,15 +64,13 @@ func ApiTest (get string) {
 	RendomData.ApiTest2("BefoAftTest", getNumTestLine2) //
 }
 
-
-
 func JWT() {
 	//Token
 	//Access_Token = ReqGetAccess_Token(URLq, Encoded(Aus))
 
 	//Authorize
 	authorize_code := GetPropValue("authorization_code")
-	fmt.Println("authorize_code ---- >>>   ",authorize_code)
+	fmt.Println("authorize_code ---- >>>   ", authorize_code)
 	var header string = "{\"typ\":\"JWT\",\"alg\":\"HS256\"}"
 	var payload string = "{\"authorization_code\":\"" + authorize_code + "\"}"
 	JWT_header_payload := Encoded(header) + "." + Encoded(payload)
@@ -87,7 +81,6 @@ func JWT() {
 }
 
 // Hash generates a Hmac256 hash of a string using a secret
-
 
 func Hash(src string, secret string) string {
 	key := []byte(secret)
@@ -104,19 +97,18 @@ func Encoded(base string) string {
 	return encoded
 }
 
-func UnixTime()  {
+func UnixTime() {
 	currentTime := strconv.FormatInt(time.Now().Unix(), 10)
 	log.Println("unixtime - - - >      " + currentTime)
 	SetPropValue("unixtime", string(currentTime))
 }
 
 func makeTimestamp() string {
-	return  strconv.FormatInt(time.Now().UnixNano() / 1000000, 10)
+	return strconv.FormatInt(time.Now().UnixNano()/1000000, 10)
 
 }
 
-
-func Crop(exp string)  {
+func Crop(exp string) {
 	cropExpression := strings.Split(exp, ">>")
 	fmt.Println("cropExpression   ------>       ", cropExpression[1])
 
@@ -128,28 +120,26 @@ func Crop(exp string)  {
 	switch {
 	case strings.Contains(cropArr[0], "Last_"):
 		lenNewVar := strings.Split(cropArr[0], "_")
-		lenNewVar_ , _ :=  strconv.Atoi(lenNewVar[1])
-		newVar := varFromProrerty[varFromProrertyLen-lenNewVar_:varFromProrertyLen]
+		lenNewVar_, _ := strconv.Atoi(lenNewVar[1])
+		newVar := varFromProrerty[varFromProrertyLen-lenNewVar_ : varFromProrertyLen]
 		fmt.Println("varFromProrerty   ------>       ", varFromProrerty)
 		fmt.Println("varFromProrertyLen   ------>       ", varFromProrertyLen)
 		fmt.Println("newVar   ------>       ", newVar)
 		SetPropValue(cropArr[2], newVar)
 
 	case strings.Contains(cropArr[0], "Split_"):
-		lenNewVar := strings.Split(cropArr[0], "_") // получили масив значений Split_id=_1
-		splitValue := lenNewVar[1] // взяли по чем разбивать
-		numElement , _ :=  strconv.Atoi(lenNewVar[2]) // какой елемент сохранять Split_id=_ -> 1
+		lenNewVar := strings.Split(cropArr[0], "_")                   // получили масив значений Split_id=_1
+		splitValue := lenNewVar[1]                                    // взяли по чем разбивать
+		numElement, _ := strconv.Atoi(lenNewVar[2])                   // какой елемент сохранять Split_id=_ -> 1
 		splitValueArray := strings.Split(varFromProrerty, splitValue) // Массив елементов после разбивки
 		fmt.Println("splitValueArray[1]   ------>       ", splitValueArray[1])
 		SetPropValue(cropArr[2], splitValueArray[numElement])
-
 
 	default:
 		//fmt.Println("switch выбора функций   ----------->>>  отработал default - значит не нашли функцию -->>   ", exp)
 
 	}
 }
-
 
 func Otp() {
 	//apilogin := GetPropValue("otp.apilogin")
@@ -171,7 +161,7 @@ func Otp() {
 	SetPropValue("otp.hex", md5HashInString)
 }
 
-func ParseIntFromText(get string)  {
+func ParseIntFromText(get string) {
 	fmt.Println("<<ParseIntFromText>>   ----------->>>    ", get)
 	get_path_array := strings.Split(get, ">>")
 	pathToText := get_path_array[1]
@@ -188,10 +178,10 @@ func ParseIntFromText(get string)  {
 	if len(s) == 0 {
 		s = re.FindAllString("9999", -1)
 	}
-	SetPropValue2(pathToText,  s[0])
+	SetPropValue(pathToText, s[0])
 }
 
-func Wait(get string)  {
+func Wait(get string) {
 	get_path_array := strings.Split(get, ">>")
 	waitTime := get_path_array[1]
 	if waitTime == "" {
@@ -203,11 +193,11 @@ func Wait(get string)  {
 	time.Sleep(comp)
 }
 
-func ReCaptcha(get string)  {
+func ReCaptcha(get string) {
 
 	recaptchaSecret := GetPropValue("testdata.pkey")
 
-	captcha, _ := recaptcha.NewReCAPTCHA(recaptchaSecret, recaptcha.V2, 10 * time.Second) // for v2 API get your secret from https://www.google.com/recaptcha/admin
+	captcha, _ := recaptcha.NewReCAPTCHA(recaptchaSecret, recaptcha.V2, 10*time.Second) // for v2 API get your secret from https://www.google.com/recaptcha/admin
 
 	err := captcha.Verify("03AGdBq24F-gUmho-vP5M7KN6sVy7hEeSBps6_z907DbrnsLeGfbyc9gWUAqtfTJrwr7dT9m-w_fHBCT5yxGf8qkWkvYxo-Ot8qCThpMjQ1UuBQtSJP4eWj3eQQwqSA0soEZjfWi2_fSRIEisQi-6s64PJJt2O6VBcTnivP4ORy5drouOmPpHUhA0mNK8rgga4Q42g7xqlewMTTLeYTy7hmbt8Uvgc1o6iTYOdEOR5z2P4GpOQ2fonHN0imnYqz4GFod5xr7KTI82WDkRvk-QRjxc3K0HQLDWIS-rQyERTb27fpePKrdGl4-a51LBvg_4FYOaTD1POyAXjnznSMNF_rKujwARBuydYeSvOyBjUsMEoC68a1ejqREHMepuDhDNbiIIE1p1fxiXcaJiolwgpL0-cGIy3NSy0fQ")
 	if err != nil {
@@ -215,8 +205,4 @@ func ReCaptcha(get string)  {
 		// Example check error codes array if they exist: (err.(*recaptcha.Error)).ErrorCodes
 	}
 
-
-
-
 }
-

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	log "github.com/sirupsen/logrus"
 	"gopkg.in/h2non/gentleman.v2"
 	"gopkg.in/h2non/gentleman.v2/plugins/body"
 )
@@ -9,8 +10,8 @@ import (
 type Response struct {
 	ResponseCode int
 	ResponseBody string
-	URL string
-	Header string
+	URL          string
+	Header       string
 }
 
 func Request(requestBody string, header map[int][]string, RequestParameters map[int][]string) Response {
@@ -20,27 +21,24 @@ func Request(requestBody string, header map[int][]string, RequestParameters map[
 
 	var UR string
 	if RequestParameters[3][0] != "nil" {
-		UR = RequestParameters[1][0] + "://" + RequestParameters[2][0] +  RequestParameters[3][0]
+		UR = RequestParameters[1][0] + "://" + RequestParameters[2][0] + RequestParameters[3][0]
 	} else {
 		UR = RequestParameters[2][0]
 	}
 
-
 	// Define base URL
-	fmt.Println("Request URL    -->     ", UR)
+	//fmt.Println("Request URL    -->     ", UR)
 	cli.URL(UR)
 	cli.Method(RequestParameters[0][0])
 	cli.Use(body.JSON(requestBody))
 
 	req := cli.Request()
 
-	//ur := RequestParameters[3][0]
-	//fmt.Println("RequestParameters[3][0]: %s\n         ", RequestParameters[3][0])
-
 	// Выполнение теста - перебираем список Requests из вкладки APIlist
+	fmt.Println("\n\n---------------------------Request Header Start-----------------------------\n")
 	for rIdx := 0; rIdx < len(header); rIdx++ {
 		req.SetHeader(header[rIdx][0], header[rIdx][1])
-		fmt.Println("Header: ->        ", header[rIdx][0],header[rIdx][1])
+		fmt.Println("Header:    -->        ", header[rIdx][0], header[rIdx][1])
 	}
 
 	// Perform the request
@@ -56,25 +54,45 @@ func Request(requestBody string, header map[int][]string, RequestParameters map[
 	//	//return
 	//}
 
-	Cookies :=res.RawResponse.Cookies()
+	respons.URL = res.RawRequest.URL.String()
+	fmt.Println("\n---------------------------Request URL-----------------------------")
+	log.Info("\n---------------------------Request URL-----------------------------")
+	fmt.Println("Request URL         -->      ", respons.URL)
+	log.Info("Request URL         -->      ", respons.URL)
 
+	//fmt.Println("len(cook):", len(cook))
+	fmt.Println("\n\n---------------------------Response Cookies-----------------------------")
+	if len(res.Cookies) > 0 {
+		cookieFull := ""
+		for _, cookie := range res.Cookies {
+			cookieFull = cookieFull + cookie.Name + "=" + cookie.Value + "; "
 
-	if len(Cookies) > 0 {
-		Cookie := Cookies[0]
-		fmt.Println("Cookie.Name     ----------------SSSSSSSSSSSSSSS>>>>>>>>>>>>", Cookie.Name)
-		fmt.Println("Cookie.Raw     ----------------SSSSSSSSSSSSSSS>>>>>>>>>>>>", Cookie.Raw)
-		fmt.Println("Cookie.Value     ----------------SSSSSSSSSSSSSSS>>>>>>>>>>>>", Cookie.Value)
-		fmt.Println("Cookie.String()     ----------------SSSSSSSSSSSSSSS>>>>>>>>>>>>", Cookie.String())
-		SetPropValue("testdata.cookies", Cookie.String())
+			fmt.Println("cookie:", cookie)
+			fmt.Println("Cookie.name:", cookie.Name)
+			fmt.Println("Cookie.Value", cookie.Value)
+			SetPropValue("testdata.cookiefull", cookie.Name+"="+cookie.Value)
+		}
+
+		SetPropValue("testdata.cookiefull", cookieFull)
+	} else {
+		fmt.Println("count cookie = 0")
+		fmt.Println("\n---------------------------Response Cookies end-----------------------------")
 	}
-
-
-
-
+	fmt.Println("\n---------------------------Response Headers-----------------------------")
+	fmt.Println("Response Headers:", res.Header)
+	//for _, header := range res.Header {
+	//	fmt.Println("Response Headers:", res.Header)
+	//}
 
 	respons.ResponseBody = res.String()
+	fmt.Println("\n---------------------------Response Body-----------------------------")
+	log.Info("\n---------------------------Response Body-----------------------------")
+
+	fmt.Println("Response Body       -->     ", respons.ResponseBody)
+	log.Info("Response Body       -->     ", respons.ResponseBody)
+
 	respons.ResponseCode = res.StatusCode
-	respons.URL = res.RawRequest.URL.String()
+
 	//respons.Header = res.Header.Get("authorization")
 	// Reads the whole body and returns it as string
 	//fmt.Printf("Body: %s", res.String())

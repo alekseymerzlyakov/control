@@ -19,22 +19,22 @@ var CountryXlsx = "APP/" + Filename + ".xlsx"
 
 const (
 	startRowTest = 5
-	startColumn = 2
+	startColumn  = 2
 	startBodyCol = 12
 	BeforeColumn = 9
-	)
+)
 
 type Cell struct {
 	columnNum int
-	rowNum int
+	rowNum    int
 }
+
 var Dop_parseRes []string
 var valueTemp string
 var newelement string
 
-
 //-------GetColumn----------------------------------------------------
-func GetColumn(column int, rownum int, a Data)  (map[int][]string) { //
+func GetColumn(column int, rownum int, a Data) map[int][]string { //
 	//a.empty = false
 	getNumTestLine := rownum
 	apiListMap := make(map[int][]string)
@@ -46,7 +46,7 @@ func GetColumn(column int, rownum int, a Data)  (map[int][]string) { //
 			break
 		} else {
 			//Empty = true
-			cellNew := a.Replace(cell.String())			//  Подмена переменных
+			cellNew := a.Replace(cell.String()) //  Подмена переменных
 			apiListMap[cIdx] = []string{cellNew}
 		}
 		//fmt.Println(cellNew)
@@ -55,13 +55,13 @@ func GetColumn(column int, rownum int, a Data)  (map[int][]string) { //
 	return apiListMap
 }
 
-
 func (a Data) GetCell(i int, z int) string {
 	return a.sheet.Cell(i, z).Value()
 }
 
 var FillColor = "#ffffff"
-func (a Data) SetSell(i int, z int, y string)  {
+
+func (a Data) SetSell(i int, z int, y string) {
 	FillColor = "#ffffff"
 	if ErrorCount >= 1 && i == 7 {
 		FillColor = "#ff0000"
@@ -87,7 +87,7 @@ func (a Data) SetSell(i int, z int, y string)  {
 
 func GetPropValue(key string) string {
 
-	ur := Path() + "/Data/"+Filename+".json"
+	ur := Path() + "/Data/" + Filename + ".json"
 	viper.SetConfigFile(ur)
 	viper.ReadInConfig()
 	viper.AutomaticEnv()
@@ -98,10 +98,10 @@ func GetPropValue(key string) string {
 	if len(get) == 0 {
 		msg :=
 			"\n function name:   GetPropValue" + "\n\n  Key ->  " + key +
-			"\n apitestname:   ->     "  + GetPropValue("apitestname") +
-			"\nТест остановлен \n Ключа " +key+  " нет в файле - /Data/" + Filename + ".json ->  " +
-			"\n\n возможная проблема -> API вернуло не корректный ответ и небыли спаршены данные в результате чего было записано пустое значение" +
-			" \n надо искать в log console -> " + key + " \nAPI Response \n  GetPropValue(\"last_response\")  \n\n"+ "Страна --->   " + GetPropValue("country_name") + "\n"
+				"\n apitestname:   ->     " + GetPropValue("apitestname") +
+				"\nТест остановлен \n Ключа " + key + " нет в файле - /Data/" + Filename + ".json ->  " +
+				"\n\n возможная проблема -> API вернуло не корректный ответ и небыли спаршены данные в результате чего было записано пустое значение" +
+				" \n надо искать в log console -> " + key + " \nAPI Response \n  GetPropValue(\"last_response\")  \n\n" + "Страна --->   " + GetPropValue("country_name") + "\n"
 		telegram(msg)
 		os.Exit(0)
 	}
@@ -109,8 +109,8 @@ func GetPropValue(key string) string {
 	return get
 }
 
-func SetPropValue(key, value string)  {
-	ur := Path() + "/Data/"+Filename+".json"
+func SetPropValue(key, value string) {
+	ur := Path() + "/Data/" + Filename + ".json"
 
 	viper.ReadInConfig()
 	viper.AutomaticEnv()
@@ -122,7 +122,7 @@ func SetPropValue(key, value string)  {
 }
 
 //work
-func (a *Data) GetRow2(ce int, ro int, apiSheetName string, rownum int) (map[int][]string) {
+func (a *Data) GetRow2(ce int, ro int, apiSheetName string, rownum int) map[int][]string {
 	getNumTestLine := rownum
 	//Open XLSX file
 	xl, err := xlsx.Open(CountryXlsx)
@@ -138,7 +138,9 @@ func (a *Data) GetRow2(ce int, ro int, apiSheetName string, rownum int) (map[int
 
 		cell := sheet.Cell(ro, getNumTestLine)
 		cell2 := sheet.Cell(ro+1, getNumTestLine)
-		if cell.Value() == "" { break } //if cell == nil { break }
+		if cell.Value() == "" {
+			break
+		} //if cell == nil { break }
 		cellNew := a.Replace(cell2.String())
 		apiListMap[rIdx] = []string{cell.Value(), cellNew}
 		getNumTestLine++
@@ -147,28 +149,68 @@ func (a *Data) GetRow2(ce int, ro int, apiSheetName string, rownum int) (map[int
 	return apiListMap
 }
 
-
 //work
-func GetRow(ce int, ro int, rownum int, a Data) (map[int][]string) {
+func GetRow(ce int, ro int, rownum int, a Data) map[int][]string {
 	getNumTestLine := rownum
-
 	apiListMap := make(map[int][]string)
-
 	for rIdx := 0; rIdx < 3000; rIdx++ {
-
 		cell := a.sheet.Cell(ro, getNumTestLine)
 		cell2 := a.sheet.Cell(ro+1, getNumTestLine)
-		if cell.Value() == "" { break } //if cell == nil { break }
+		if cell.Value() == "" {
+			break
+		} //if cell == nil { break }
 		cellNew := a.Replace(cell2.String())
 		apiListMap[rIdx] = []string{cell.Value(), cellNew}
 		getNumTestLine++
+	}
+	return apiListMap
+}
+
+//-----------------------------------------
+
+func GetHeader(ce int, ro int, rownum int, a Data) map[int][]string {
+	getNumTestLine := rownum
+	apiListMap := make(map[int][]string)
+	cell := a.sheet.Cell(ro, getNumTestLine)
+
+	switch {
+	case strings.Contains(cell.Value(), "::"):
+
+		parseHeader := a.GetCell(ro, getNumTestLine)
+		strHeader_ := strings.Replace(parseHeader, "\n", "", -1)
+		strHeader := strings.Split(strHeader_, "##")
+
+		// Выполнение теста - перебираем список Requests из вкладки
+		for rIdx := 0; rIdx < len(strHeader); rIdx++ {
+			if string(strHeader[rIdx]) == "" {
+				break
+			}
+
+			generateMap := strings.Split(strHeader[rIdx], "::")
+			fmt.Println("strHeader  ---- >    ", generateMap[0])
+			fmt.Println("strHeader  ---- >    ", generateMap[1])
+			cellNew := a.Replace(generateMap[1])
+			apiListMap[rIdx] = []string{generateMap[0], cellNew}
+		}
+
+	default:
+		for rIdx := 0; rIdx < 3000; rIdx++ {
+			cell := a.sheet.Cell(ro, getNumTestLine)
+			cell2 := a.sheet.Cell(ro+1, getNumTestLine)
+			if cell.Value() == "" {
+				break
+			} //if cell == nil { break }
+			cellNew := a.Replace(cell2.String())
+			apiListMap[rIdx] = []string{cell.Value(), cellNew}
+			getNumTestLine++
+		}
 	}
 
 	return apiListMap
 }
 
 // WORK
-func GetNumTestLine(apiSheetName string, apiTestName string)  int {
+func GetNumTestLine(apiSheetName string, apiTestName string) int {
 	var getNumTestLine int
 	xl, err := xlsx.Open(CountryXlsx)
 	if err != nil {
@@ -179,11 +221,13 @@ func GetNumTestLine(apiSheetName string, apiTestName string)  int {
 	for cIdx := 0; cIdx < 3000; cIdx++ {
 		cell := sheet.Cell(0, cIdx)
 		er = cell.Value()
-		if cell.Value() == apiTestName {getNumTestLine = cIdx
-		break }
+		if cell.Value() == apiTestName {
+			getNumTestLine = cIdx
+			break
+		}
 	}
 
-	value := getNumTestLine+1
+	value := getNumTestLine + 1
 
 	if er == "" {
 		fmt.Println("Ошибка. В вкладке APIList есть ссылка на не существующий тест")
@@ -201,13 +245,14 @@ func Path() string {
 	return path
 }
 
-
 func Random(str string) string {
 	letter := []rune{}
 
-	 data := strings.Split(str, "##")
+	data := strings.Split(str, "##")
 	i, _ := strconv.Atoi(data[1])
-	if i == 0 { i = 6 }
+	if i == 0 {
+		i = 6
+	}
 
 	switch {
 	case strings.Contains(str, "RanString"):
@@ -219,20 +264,19 @@ func Random(str string) string {
 	default:
 	}
 
-
 	rand.Seed(time.Now().UnixNano())
-	b := make([]rune,i)
+	b := make([]rune, i)
 	for i := range b {
 		b[i] = letter[rand.Intn(len(letter))]
 	}
 	return string(b)
 }
 
-func (a Data) GenerateData(generate map[int][]string)  {
+func (a Data) GenerateData(generate map[int][]string) {
 	fmt.Println("generate test data --->    ", generate[0])
 
 	if len(generate[0]) != 0 {
-	//if generate[0][0] != "" {
+		//if generate[0][0] != "" {
 		generateTestData2_ := strings.Replace(generate[0][0], "\n", "", -1)
 		generateTestData2 := strings.Split(generateTestData2_, ";")
 
@@ -247,11 +291,7 @@ func (a Data) GenerateData(generate map[int][]string)  {
 			fmt.Println("generateMap  - ><><><>>>>>>>>>>>    ", generateMap[0])
 			fmt.Println("generateMap  - ><><><>>>>>>>>>>>    ", generateMap[1])
 			SetPropValue(generateMap[0], a.Replace(generateMap[1]))
-			}
+		}
 	}
 
 }
-
-
-
-

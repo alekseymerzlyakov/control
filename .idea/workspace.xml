@@ -2,66 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21536da0-b795-41ee-98c2-0a2e0c862937" name="Default Changelist" comment="&#10;wer 2.0">
-      <change afterPath="$PROJECT_DIR$/APP/montenegro.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/niger.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/thailand.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/APP/togo.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/albaniaReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/montenegroReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/nigerReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/thailandReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/togoReport.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Report/ukraine_hostedReport.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP/albania.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/APP/albania.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP/aruba.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/APP/aruba.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP/bahrain.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/APP/bahrain.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP/benin.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/APP/benin.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP/brunei.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/APP/brunei.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP/burkinafaso.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/APP/burkinafaso.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP/cotedivoire.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/APP/cotedivoire.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP/kenya_hosted.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/APP/kenya_hosted.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP/oman.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/APP/oman.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APP/uae.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/APP/uae.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP/ukraine_hosted.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/APP/ukraine_hosted.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ApiTest.go" beforeDir="false" afterPath="$PROJECT_DIR$/ApiTest.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/albania.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/albania.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/aruba.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/aruba.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/bahrain.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/bahrain.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/benin.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/benin.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/brunei.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/brunei.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/burkinafaso.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/burkinafaso.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/cotedivoire.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/cotedivoire.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/kenya_hosted.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/kenya_hosted.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/montenegro.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/montenegro.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/niger.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/niger.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/oman.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/oman.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/thailand.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/thailand.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/togo.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/togo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiTestAdded.go" beforeDir="false" afterPath="$PROJECT_DIR$/ApiTestAdded.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/uae.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/uae.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/ukraine_hosted.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/ukraine_hosted.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataForRequest.go" beforeDir="false" afterPath="$PROJECT_DIR$/DataForRequest.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataForRequestAdded.go" beforeDir="false" afterPath="$PROJECT_DIR$/DataForRequestAdded.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Function.go" beforeDir="false" afterPath="$PROJECT_DIR$/Function.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Function2.go" beforeDir="false" afterPath="$PROJECT_DIR$/Function2.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Replase.go" beforeDir="false" afterPath="$PROJECT_DIR$/Replase.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/arubaReport.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Report/arubaReport.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/bahrainReport.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Report/bahrainReport.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/beninReport.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Report/beninReport.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/burkinafasoReport.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Report/burkinafasoReport.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Report/cotedivoireReport.xlsx" beforePathEscaped="$PROJECT_DIR$/Report/cotedivoireReport#10#.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Report/cotedivoireReport.xlsx" afterPathEscaped="$PROJECT_DIR$/Report/cotedivoireReport#10#.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/cotedivoireReport.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Report/cotedivoireReport.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/kenya_hostedReport.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Report/kenya_hostedReport.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Report/uaeReport.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Report/uaeReport.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Request.go" beforeDir="false" afterPath="$PROJECT_DIR$/Request.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestFunc.go" beforeDir="false" afterPath="$PROJECT_DIR$/TestFunc.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/control" beforeDir="false" afterPath="$PROJECT_DIR$/control" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email.go" beforeDir="false" afterPath="$PROJECT_DIR$/email.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/logfile.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start.go" beforeDir="false" afterPath="$PROJECT_DIR$/start.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,25 +133,28 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="479" y="241" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog/-2560.0.2560.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1594636636706" />
-    <state x="325" y="125" key="CommitChangelistDialog2" timestamp="1599836856066">
+    <state x="326" y="125" key="CommitChangelistDialog2" timestamp="1600787718659">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="325" y="125" key="CommitChangelistDialog2/-2560.0.2560.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1599836856066" />
-    <state x="326" y="125" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1599744158448" />
-    <state x="326" y="139" key="CommitChangelistDialog2/0.23.1680.977@0.23.1680.977" timestamp="1591122641024" />
+    <state x="326" y="125" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1600787718659" />
     <state x="341" y="164" key="SettingsEditor" timestamp="1597420651286">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="341" y="164" key="SettingsEditor/-2560.0.2560.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1594636601606" />
     <state x="341" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1597420651286" />
-    <state x="495" y="289" width="689" height="472" key="find.popup" timestamp="1600071534844">
+    <state x="495" y="289" width="689" height="472" key="find.popup" timestamp="1600876973158">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="495" y="289" width="689" height="472" key="find.popup/-2560.0.2560.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1600071534844" />
+    <state x="495" y="289" width="689" height="472" key="find.popup/-2560.0.2560.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1600876973158" />
     <state x="495" y="289" width="689" height="472" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1600017655331" />
     <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1599222079093">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1599222079093" />
+    <state x="570" y="447" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1600860243806">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="570" y="447" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/-2560.0.2560.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1600860243806" />
   </component>
 </project>
