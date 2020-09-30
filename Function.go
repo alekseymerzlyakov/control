@@ -182,8 +182,18 @@ func GetHeader(ce int, ro int, rownum int, a Data) map[int][]string {
 
 		// Выполнение теста - перебираем список Requests из вкладки
 		for rIdx := 0; rIdx < len(strHeader); rIdx++ {
-			if string(strHeader[rIdx]) == "" {
+			strHeader[rIdx] = strings.Trim(strHeader[rIdx], " ")
+			if len(string(strHeader[rIdx])) <= 1 || strHeader[rIdx] == "" {
 				break
+			}
+
+			if !strings.Contains(strHeader[rIdx], "::") {
+				msg := "В тесте    ---- >    " + a.ApiTestName + "\n" + "Не корректно составлен Header - надо проверить разделитель - ::"
+				fmt.Println("В тесте    ---- >    ", a.ApiTestName)
+				fmt.Println("Не корректно составлен Header - надо проверить разделитель - ::")
+
+				telegram(msg)
+				os.Exit(0)
 			}
 
 			generateMap := strings.Split(strHeader[rIdx], "::")

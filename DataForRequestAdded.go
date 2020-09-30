@@ -18,14 +18,14 @@ import (
 var BodyRespons2 string
 
 // Функция по созданию запросов из XLSX
-func (b *Data) DataForRequest2 (rownum2 int,header2 map[int][]string, RequestParameters2 map[int][]string)  {
+func (b *Data) DataForRequest2(rownum2 int, header2 map[int][]string, RequestParameters2 map[int][]string) {
 	startRow2 := rownum2 + startRowTest2
 	startColumn := startColumn2
 	startBodyColumn2 := startColumn + startBodyCol2
-	startRownew2 :=startRow2
-	defaultRow2 := startRow2-1
-	templateRow2 := startRow2-2
-	templabeBodyRow2 := startRow2-3
+	startRownew2 := startRow2
+	defaultRow2 := startRow2 - 1
+	templateRow2 := startRow2 - 2
+	templabeBodyRow2 := startRow2 - 3
 	b.Error.errorCount = 0
 
 	for zIdx := 0; zIdx < 3000; zIdx++ {
@@ -33,15 +33,14 @@ func (b *Data) DataForRequest2 (rownum2 int,header2 map[int][]string, RequestPar
 		startBodyColumnnew2 := startBodyColumn2
 		requestBody2 := b.GetCell2(startBodyColumn2, templabeBodyRow2)
 
-
 		// Before function
 		//
 		//
 		//
 
-		if b.GetCell2(0, startRownew2) == "End" { break } //if cell == nil { break }
-
-
+		if b.GetCell2(0, startRownew2) == "End" {
+			break
+		} //if cell == nil { break }
 
 		for sIdx := 0; sIdx < 30; sIdx++ {
 			template2 := b.GetCell2(startBodyColumnnew2, templateRow2)
@@ -62,13 +61,15 @@ func (b *Data) DataForRequest2 (rownum2 int,header2 map[int][]string, RequestPar
 				requestBody2 = strings.Replace(requestBody2, template2, bodyROWdatarep2, -1) // замены шаблонов на переменные
 			}
 
-			if b.GetCell2(startBodyColumnnew2, templateRow2) == "End" || b.GetCell2(startBodyColumnnew2, templateRow2) == "" { break } //if cell == nil { break }
+			if b.GetCell2(startBodyColumnnew2, templateRow2) == "End" || b.GetCell2(startBodyColumnnew2, templateRow2) == "" {
+				break
+			} //if cell == nil { break }
 			startBodyColumnnew2++
 		}
 
 		//==============Вызываем API =================
 
-		resp2 := Request2(requestBody2, header2, RequestParameters2)  //Request
+		resp2 := Request2(requestBody2, header2, RequestParameters2) //Request
 		fmt.Println("ApiTest Name  	-->      ", b.ApiTestName)
 		log.Info("ApiTest Name        -->      ", b.ApiTestName)
 		fmt.Println("Request URL         -->      ", resp2.URL2)
@@ -85,16 +86,15 @@ func (b *Data) DataForRequest2 (rownum2 int,header2 map[int][]string, RequestPar
 		b.SetSell2(4, startRownew2, strconv.Itoa(resp2.ResponseCode2))
 		b.SetSell2(3, startRownew2, resp2.ResponseBody2)
 
-
-		if resp2.ResponseCode2 == 502 || resp2.ResponseCode2 == 500  {
+		if resp2.ResponseCode2 == 502 || resp2.ResponseCode2 == 500 {
 			fmt.Println("GW is DOWN resp.ResponseCode  ->  ", resp2.ResponseCode2)
 			fmt.Println("Выполнение теста остановленно resp.ResponseBody  ->    ", resp2.ResponseBody2)
 			msg := "GW is DOWN resp.ResponseCode  ->    " + string(resp2.ResponseCode2)
 			msg = msg + "\nВыполнение теста остановленно resp.ResponseBody  ->    \n" + string(resp2.ResponseBody2)
 			msg = msg + b.Response.URL
 			telegram(msg)
-			XL.SaveAs("./Report/" + Filename + "Report.xlsx")
-			mail(RendomData.Filename)  //Send Email
+			//XL.SaveAs("./Report/" + Filename + "Report.xlsx")
+			//mail(RendomData.Filename)  //Send Email
 			os.Exit(0)
 		}
 
@@ -107,12 +107,10 @@ func (b *Data) DataForRequest2 (rownum2 int,header2 map[int][]string, RequestPar
 		//	otp(BodyRespons)
 		//}
 
-
 		// Функция сохранения всего ответа в переменную
-		if strings.Contains(resp2.URL2,"api/version") {
+		if strings.Contains(resp2.URL2, "api/version") {
 			SetPropValue2("apiversion", BodyRespons)
 		}
-
 
 		//------------------------------------------------
 		//-----------------ASSERTION----------------------
@@ -133,8 +131,7 @@ func (b *Data) DataForRequest2 (rownum2 int,header2 map[int][]string, RequestPar
 			b.errorCount++
 		}
 
-
-// Response Message Assertion
+		// Response Message Assertion
 		parseAssertion := b.GetCell2(6, startRownew2)
 		if parseAssertion != "" {
 			parseAssert := strings.Replace(parseAssertion, "\n", "", -1)
@@ -143,7 +140,9 @@ func (b *Data) DataForRequest2 (rownum2 int,header2 map[int][]string, RequestPar
 
 			for mIdx := 0; mIdx < len(parseAssertArr); mIdx++ {
 				tempArr2 := parseAssertArr[mIdx]
-				if parseAssertArr[mIdx] == ""  { break }
+				if parseAssertArr[mIdx] == "" {
+					break
+				}
 				fmt.Println("parseAssert   ------->>>>             ", parseAssertArr[mIdx])
 
 				assertRequired2 := strings.Split(tempArr2, "<<")
@@ -159,7 +158,7 @@ func (b *Data) DataForRequest2 (rownum2 int,header2 map[int][]string, RequestPar
 						fmt.Println("Нет обязательного assertion в ответе ->  ", assertRequired2[0])
 						fmt.Println("Выполнение теста остановленно")
 
-						msg := "Нет обязательного assertion в ответе ->  " +assertRequired2[0]
+						msg := "Нет обязательного assertion в ответе ->  " + assertRequired2[0]
 						msg = msg + "\nВыполнение теста остановленно\n\n"
 						msg = msg + " - ApiTestName --->  " + b.ApiTestName
 						msg = msg + b.Response.URL + "\n"
@@ -172,18 +171,11 @@ func (b *Data) DataForRequest2 (rownum2 int,header2 map[int][]string, RequestPar
 						os.Exit(0)
 					}
 				}
-				}
 			}
+		}
 
 		// Save Result (PASS/Fail)
 		b.SetSell2(7, startRownew2, assertMessage2)
-
-
-
-
-
-
-
 
 		//------------------------------------------------
 		//-----------------ParseResponse----------------------
@@ -192,17 +184,18 @@ func (b *Data) DataForRequest2 (rownum2 int,header2 map[int][]string, RequestPar
 		//  парсим обрезаем и записываем
 		//  var newelement string
 
-
 		parseData := b.GetCell2(8, startRownew2)
 		if parseData != "" {
 			parseData = strings.Replace(parseData, "\n", "", -1)
 			all_parseRes := strings.Split(parseData, ";")
 			for vIdx := 0; vIdx < len(all_parseRes); vIdx++ {
 				funcName2 := ""
-				if all_parseRes[vIdx] == ""  { break }
+				if all_parseRes[vIdx] == "" {
+					break
+				}
 
 				switch {
-				case  strings.Contains(all_parseRes[vIdx], "::") && strings.Contains(all_parseRes[vIdx], "htmlquery_value"):
+				case strings.Contains(all_parseRes[vIdx], "::") && strings.Contains(all_parseRes[vIdx], "htmlquery_value"):
 					Dop_parseRes = strings.Split(all_parseRes[vIdx], "::")
 
 					xpath := strings.Split(Dop_parseRes[1], "##")
@@ -216,15 +209,12 @@ func (b *Data) DataForRequest2 (rownum2 int,header2 map[int][]string, RequestPar
 					//htmlquery.SelectAttr(list, "href")
 					valueTemp = htmlquery.SelectAttr(list, "value")
 					fmt.Println("valueTemp  --->>>   ", valueTemp)
-					SetPropValue2(Dop_parseRes[0],  valueTemp)
+					SetPropValue2(Dop_parseRes[0], valueTemp)
 
-
-
-
-				case  strings.Contains(all_parseRes[vIdx], "::") && !strings.Contains(all_parseRes[vIdx], "htmlquery_value"):
+				case strings.Contains(all_parseRes[vIdx], "::") && !strings.Contains(all_parseRes[vIdx], "htmlquery_value"):
 					Dop_parseRes = strings.Split(all_parseRes[vIdx], "::")
 
-//otp1.text<<ParseOtp##Your one-time WU password is>>
+					//otp1.text<<ParseOtp##Your one-time WU password is>>
 					if strings.Contains(Dop_parseRes[1], "<<") && strings.Contains(Dop_parseRes[1], ">>") {
 						tempPers := strings.Split(Dop_parseRes[1], "<<")
 						Dop_parseRes[1] = tempPers[0]
@@ -234,7 +224,7 @@ func (b *Data) DataForRequest2 (rownum2 int,header2 map[int][]string, RequestPar
 					}
 
 					fmt.Println("------------  >>>>    Dop_parseRes[1]  ", Dop_parseRes[1])
-					valueTemp = gjson.Get(resp2.ResponseBody2,Dop_parseRes[1]).String()
+					valueTemp = gjson.Get(resp2.ResponseBody2, Dop_parseRes[1]).String()
 					fmt.Println("------------  >>>>    valueTemp  ", valueTemp)
 					if valueTemp == "[]" {
 						fmt.Println("В данном Response нет такого ключа  ", Dop_parseRes[1])
@@ -258,15 +248,12 @@ func (b *Data) DataForRequest2 (rownum2 int,header2 map[int][]string, RequestPar
 						s := re.FindAllString(valueTemp, -1)
 						if len(s) == 0 {
 							s = re.FindAllString("9999", -1)
-							}
-						SetPropValue2(key,  s[0])
+						}
+						SetPropValue2(key, s[0])
 					default:
-						SetPropValue2(key,  valueTemp)
+						SetPropValue2(key, valueTemp)
 
 					}
-
-
-
 
 					Dop_parseRes[0] = ""
 					fmt.Println("len(parseDataArr)        -->>>>>>>>>   ", key, valueTemp)
@@ -284,8 +271,7 @@ func (b *Data) DataForRequest2 (rownum2 int,header2 map[int][]string, RequestPar
 						fmt.Println("------------  >>>>    funcName  ", funcName2)
 					}
 
-
-					valueTemp = gjson.Get(resp2.ResponseBody2,Dop_parseRes[0]).String()
+					valueTemp = gjson.Get(resp2.ResponseBody2, Dop_parseRes[0]).String()
 					if valueTemp == "[]" {
 						fmt.Println("В данном Response нет такого ключа  ", Dop_parseRes[0])
 						valueTemp = "В данном Response нет " + resp2.ResponseBody2 + " такого ключа  " + Dop_parseRes[0]
@@ -303,9 +289,9 @@ func (b *Data) DataForRequest2 (rownum2 int,header2 map[int][]string, RequestPar
 						case funcName2 == "ParseOtp":
 							re := regexp.MustCompile("[0-9]+")
 							s := re.FindAllString(valueTemp, -1)
-							SetPropValue2(key,  s[0])
+							SetPropValue2(key, s[0])
 						default:
-							SetPropValue2(key,  valueTemp)
+							SetPropValue2(key, valueTemp)
 						}
 						//SetPropValue(key,  valueTemp)
 					}
@@ -320,10 +306,6 @@ func (b *Data) DataForRequest2 (rownum2 int,header2 map[int][]string, RequestPar
 		startRownew2++
 	}
 
-
-
 	// After function
-
-
 
 }

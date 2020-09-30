@@ -60,6 +60,11 @@ func Request(requestBody string, header map[int][]string, RequestParameters map[
 	fmt.Println("Request URL         -->      ", respons.URL)
 	log.Info("Request URL         -->      ", respons.URL)
 
+	fmt.Println("\n---------------------------Request Body-----------------------------")
+	log.Info("\n---------------------------Request Body-----------------------------")
+	fmt.Println("Request Body         -->      ", requestBody)
+	log.Info("Request Body         -->      ", requestBody)
+
 	//fmt.Println("len(cook):", len(cook))
 	fmt.Println("\n\n---------------------------Response Cookies-----------------------------")
 	if len(res.Cookies) > 0 {
@@ -70,7 +75,7 @@ func Request(requestBody string, header map[int][]string, RequestParameters map[
 			fmt.Println("cookie:", cookie)
 			fmt.Println("Cookie.name:", cookie.Name)
 			fmt.Println("Cookie.Value", cookie.Value)
-			SetPropValue("testdata.cookiefull", cookie.Name+"="+cookie.Value)
+			SetPropValue("testdata.cookie."+cookie.Name, cookie.Name+"="+cookie.Value)
 		}
 
 		SetPropValue("testdata.cookiefull", cookieFull)
