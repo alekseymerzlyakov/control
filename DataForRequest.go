@@ -26,7 +26,7 @@ func (a *Data) DataForRequest(rownum int, header map[int][]string, RequestParame
 	defaultRow := startRow - 1
 	templateRow := startRow - 2
 	templabeBodyRow := startRow - 3
-	ErrorCount = 0
+	//ErrorCount = 0
 
 	for zIdx := 0; zIdx < 3000; zIdx++ {
 
@@ -120,17 +120,21 @@ func (a *Data) DataForRequest(rownum int, header map[int][]string, RequestParame
 		ExpRespCode := a.GetCell(5, startRownew)
 		fmt.Println("ExpRespCode   :::::::::::>>>>>>>>>>>>>>>>>             ", ExpRespCode)
 
-		if strings.Contains(ExpRespCode, strconv.Itoa(resp.ResponseCode)) {
-			assertMessage = assertMessage + "ResponseCode - PASS\n"
-		} else {
-			assertMessage = assertMessage + "ResponseCode - FAILL\n"
-			ErrorCount++
-			a.errorCount++
-			fmt.Println("ErrorCount       ----->             ", string(ErrorCount))
+		if ExpRespCode != "" {
+			if strings.Contains(ExpRespCode, strconv.Itoa(resp.ResponseCode)) {
+				assertMessage = assertMessage + "ResponseCode - PASS\n"
+			} else {
+				assertMessage = assertMessage + "ResponseCode - FAILL\n"
+				ErrorCount++
+				a.errorCount++
+				fmt.Println("ErrorCount       ----->             ", string(ErrorCount))
+			}
 		}
 
 		// Response Message Assertion
 		parseAssertion := a.GetCell(6, startRownew)
+
+		//if parseAssertion != "" && ExpRespCode != "" {assertMessage = " - Please set assertion\n"}
 		if parseAssertion != "" {
 			parseAssert := strings.Replace(parseAssertion, "\n", "", -1)
 			fmt.Println("parseAssert       ----->             ", parseAssert)

@@ -63,11 +63,11 @@ var FillColor = "#ffffff"
 
 func (a Data) SetSell(i int, z int, y string) {
 	FillColor = "#ffffff"
-	if ErrorCount >= 1 && i == 7 {
+	if a.errorCount >= 1 && i == 7 {
 		FillColor = "#ff0000"
 		styles.Fill.Color("#ff0000")
 	}
-	if ErrorCount == 0 && i == 7 {
+	if a.errorCount == 0 && i == 7 {
 		FillColor = "#7CFC00"
 		styles.Fill.Color("#7CFC00")
 	}
@@ -82,7 +82,7 @@ func (a Data) SetSell(i int, z int, y string) {
 		//styles.Border.Color("#009000"),
 		//styles.Border.Type(styles.BorderStyleMedium),
 	))
-	ErrorCount = 0
+	a.errorCount = 0
 }
 
 func GetPropValue(key string) string {
@@ -181,6 +181,7 @@ func GetHeader(ce int, ro int, rownum int, a Data) map[int][]string {
 		strHeader := strings.Split(strHeader_, "##")
 
 		// Выполнение теста - перебираем список Requests из вкладки
+		fmt.Println("------------------------- Preparation of Header-------------------------")
 		for rIdx := 0; rIdx < len(strHeader); rIdx++ {
 			strHeader[rIdx] = strings.Trim(strHeader[rIdx], " ")
 			if len(string(strHeader[rIdx])) <= 1 || strHeader[rIdx] == "" {

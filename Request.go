@@ -5,6 +5,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"gopkg.in/h2non/gentleman.v2"
 	"gopkg.in/h2non/gentleman.v2/plugins/body"
+	"os"
 )
 
 type Response struct {
@@ -26,8 +27,6 @@ func Request(requestBody string, header map[int][]string, RequestParameters map[
 		UR = RequestParameters[2][0]
 	}
 
-	// Define base URL
-	//fmt.Println("Request URL    -->     ", UR)
 	cli.URL(UR)
 	cli.Method(RequestParameters[0][0])
 	cli.Use(body.JSON(requestBody))
@@ -45,14 +44,16 @@ func Request(requestBody string, header map[int][]string, RequestParameters map[
 	res, err := req.Send()
 	if err != nil {
 		fmt.Printf("Request error: %s\n", err)
-		//fmt.Println("Ошибка. В вкладке APIList есть ссылка на не существующий тест")
-		//os.Exit(0)
-		//return
+		msg := "Request error: ->    " + err.Error()
+		msg = msg + "\nВыполнение теста остановленно"
+		msg = msg + "\n ApiSheetName ->" + RendomData.ApiSheetName
+		msg = msg + "\n ApiTestName ->" + RendomData.ApiTestName
+		msg = msg + "\nURL -> " + UR
+		msg = msg + "\nRequest Body -> " + "\n" + requestBody
+		telegram(msg)
+		os.Exit(0)
+
 	}
-	//if !res.Ok {
-	//	fmt.Printf("Invalid server response: %d\n", res.StatusCode)
-	//	//return
-	//}
 
 	respons.URL = res.RawRequest.URL.String()
 	fmt.Println("\n---------------------------Request URL-----------------------------")
@@ -81,7 +82,7 @@ func Request(requestBody string, header map[int][]string, RequestParameters map[
 		SetPropValue("testdata.cookiefull", cookieFull)
 	} else {
 		fmt.Println("count cookie = 0")
-		fmt.Println("\n---------------------------Response Cookies end-----------------------------")
+
 	}
 	fmt.Println("\n---------------------------Response Headers-----------------------------")
 	fmt.Println("Response Headers:", res.Header)
