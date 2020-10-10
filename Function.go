@@ -46,8 +46,14 @@ func GetColumn(column int, rownum int, a Data) map[int][]string { //
 			break
 		} else {
 			//Empty = true
-			cellNew := a.Replace(cell.String()) //  Подмена переменных
-			apiListMap[cIdx] = []string{cellNew}
+
+			//TODO КАСТЫЛЬ
+			if !strings.Contains(cell.String(), "${{rid") {
+				cellNew := a.Replace(cell.String()) //  Подмена переменных
+				apiListMap[cIdx] = []string{cellNew}
+			} else {
+				apiListMap[cIdx] = []string{cell.String()}
+			}
 		}
 		//fmt.Println(cellNew)
 	}
@@ -269,6 +275,8 @@ func Random(str string) string {
 	case strings.Contains(str, "RanString"):
 		letter = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
 	case strings.Contains(str, "RanInt"):
+		letter = []rune("0123456789")
+	case strings.Contains(str, "rid"):
 		letter = []rune("0123456789")
 	case strings.Contains(str, "RanStrInt"):
 		letter = []rune("abcdefghijklmnopqrstuvwxyz0123456789")

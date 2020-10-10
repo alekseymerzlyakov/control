@@ -73,7 +73,7 @@ func (a *Data) DataForRequest(rownum int, header map[int][]string, RequestParame
 		fmt.Println("ApiSheetName + ApiTestName  	-->      ", a.ApiSheetName, a.ApiTestName)
 		log.Info("ApiSheetName + ApiTestName  	-->      ", a.ApiSheetName, a.ApiTestName)
 
-		resp := Request(requestBody, header, RequestParameters) //Request
+		resp := a.Request(requestBody, header, RequestParameters) //Request
 
 		SetPropValue("last_response", resp.ResponseBody)
 
@@ -115,10 +115,12 @@ func (a *Data) DataForRequest(rownum int, header map[int][]string, RequestParame
 
 		//Response Code Assertion
 		assertMessage := ""
-		fmt.Println("assertMessage, assertError   :::::::::::>>>>>>>>>>>>>>>>>             ", assertMessage)
+		a.errorCount = 0
+
+		//fmt.Println("assertMessage, assertError   :::::::::::>>>>>>>>>>>>>>>>>             ", assertMessage)
 
 		ExpRespCode := a.GetCell(5, startRownew)
-		fmt.Println("ExpRespCode   :::::::::::>>>>>>>>>>>>>>>>>             ", ExpRespCode)
+		//fmt.Println("ExpRespCode   :::::::::::>>>>>>>>>>>>>>>>>             ", ExpRespCode)
 
 		if ExpRespCode != "" {
 			if strings.Contains(ExpRespCode, strconv.Itoa(resp.ResponseCode)) {
@@ -141,6 +143,7 @@ func (a *Data) DataForRequest(rownum int, header map[int][]string, RequestParame
 			parseAssertArr := strings.Split(parseAssert, "##")
 
 			for mIdx := 0; mIdx < len(parseAssertArr); mIdx++ {
+
 				tempArr := parseAssertArr[mIdx]
 				if parseAssertArr[mIdx] == "" {
 					break
@@ -150,7 +153,7 @@ func (a *Data) DataForRequest(rownum int, header map[int][]string, RequestParame
 				assertRequired := strings.Split(tempArr, "<<")
 
 				if strings.Contains(BodyRespons, assertRequired[0]) {
-					//assertMessage = assertMessage + tempArr + " - PASS\n"
+					assertMessage = assertMessage + tempArr + " - PASS\n"
 				} else {
 					assertMessage = assertMessage + tempArr + " - FAIL\n"
 					ErrorCount++
@@ -164,8 +167,7 @@ func (a *Data) DataForRequest(rownum int, header map[int][]string, RequestParame
 						msg = msg + "\nВыполнение теста остановленно\n\n"
 						msg = msg + " - ApiTestName --->  " + a.ApiTestName
 						msg = msg + a.Response.URL + "\n"
-
-						//msg = msg + " ResponseBody    --->>>    " + resp.ResponseBody + "\n"
+						msg = msg + " ResponseBody    --->>>    " + resp.ResponseBody + "\n"
 						msg = msg + "Страна --->   " + a.Countryname + "\n"
 						telegram(msg)
 						//XL.SaveAs("./Report/IssueReport.xlsx")

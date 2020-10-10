@@ -15,17 +15,19 @@ type Response struct {
 	Header       string
 }
 
-func Request(requestBody string, header map[int][]string, RequestParameters map[int][]string) Response {
+func (a Data) Request(requestBody string, header map[int][]string, RequestParameters map[int][]string) Response {
 	// Create a new client
 	var respons = Response{}
 	cli := gentleman.New()
 
 	var UR string
-	if RequestParameters[3][0] != "nil" {
+	if RequestParameters[3][0] != "" {
 		UR = RequestParameters[1][0] + "://" + RequestParameters[2][0] + RequestParameters[3][0]
 	} else {
 		UR = RequestParameters[2][0]
 	}
+
+	UR = a.Replace(UR)
 
 	cli.URL(UR)
 	cli.Method(RequestParameters[0][0])
@@ -89,7 +91,7 @@ func Request(requestBody string, header map[int][]string, RequestParameters map[
 	//for _, header := range res.Header {
 	//	fmt.Println("Response Headers:", res.Header)
 	//}
-
+	respons.ResponseBody = ""
 	respons.ResponseBody = res.String()
 	fmt.Println("\n---------------------------Response Body-----------------------------")
 	log.Info("\n---------------------------Response Body-----------------------------")
