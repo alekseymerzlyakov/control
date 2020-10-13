@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -20,12 +19,12 @@ func (a Data) ApiTest(ApiSheetName string, numTestLine int) {
 
 	// получаем данные  Metod	Protocol	Domain	Path
 	RequestParameters := GetColumn(startColumnReq, startRow, a) //MetodProtocolDomainPath := GetColumn(4, 1, ap)
-	fmt.Println(RequestParameters)
+	//fmt.Println(RequestParameters)
 
 	// получаем Header
 	//getHeader := GetRow(0, startColumnHeader, startRow, a) // выбираем список проверок // выборка row с нужной точки и до пустой ячейки
 	getHeader := GetHeader(0, startColumnHeader, startRow, a) // выбираем список проверок // выборка row с нужной точки и до пустой ячейки
-	fmt.Println("test1  --   ", getHeader)
+	//fmt.Println("test1  --   ", getHeader)
 
 	//Generate test data
 	generateTestData := GetColumn(GenerateTestData, startRow, a) //

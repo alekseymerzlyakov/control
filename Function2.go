@@ -137,19 +137,30 @@ func GetRow3(ce int, ro int, rownum int, a Data) map[int][]string {
 func GetHeader2(ce int, ro int, rownum int, a Data) map[int][]string {
 	getNumTestLine := rownum
 	apiListMap := make(map[int][]string)
-	cell := a.sheet.Cell(ro, getNumTestLine)
-
+	cell := a.sheetBefoAftTest.Cell(ro, getNumTestLine)
+	//cell := b.sheet.Cell(ro, getNumTestLine)
 	switch {
 	case strings.Contains(cell.Value(), "::"):
-
-		parseHeader := a.GetCell(ro, getNumTestLine)
-		strHeader_ := strings.Replace(parseHeader, "\n", "", -1)
+		fmt.Println("GetHeader2 cell -> ", cell)
+		//parseHeader := a.GetCell(ro, getNumTestLine)
+		strHeader_ := strings.Replace(cell.String(), "\n", "", -1)
 		strHeader := strings.Split(strHeader_, "##")
 
 		// Выполнение теста - перебираем список Requests из вкладки
+		fmt.Println("------------------------- Preparation of Header-------------------------")
 		for rIdx := 0; rIdx < len(strHeader); rIdx++ {
-			if string(strHeader[rIdx]) == "" {
+			strHeader[rIdx] = strings.Trim(strHeader[rIdx], " ")
+			if len(string(strHeader[rIdx])) <= 1 || strHeader[rIdx] == "" {
 				break
+			}
+
+			if !strings.Contains(strHeader[rIdx], "::") {
+				msg := "В тесте    ---- >    " + a.ApiTestName + "\n" + "Не корректно составлен Header - надо проверить разделитель - ::"
+				fmt.Println("В тесте    ---- >    ", a.ApiTestName)
+				fmt.Println("Не корректно составлен Header - надо проверить разделитель - ::")
+
+				telegram(msg)
+				os.Exit(0)
 			}
 
 			generateMap := strings.Split(strHeader[rIdx], "::")
@@ -161,13 +172,15 @@ func GetHeader2(ce int, ro int, rownum int, a Data) map[int][]string {
 
 	default:
 		for rIdx := 0; rIdx < 3000; rIdx++ {
-			cell := a.sheet.Cell(ro, getNumTestLine)
-			cell2 := a.sheet.Cell(ro+1, getNumTestLine)
+			cell := a.sheetBefoAftTest.Cell(ro, getNumTestLine)
+			cell2 := a.sheetBefoAftTest.Cell(ro+1, getNumTestLine)
 			if cell.Value() == "" {
 				break
 			} //if cell == nil { break }
 			cellNew := a.Replace(cell2.String())
 			apiListMap[rIdx] = []string{cell.Value(), cellNew}
+			fmt.Println("Headers     ---- >    ", cell.Value(), apiListMap[rIdx])
+
 			getNumTestLine++
 		}
 	}
@@ -199,7 +212,7 @@ func GetNumTestLine2(apiSheetName string, apiTestName string) int {
 		fmt.Println("Ошибка. В вкладке APIList есть ссылка на не существующий тест")
 		os.Exit(0)
 	}
-
+	fmt.Println("GetNumTestLine ->>> ", value)
 	return value
 }
 

@@ -36,7 +36,7 @@ func (a Data) Request(requestBody string, header map[int][]string, RequestParame
 	req := cli.Request()
 
 	// Выполнение теста - перебираем список Requests из вкладки APIlist
-	fmt.Println("\n\n---------------------------Request Header Start-----------------------------\n")
+	fmt.Println("\n\n---------------------------Request Header -----------------------------\n")
 	for rIdx := 0; rIdx < len(header); rIdx++ {
 		req.SetHeader(header[rIdx][0], header[rIdx][1])
 		fmt.Println("Header:    -->        ", header[rIdx][0], header[rIdx][1])
@@ -44,6 +44,7 @@ func (a Data) Request(requestBody string, header map[int][]string, RequestParame
 
 	// Perform the request
 	res, err := req.Send()
+
 	if err != nil {
 		fmt.Printf("Request error: %s\n", err)
 		msg := "Request error: ->    " + err.Error()

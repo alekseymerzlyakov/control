@@ -1,30 +1,25 @@
 {
-  "apitestname": "profileEdit_Verified_Identificationformation",
-  "apiversion": "1.143.0",
-  "challenge": "584e0d97487bfe723d5bd79e42e46c1c18ae0e1f8e2aae654a0723c48b938efe",
+  "apitestname": "get_webs_configurations",
+  "apiversion": "1.144.0",
+  "challenge": "ac58599fbde0fa571c9572a29a96c57914b22098ee8e4ea398f6c361703f5744",
   "country_code": "AE",
   "country_name": "United Arab Emirates",
   "countryname": "uae",
   "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
   "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
-  "devicekey": "66c14900463ce94cc2dbc41e9bbac2c70e63303739f464dcbc5a88ac911c6623",
+  "devicekey": "0cd61ed4f91affb4b514d28f59ac33d2cac0300c627113b9c455d5ce81326257",
   "email": "alex.mywu.qa@gmail.com",
-  "first_name": "nsJYR",
+  "first_name": "WVwTO",
   "language_code": "en\",\"ar",
   "language_name": "English\",\"العربية",
   "last_name": "uae",
-  "last_response": "{\"status\":\"error\",\"sessionData\":{\"user\":{\"phone_verified\":true,\"new_user\":true,\"mywu_error\":true,\"mywu\":\"\",\"last_name\":\"vgjsvcCUxr\",\"first_name\":\"ovtVruVsk\",\"currencies\":[\"AED\"],\"country_name\":\"United Arab Emirates\",\"country_code\":\"AE\",\"account_verified\":true},\"timeout\":900,\"login\":\"alex.mywu.qa@gmail.com\",\"limits\":[\"Transaction Limit\",\"34 890.00 AED per transaction;\",\" \",\"Pay cash in-store limits:\",\"18 365.00 AED per transaction;\"],\"id\":\"41510\",\"auth\":true,\"amplitude\":{\"wu_language\":\"en\",\"sender_country\":\"ae\",\"previous_page\":\"/profile/edit/location\",\"phone_verified\":\"true\",\"page_name\":\"/profile/edit/location\",\"marketing_opt-in\":true,\"logged_in\":\"true\",\"account_verified\":\"true\",\"account_id\":\"41510\",\"TransactionID\":\"\"},\"_time_zone\":120},\"error_msg\":[{\"id\":\"web/profile/edit/identification\",\"error_msg\":\"Due to a technical error we are unable to proceed with your request. Please try again later.\",\"error_code\":\"am07:25dbfa9\"}],\"code\":0}",
+  "last_response": "{\"status\":\"ok\",\"sessionData\":{\"user\":{\"currencies\":[\"AED\"],\"country_name\":\"United Arab Emirates\",\"country_code\":\"AE\"},\"timeout\":900,\"limits\":[\"Transaction Limit\",\"183 648.50 AED per transaction;\",\" \",\"Pay cash in-store limits:\",\"18 365.00 AED per transaction;\"],\"auth\":false,\"amplitude\":{\"wu_language\":\"en\",\"sender_country\":\"ae\",\"previous_page\":\"\",\"page_name\":\"/log_in\",\"marketing_opt-in\":\"false\",\"logged_in\":\"false\",\"TransactionID\":\"\"},\"_time_zone\":120},\"configurations\":{\"supportPhone\":\"800 736398 or 800 SENDWU\",\"supportEmail\":\"wu.support@alfardanexchange.com\",\"source_funds\":[{\"value\":\"Salary/Income\",\"title\":\"Salary/Income\"},{\"value\":\"Savings\",\"title\":\"Savings\"},{\"value\":\"Borrowed Funds/Loan\",\"title\":\"Borrowed Funds/Loan\"},{\"value\":\"Gift\",\"title\":\"Gift\"},{\"value\":\"Pension/Government/Welfare\",\"title\":\"Pension/Government/Welfare\"},{\"value\":\"Inheritance\",\"title\":\"Inheritance\"}],\"siftScienceKey_prod\":\"a5895a6abd\",\"siftScienceKey_dev\":\"a5895a6abd\",\"purpose_transaction\":[{\"value\":\"Family Support\",\"title\":\"Family Support\"},{\"value\":\"Education\",\"title\":\"Education\"},{\"value\":\"Regular Labour Transfers (expatriates)\",\"title\":\"Regular Labour Transfers (expatriates)\"},{\"value\":\"Investment\",\"title\":\"Investment\"},{\"value\":\"Other Personal Needs\",\"title\":\"Other Personal Needs\"},{\"value\":\"Investment Related\",\"title\":\"Investment Related\"},{\"value\":\"Trade\",\"title\":\"Trade\"}],\"payProcessor\":\"Al Fardan exchange\",\"myReceivers\":true,\"lang\":\"en\",\"headersSteps\":[\"estimate\",\"receiver\",\"payment\",\"review\"],\"headerMenuLinks\":[{\"url\":\"https://www.westernunion.com/global-service/track-transfer\",\"title\":\"Track Transfer\"},{\"url\":\"https://www.westernunion.com/ae/en/find-locations.html\",\"title\":\"Find Locations\"},{\"url\":\"https://www.westernunion.com/ae/en/find-locations.html\",\"title\":\"Find Locations for verification\"},{\"url\":\"https://www.westernunion.com/ae/en/frequently-asked-questions.html\",\"title\":\"Customer Support\"},{\"url\":\"/verification_page\",\"title\":\"Profile verification\"}],\"ga\":\"\",\"footersSend\":[{\"url\":\"https://www.westernunion.com/ae/en/send-money-to-philippines.html\",\"title\":\"Send money to Philippines\"},{\"url\":\"https://www.westernunion.com/ae/en/send-money-to-india.html\",\"title\":\"Send money to India\"},{\"url\":\"https://www.westernunion.com/ae/en/send-money-to-pakistan.html\",\"title\":\"Send money to Pakistan\"},{\"url\":\"https://www.westernunion.com/ae/en/send-money-to-egypt.html\",\"title\":\"Send money to Egypt\"},{\"url\":\"https://www.westernunion.com/ae/en/send-money-to-lebanon.html\",\"title\":\"Send money to Lebanon\"}],\"footers\":[{\"url\":\"https://www.westernunion.com/ae/en/home.html\",\"title\":\"Home\"},{\"url\":\"https://corporate.westernunion.com/index.html\",\"title\":\"About us\"},{\"url\":\"https://www.westernunion.com/ae/en/contact-us.html\",\"title\":\"Contact us\"},{\"url\":\"https://www.westernunion.com/ae/en/frequently-asked-questions.html\",\"title\":\"Help\"},{\"url\":\"https://www.westernunion.com/ae/en/fraud-awareness.html\",\"title\":\"Fraud awareness\"},{\"url\":\"http://ir.westernunion.com/investor-relations/default.aspx\",\"title\":\"Investor relations\"},{\"url\":\"https://corporate.westernunion.com/careers/index.html\",\"title\":\"Careers\"},{\"url\":\"https://foundation.westernunion.com/index.html\",\"title\":\"Western Union foundation\"},{\"url\":\"https://www.westernunion.com/ae/en/become-agent.html\",\"title\":\"Become an agent\"},{\"url\":\"https://www.westernunion.com/ae/en/legal/intellectual-property.html\",\"title\":\"Intellectual property\"},{\"url\":\"https://www.westernunion.com/ae/en/legal/privacy-statement.html\",\"title\":\"Online Privacy statement\"},{\"url\":\"https://www.westernunion.com/ae/en/legal/terms-conditions.html\",\"title\":\"Terms and conditions\"},{\"url\":\"https://www.westernunion.com/ae/en/legal/privacy-statement-ar.html\",\"title\":\"Online Privacy statement (Arabic)\"},{\"url\":\"https://www.westernunion.com/ae/en/legal/terms-conditions-ar.html\",\"title\":\"Terms and conditions (Arabic)\"}],\"doubleClickTags\":{\"web/sign_up/done\":\"DC-3388366/aepri001/aepri0+standard\",\"web/sign_up\":\"DC-3388366/aepri001/aepri00+standard\",\"web/send_money/success\":\"DC-3388366/aepri000/aepri0+transactions\",\"web/send_money/rejected\":\"DC-3388366/aepri000/aepri0+transactions\",\"web/send_money/receiver\":\"DC-3388366/aepri00/aepri000+standard\",\"web/send_money/in_progress\":\"DC-3388366/aepri000/aepri0+transactions\",\"web/send_money/hold\":\"DC-3388366/aepri001/aepri0+transactions\",\"web/send_money\":\"DC-3388366/aepri00/aepri0+standard\",\"web/profile\":\"DC-3388366/aepri0/aepri005+standard\"},\"defaultHeaderLang\":{\"value\":\"en\",\"title\":\"English\"},\"defaultHeaderCounty\":{\"value\":\"AE\",\"title\":\"United Arab Emirates\"},\"countryCode\":\"AE\",\"appMarket\":{\"ios\":\"https://apps.apple.com/us/app/westernunion-ae-money-transfer/id1171330611?ls=1\",\"aos\":\"market://details?id=com.westernunion.moneytransferr3app.ae\"},\"amoutDigitsLimit\":8,\"adWords\":{\"targetId\":\"AW-1026534010\",\"pages\":{\"web/sign_up/done\":\"AW-1026534010/gZXdCI2V_HsQ-tS-6QM\",\"web/send_money/success\":\"AW-123456789/AbC-D_efG-h12_34-567\",\"web/send_money/in_progress\":\"AW-123456789/AbC-D_efG-h12_34-567\"}}},\"code\":0}",
   "otp": {
     "apilogin": "8",
     "apisecret": "WAgDZFXgM753LUyb5joMwntN8j3ueDl2Ess7qR3kIuTGFPtsB3",
     "body": "{\"ops\":[{\"limit\":10,\"offset\":0,\"type\":\"list\",\"obj\":\"node\",\"conv_id\":\"50\",\"obj_id\":\"5f048df609a8af26c1e4f34b\"}]}",
     "conv_id": "50",
-    "epoch": "1602352211882",
-    "hex": "0cd7689c0a03582218193a2734f91e950c8f9e81",
-    "obj_id": "5f048df609a8af26c1e4f34b",
-    "otp1": {
-      "text": "0837"
-    }
+    "obj_id": "5f048df609a8af26c1e4f34b"
   },
   "password": "Password_01",
   "payment": {
@@ -34,17 +29,17 @@
   "phone": "380711111111",
   "phonenumber": "711111111",
   "reportfoldername": "1QAxSGEWwhPYeIwbFPBzynxLUEhtovkad",
-  "sheetname": "profileedit",
+  "sheetname": "registration",
   "testdata": {
     "email": "alex.mywu.qa@gmail.com",
-    "first_name": "ovtVruVsk",
+    "first_name": "HcqJOkGnd",
     "id_number": "275654345658985",
-    "last_name": "vgjsvcCUxr",
+    "last_name": "DqDruuEMmO",
     "phone": "711111111",
     "phone_full": "mob-380-711111111"
   },
-  "token": "924a9a344929cc19b7c7196a9aeab963cf167f746497aeae8a254c687f3acac2",
-  "udid": "84a6e8844adb0cfa5132104a18d7e6c88b56483f121d0cf95231265c7688c0a3",
+  "token": "3c1428a9fe43a18019db87e33fec48e5cb434f62415b126c66c355e82de92e72",
+  "udid": "acefe2bbb03a4a14ecbc8cdf140ad0498ed47de113dcab1f495db8e4e13f97e6",
   "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1sdusf7fDxY0NxkBOQZcWzKOTVlDM9YV8L9HKgQM1D9U/export?format=xlsx",
   "wiatsms": "31"
 }

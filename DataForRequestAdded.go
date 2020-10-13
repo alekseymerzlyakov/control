@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"github.com/antchfx/htmlquery"
-	log "github.com/sirupsen/logrus"
 	"github.com/tidwall/gjson"
 	"os"
 	"regexp"
@@ -44,10 +43,8 @@ func (b *Data) DataForRequest2(rownum2 int, header2 map[int][]string, RequestPar
 
 		for sIdx := 0; sIdx < 30; sIdx++ {
 			template2 := b.GetCell2(startBodyColumnnew2, templateRow2)
-			fmt.Println("template2  	-->      ", template2)
-
 			bodyROWdata2 := b.GetCell2(startBodyColumnnew2, startRownew2)
-			fmt.Println("bodyROWdata2  	-->      ", bodyROWdata2)
+			//fmt.Println("bodyROWdata2  	-->      ", bodyROWdata2)
 
 			if bodyROWdata2 == "" {
 				def2 := b.GetCell2(startBodyColumnnew2, defaultRow2)
@@ -55,9 +52,9 @@ func (b *Data) DataForRequest2(rownum2 int, header2 map[int][]string, RequestPar
 				requestBody2 = strings.Replace(requestBody2, template2, defData2, -1) // замены шаблонов на переменные
 			} else {
 				bodyROWdatarep2 := b.Replace2(bodyROWdata2)
-				fmt.Println("1 requestBody2  	-->      ", requestBody2)
-				fmt.Println("2 template2  	-->      ", template2)
-				fmt.Println("3 bodyROWdatarep2  	-->      ", bodyROWdatarep2)
+				//fmt.Println("1 requestBody2  	-->      ", requestBody2)
+				//fmt.Println("2 template2  	-->      ", template2)
+				//fmt.Println("3 bodyROWdatarep2  	-->      ", bodyROWdatarep2)
 				requestBody2 = strings.Replace(requestBody2, template2, bodyROWdatarep2, -1) // замены шаблонов на переменные
 			}
 
@@ -69,19 +66,19 @@ func (b *Data) DataForRequest2(rownum2 int, header2 map[int][]string, RequestPar
 
 		//==============Вызываем API =================
 
-		resp2 := Request2(requestBody2, header2, RequestParameters2) //Request
-		fmt.Println("ApiTest Name  	-->      ", b.ApiTestName)
-		log.Info("ApiTest Name        -->      ", b.ApiTestName)
-		fmt.Println("Request URL         -->      ", resp2.URL2)
-		log.Info("Request URL         -->      ", resp2.URL2)
-		fmt.Println("Request Body        -->      ", requestBody2)
-		log.Info("Request Body        -->      ", requestBody2)
-		fmt.Println("Response Code 	  -->       ", resp2.ResponseCode2)
-		log.Info("Response Code       -->       ", resp2.ResponseCode2)
-		fmt.Println("Response Body       -->     ", resp2.ResponseBody2)
-		log.Info("Response Body       -->     ", resp2.ResponseBody2)
-		log.Info("------------------------------------------------------------------")
-		fmt.Println("---------------------------------------\n\n")
+		resp2 := b.Request2(requestBody2, header2, RequestParameters2) //Request
+		//fmt.Println("ApiTest Name  	-->      ", b.ApiTestName)
+		//log.Info("ApiTest Name        -->      ", b.ApiTestName)
+		//fmt.Println("Request URL         -->      ", resp2.URL2)
+		//log.Info("Request URL         -->      ", resp2.URL2)
+		//fmt.Println("Request Body        -->      ", requestBody2)
+		//log.Info("Request Body        -->      ", requestBody2)
+		//fmt.Println("Response Code 	  -->       ", resp2.ResponseCode2)
+		//log.Info("Response Code       -->       ", resp2.ResponseCode2)
+		//fmt.Println("Response Body       -->     ", resp2.ResponseBody2)
+		//log.Info("Response Body       -->     ", resp2.ResponseBody2)
+		//log.Info("------------------------------------------------------------------")
+		//fmt.Println("---------------------------------------\n\n")
 		b.SetSell2(2, startRownew2, requestBody2)
 		b.SetSell2(4, startRownew2, strconv.Itoa(resp2.ResponseCode2))
 		b.SetSell2(3, startRownew2, resp2.ResponseBody2)
@@ -98,7 +95,7 @@ func (b *Data) DataForRequest2(rownum2 int, header2 map[int][]string, RequestPar
 			os.Exit(0)
 		}
 
-		BodyRespons = resp2.ResponseBody2
+		BodyRespons2 = resp2.ResponseBody2
 
 		////==============Вызываем функции обработки ответов=================
 		//// если в ответе есть определенный текст - вызываем функцию по его обработке
@@ -109,7 +106,7 @@ func (b *Data) DataForRequest2(rownum2 int, header2 map[int][]string, RequestPar
 
 		// Функция сохранения всего ответа в переменную
 		if strings.Contains(resp2.URL2, "api/version") {
-			SetPropValue2("apiversion", BodyRespons)
+			SetPropValue2("apiversion", BodyRespons2)
 		}
 
 		//------------------------------------------------
@@ -161,7 +158,7 @@ func (b *Data) DataForRequest2(rownum2 int, header2 map[int][]string, RequestPar
 						msg := "Нет обязательного assertion в ответе ->  " + assertRequired2[0]
 						msg = msg + "\nВыполнение теста остановленно\n\n"
 						msg = msg + " - ApiTestName --->  " + b.ApiTestName
-						msg = msg + b.Response.URL + "\n"
+						msg = msg + b.Response2.URL2 + "\n"
 
 						//msg = msg + " ResponseBody    --->>>    " + resp2.ResponseBody2 + "\n"
 						msg = msg + "Страна --->   " + b.Countryname + "\n"
