@@ -1,19 +1,19 @@
 {
-  "apitestname": "get_form_id_web_profile",
-  "apiversion": "1.144.0",
-  "challenge": "3d6c3b16cd60652cb63a75c2df61c5e669cffaf0c7b537d620f7617fae9fd4d6",
+  "apitestname": "reg_send",
+  "apiversion": "1.145.0",
+  "challenge": "20fae6a0d5e6376fb90cc3ab18e29ed3f178c16a59f2fd31e9d57ea53a9e015f",
   "country_code": "JO",
   "country_name": "Jordan",
   "countryname": "jordan",
   "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
   "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
-  "devicekey": "55fb3d0fa35a5ed2086bb7365b025b10a42549d6e24bb2bad8af07c19fb41e9c",
+  "devicekey": "42064532dfd6ded1a5cc43c01bea8bee14a34640b410a41656981a826f6d4fa7",
   "email": "alex.mywu.qa@gmail.com",
-  "first_name": "auoTA",
+  "first_name": "ljbpj",
   "language_code": "en\",\"ar",
   "language_name": "English\",\"العربية",
   "last_name": "jordan",
-  "last_response": "{\"status\":\"error\",\"sessionData\":{\"user\":{\"currencies\":[\"JOD\"],\"country_name\":\"Jordan\",\"country_code\":\"JO\"},\"timeout\":900,\"limits\":[\"Bank transfer limits:\",\"6 700.000 JOD per transaction;\",\"6 700.000 JOD per day;\",\"14 000.000 JOD per month\",\" \",\"Pay cash in-store limits:\",\"3 500.000 JOD per transaction;\"],\"auth\":false,\"amplitude\":{\"wu_language\":\"en\",\"sender_country\":\"jo\",\"previous_page\":\"/sign_up/done\",\"phone_verified\":\"false\",\"page_name\":\"/log_in\",\"marketing_opt-in\":true,\"logged_in\":\"false\",\"account_verified\":\"false\",\"account_id\":\"125642\",\"TransactionID\":\"\"},\"_time_zone\":120},\"error_msg\":[{\"id\":\"\",\"error_msg\":\"Due to a technical error we are unable to proceed with your request. Please try again later.\"}],\"code\":0}",
+  "last_response": "{\"status\":\"ok\",\"sessionData\":{\"user\":{\"currencies\":[\"JOD\"],\"country_name\":\"Jordan\",\"country_code\":\"JO\"},\"timeout\":900,\"limits\":[\"Bank transfer limits:\",\"6 700.000 JOD per transaction;\",\"6 700.000 JOD per day;\",\"14 000.000 JOD per month\",\" \",\"Pay cash in-store limits:\",\"3 500.000 JOD per transaction;\"],\"auth\":false,\"amplitude\":{\"wu_language\":\"en\",\"sender_country\":\"jo\",\"previous_page\":\"/log_in\",\"page_name\":\"/sign_up\",\"marketing_opt-in\":\"false\",\"logged_in\":\"false\",\"TransactionID\":\"\"},\"_time_zone\":120},\"data\":[{\"type\":\"set\",\"items\":[{\"visibility\":\"visible\",\"required\":true,\"id\":\"id_issuer\",\"actions\":[{\"url\":\"/items/countries\",\"oper\":\"loadOnClick\"}]},{\"visibility\":\"visible\",\"required\":false,\"id\":\"id_issuer_date\"},{\"visibility\":\"visible\",\"required\":true,\"id\":\"expiration\"},{\"visibility\":\"visible\",\"type\":\"text\",\"title\":\"ID Number\",\"required\":true,\"regexp\":\"^[a-zA-Z0-9]{4,20}$\",\"length\":20,\"id\":\"id_number\"}],\"form_id\":\"web/sign_up\"}],\"code\":0}",
   "password": "Password_01",
   "payment": {
     "amount_get": "11",
@@ -22,14 +22,14 @@
   "phone": "380711111111",
   "phonenumber": "711111111",
   "reportfoldername": "1Qqy7XQlpYCY16UtwkMwqmAFwXugrCfHu",
-  "sheetname": "login",
+  "sheetname": "registration",
   "testdata": {
-    "email": "alex_xXmfymUBq@gmail.com",
-    "id_number": "7821590",
-    "phonenumber": "717821590"
+    "email": "alex_somsprwao@gmail.com",
+    "id_number": "5226650",
+    "phonenumber": "715226650"
   },
-  "token": "bf410509686cb2457522a850e80ec97dd00a68808cece2a8539ebd9fc05b51b1",
-  "udid": "ff9fbeecd47b5bbcc343d2710dda8c614a8fd34eab0c758aefaf9ae26b34a2ab",
+  "token": "a269a073a3c26bfc765e6c33caa47f7181bdc16f9880db40c4cc28248c419fbe",
+  "udid": "c0de6f79ff8578af8fc94b4479552f491f427ba80cc41d3ddc3c6471394f7a8a",
   "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1Nv6-XsOcvhARdy2pnI3--RhwR14qOjzZt6uhDA62O_Q/export?format=xlsx",
   "wiatsms": "31"
 }

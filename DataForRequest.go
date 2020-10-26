@@ -139,7 +139,7 @@ func (a *Data) DataForRequest(rownum int, header map[int][]string, RequestParame
 		//if parseAssertion != "" && ExpRespCode != "" {assertMessage = " - Please set assertion\n"}
 		if parseAssertion != "" {
 			parseAssert := strings.Replace(parseAssertion, "\n", "", -1)
-			fmt.Println("parseAssert       ----->             ", parseAssert)
+			//fmt.Println("parseAssert       ----->             ", parseAssert)
 			parseAssertArr := strings.Split(parseAssert, "##")
 
 			for mIdx := 0; mIdx < len(parseAssertArr); mIdx++ {

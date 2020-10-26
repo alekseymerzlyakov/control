@@ -273,6 +273,8 @@ func Random(str string) string {
 
 	switch {
 	case strings.Contains(str, "RanString"):
+		letter = []rune("abcdefghijklmnopqrstuvwxyz")
+	case strings.Contains(str, "RanStringUp"):
 		letter = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
 	case strings.Contains(str, "RanInt"):
 		letter = []rune("0123456789")
