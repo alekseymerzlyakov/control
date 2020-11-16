@@ -225,6 +225,7 @@ func (a *Data) DataForRequest(rownum int, header map[int][]string, RequestParame
 					ifTemplate := ifVaule.FindAllString(all_parseRes[vIdx], -1)
 					ifTemplates := strings.Trim(ifTemplate[0], "==\"")
 					ifTemplates = strings.Trim(ifTemplates, "\")")
+					ifTemplates = a.Replace(ifTemplates)
 					fmt.Println("ifTemplate_ ->  ", ifTemplates)
 
 					numm := 0
