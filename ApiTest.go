@@ -1,9 +1,5 @@
 package main
 
-import (
-	"strings"
-)
-
 const (
 	startColumnReq    int = 1
 	startColumnHeader int = 5
@@ -37,9 +33,9 @@ func (a Data) ApiTest(ApiSheetName string, numTestLine int) {
 	before_after(after_header)
 	after_header = ""
 
-	// Если в PATH есть }/reg? то генерируем токен
-	if strings.Contains(RequestParameters[3][0], "/reg?") {
-		Token()
-	}
+	//// Если в PATH есть }/reg? то генерируем токен
+	//if strings.Contains(RequestParameters[3][0], "/reg?") {
+	//	Token()
+	//}
 
 }

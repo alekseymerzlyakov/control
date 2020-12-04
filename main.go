@@ -162,7 +162,7 @@ func main() {
 	//SetPropValue("payment.amount_get","12")
 
 	Downloading(startData, RendomData.Filename) //download xlsx file from google
-	UDID()
+	//UDID()
 	//drivers()
 	//checkEmail() // check EMail
 

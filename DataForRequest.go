@@ -399,8 +399,14 @@ func before_after(bef_aft string) {
 				case strings.Contains(beforeArr[fIdx], "<<Authorization_ozer>>"):
 					Authorization_ozer(beforeArr[fIdx])
 
-				case strings.Contains(beforeArr[fIdx], "<<OTP>>"):
-					Otp()
+				case strings.Contains(beforeArr[fIdx], "<<Token>>"):
+					Token()
+
+				case strings.Contains(beforeArr[fIdx], "<<udid>>"):
+					UDID()
+
+				//case strings.Contains(beforeArr[fIdx], "<<OTP>>"):
+				//	Otp()
 
 				case strings.Contains(beforeArr[fIdx], "<<ParseIntFromText>>"):
 					ParseIntFromText(beforeArr[fIdx])
