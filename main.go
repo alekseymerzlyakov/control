@@ -4,6 +4,7 @@ import (
 	"fmt"
 	_ "github.com/antchfx/htmlquery"
 	"github.com/plandem/xlsx"
+	"github.com/sclevine/agouti"
 	log "github.com/sirupsen/logrus"
 	"os"
 	_ "strings"
@@ -12,6 +13,9 @@ import (
 
 //
 type Data struct {
+	XL               *xlsx.Spreadsheet
+	page             *agouti.Page
+	Selection        *agouti.Selection
 	sheet            xlsx.Sheet
 	sheetBefoAftTest xlsx.Sheet
 	empty            bool
@@ -20,6 +24,7 @@ type Data struct {
 	ApiSheetName     string
 	ApiSheetName2    string
 	ApiTestName      string
+	MessageWeb       string
 	Requestparam
 	Cell
 	Cell2
@@ -38,7 +43,7 @@ var (
 	apiversion   string
 	urlxlsxfile  string
 	ErrorCount   int
-	XL           xlsx.Spreadsheet
+	//XL           xlsx.Spreadsheet
 	//Countryname string
 )
 
@@ -48,7 +53,6 @@ var Filename = os.Getenv("FILENAME")
 //var Countryname = os.Getenv("COUNTRY")
 
 func main() {
-
 	//Countryname = "jordan"
 	//RendomData.Countryname = Countryname
 	//DataStart.Country = Countryname
@@ -168,26 +172,34 @@ func main() {
 
 	// ------------        выбираем список проверок // выборка row с нужной точки и до пустой ячейки
 	GetAPIList := RendomData.GetRow2(1, 1, "APIList", 1)
-	XL, err := xlsx.Open(CountryXlsx)
+	RendomData.XL, err = xlsx.Open(CountryXlsx)
 	if err != nil {
 		fmt.Println("xlsxmmmmmm not opened")
 	}
 
 	// Выполнение теста - перебираем список Requests из вкладки APIlist
 	for rIdx := 0; rIdx < len(GetAPIList); rIdx++ {
+
 		//fmt.Println(GetAPIList[rIdx][0],GetAPIList[rIdx][1])
 		RendomData.ApiSheetName, RendomData.ApiTestName = GetAPIList[rIdx][0], GetAPIList[rIdx][1]
 		getNumTestLine := GetNumTestLine(RendomData.ApiSheetName, RendomData.ApiTestName) // поиск номера строки начала теста
 		SetPropValue("sheetname", RendomData.ApiSheetName)                                // Сохраняем в дата файл
 		SetPropValue("apitestname", RendomData.ApiTestName)
-		RendomData.sheet = XL.SheetByName(GetPropValue("sheetname"))
-		RendomData.sheetBefoAftTest = XL.SheetByName("BefoAftTest")
-		RendomData.ApiTest(RendomData.ApiSheetName, getNumTestLine) //
+		RendomData.sheet = RendomData.XL.SheetByName(GetPropValue("sheetname"))
+
+		if GetAPIList[rIdx][2] == "Web" {
+			fmt.Println("  ------->     Web")
+			RendomData.WebTest(RendomData.ApiSheetName, getNumTestLine)
+		} else {
+			RendomData.sheetBefoAftTest = RendomData.XL.SheetByName("BefoAftTest")
+			RendomData.ApiTest(RendomData.ApiSheetName, getNumTestLine) //
+		}
+
 	}
 
 	//Save report to local disk
 
-	XL.SaveAs("./Report/" + Filename + "Report.xlsx")
+	RendomData.XL.SaveAs("./Report/" + Filename + "Report.xlsx")
 
 	//t := time.Now()
 	t := time.Now().String()
@@ -197,11 +209,12 @@ func main() {
 	upload(startData, t)
 
 	fmt.Println("\nError Count ->  ", ErrorCount)
-	mail(RendomData.Filename) //Send Email with report
+	RendomData.mail(RendomData.Filename) //Send Email with report
 	//telegram("mes string")
 
 	//Send report link to telegram
 	Reports(startData, t)
+	CloseWindow()
 
 	//fmt.Fprintf (os.Stderr,"*** 開始 ***\n")
 	//driver := agouti.ChromeDriver()

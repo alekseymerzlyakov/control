@@ -1,8 +1,8 @@
 package main
 
 import (
-	"log"
 	"github.com/go-telegram-bot-api/telegram-bot-api"
+	"log"
 )
 
 func telegram(mes string) {
@@ -19,6 +19,7 @@ func telegram(mes string) {
 	u.Timeout = 5
 
 	//
+	//mes = mes + "" + ./img/error_1680x1050.png
 
 	// Для работы надо узнать чат ID - запускаем закоментированый код - пишем в чат и получаем ID чата
 	//for update := range updates {
@@ -31,13 +32,9 @@ func telegram(mes string) {
 	//	msg := tgbotapi.NewMessage(update.Message.Chat.ID, update.Message.Text)
 	//	msg.ReplyToMessageID = update.Message.MessageID
 
-
-
 	msg := tgbotapi.NewMessage(-467584122, mes)
-		//msg.ReplyToMessageID = update.Message.MessageID
+	//msg.ReplyToMessageID = update.Message.MessageID
 
-		bot.Send(msg)
+	bot.Send(msg)
 
 }
-
-

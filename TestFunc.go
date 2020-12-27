@@ -163,6 +163,7 @@ func Otp() {
 
 func ParseIntFromText(get string) {
 	fmt.Println("<<ParseIntFromText>>   ----------->>>    ", get)
+
 	get_path_array := strings.Split(get, ">>")
 	pathToText := get_path_array[1]
 	msg := "Func ParseIntFromText не содержит путь к тексту: корректный пример - <<ParseIntFromText>>otp.otp1;"
@@ -170,8 +171,16 @@ func ParseIntFromText(get string) {
 		telegram(msg)
 		os.Exit(0)
 	}
+	fmt.Println("pathToText   ----------->>>    ", pathToText)
 
 	text := GetPropValue(pathToText)
+	fmt.Println("text   ----------->>>    ", text)
+	msg_ := "нет переменной -> otp.otp1 -> OTP небыло в ответе"
+	if len(text) <= 1 {
+		telegram(msg_)
+		os.Exit(0)
+	}
+
 	fmt.Println("text   ------>       ", text)
 	re := regexp.MustCompile("[0-9]+")
 	s := re.FindAllString(text, -1)

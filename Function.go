@@ -69,11 +69,11 @@ var FillColor = "#ffffff"
 
 func (a Data) SetSell(i int, z int, y string) {
 	FillColor = "#ffffff"
-	if a.errorCount >= 1 && i == 7 {
+	if (a.errorCount >= 1 || RendomData.errorCount >= 1) && (i == 7 || i == 11) {
 		FillColor = "#ff0000"
 		styles.Fill.Color("#ff0000")
 	}
-	if a.errorCount == 0 && i == 7 {
+	if (a.errorCount == 0 || RendomData.errorCount == 0) && (i == 7 || i == 11) {
 		FillColor = "#7CFC00"
 		styles.Fill.Color("#7CFC00")
 	}
@@ -92,16 +92,16 @@ func (a Data) SetSell(i int, z int, y string) {
 }
 
 func GetPropValue(key string) string {
-
+	get := ""
 	ur := Path() + "/Data/" + Filename + ".json"
 	viper.SetConfigFile(ur)
 	viper.ReadInConfig()
 	viper.AutomaticEnv()
 	//viper.WriteConfig()
-	get := viper.GetString(key)
-	//fmt.Println("GetPropValue key --- >>>     ", key)
-	//fmt.Println("GetPropValue get --- >>>     ", get)
-	if len(get) == 0 {
+	get = viper.GetString(key)
+	fmt.Println("GetPropValue key --- >>>     ", key)
+	fmt.Println("GetPropValue get --- >>>     ", get)
+	if len(get) <= 1 {
 		msg :=
 			"\n function name:   GetPropValue" + "\n\n  Key ->  " + key +
 				"\n apitestname:   ->     " + GetPropValue("apitestname") +
@@ -144,11 +144,12 @@ func (a *Data) GetRow2(ce int, ro int, apiSheetName string, rownum int) map[int]
 
 		cell := sheet.Cell(ro, getNumTestLine)
 		cell2 := sheet.Cell(ro+1, getNumTestLine)
+		cell3 := sheet.Cell(ro+2, getNumTestLine)
 		if cell.Value() == "" {
 			break
 		} //if cell == nil { break }
 		cellNew := a.Replace(cell2.String())
-		apiListMap[rIdx] = []string{cell.Value(), cellNew}
+		apiListMap[rIdx] = []string{cell.Value(), cellNew, cell3.String()}
 		getNumTestLine++
 	}
 
@@ -314,5 +315,14 @@ func (a Data) GenerateData(generate map[int][]string) {
 			SetPropValue(generateMap[0], a.Replace(generateMap[1]))
 		}
 	}
+
+}
+
+func CloseWindow() {
+	RendomData.page.CloseWindow()
+}
+
+func Screen() {
+	RendomData.page.Screenshot("error.png")
 
 }

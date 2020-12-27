@@ -84,8 +84,8 @@ func (a *Data) DataForRequest(rownum int, header map[int][]string, RequestParame
 			msg = msg + "\nВыполнение теста остановленно resp.ResponseBody  ->    \n" + string(resp.ResponseBody)
 			msg = msg + a.Response.URL
 			telegram(msg)
-			//XL.SaveAs("./Report/" + Filename + "Report.xlsx")
-			mail(RendomData.Filename) //Send Email
+			RendomData.XL.SaveAs("./Report/" + Filename + "Report.xlsx")
+			a.mail(RendomData.Filename) //Send Email
 			os.Exit(0)
 		}
 
@@ -170,8 +170,8 @@ func (a *Data) DataForRequest(rownum int, header map[int][]string, RequestParame
 						msg = msg + " ResponseBody    --->>>    " + resp.ResponseBody + "\n"
 						msg = msg + "Страна --->   " + a.Countryname + "\n"
 						telegram(msg)
-						//XL.SaveAs("./Report/IssueReport.xlsx")
-						//mail2(RendomData.Filename)  //Send Email
+						//RendomData.XL.SaveAs("./Report/IssueReport.xlsx")
+						//RendomData.mail(RendomData.Filename)  //Send Email
 						os.Exit(0)
 					}
 				}

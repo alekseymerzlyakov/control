@@ -1,15 +1,11 @@
 {
-  "apitestname": "web_fraud",
-  "apiversion": "1.151.0",
-  "challenge": "a1e4b61e8bcc1c079fff963f403b286bac2d1d5c4ed4e8c9a85a459a35bdb4bd",
+  "apitestname": "registration",
+  "apiversion": "1.154.0",
   "countryname": "uae",
   "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
   "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
-  "devicekey": {
-    "devicekey": "1672905c8ef53dd47d2c846740943ad717219f762c9f4328e38cd62fed0e67cb"
-  },
   "email": "alex.mywu.qa@gmail.com",
-  "last_response": "{\"status\":\"ok\",\"sessionData\":{\"user\":{\"currencies\":[\"AED\"],\"country_name\":\"United Arab Emirates\",\"country_code\":\"AE\"},\"timeout\":900,\"payment\":{\"received_as\":\"Cash\",\"fundsout\":\"cash\"},\"limits\":[\"Transaction Limit\",\"183 600.00 AED per transaction;\",\" \",\"Pay cash in-store limits:\",\"18 365.00 AED per transaction;\"],\"auth\":false,\"amplitude\":{\"wu_language\":\"en\",\"sender_country\":\"ae\",\"previous_page\":\"/log_in\",\"page_name\":\"/fraud\",\"marketing_opt-in\":\"false\",\"logged_in\":\"false\",\"funds_out\":\"cash\",\"TransactionID\":\"\"},\"_time_zone\":120},\"data\":{\"next_page\":\"web/fraud\",\"grid\":{\"type\":\"one_column\",\"header\":\"HeaderStart\",\"components\":{\"center\":[\"web/fraud\"]}},\"forms\":[{\"type\":\"body\",\"title\":\"\",\"sections\":[{\"header\":[],\"footer\":[{\"visibility\":\"visible\",\"value\":\"submit\",\"type\":\"submit\",\"title\":\"Continue\",\"id\":\"button_submit\",\"class\":\"button\"}],\"content\":[{\"value\":\"[b]Protect Yourself from Fraud[/b][br][br]Only use Western Union to send money to friends and family. Never send money to someone you have not met in person.[br][br]Scammers sometimes encourage people to transfer money. Do not transfer money to anyone who asks you to send them money:[*]For an emergency situation you haven’t confirmed.[/*][*]For an online purchase.[/*][*]For anti-virus protection.[/*][*]For a deposit or payment on a rental property.[/*][*]To claim lottery or prize winnings.[/*][*]To pay taxes.[/*][*]For a donation to charity.[/*][*]For a mystery shopping assignment.[/*][*]For a job opportunity.[/*][*]For a credit card or loan fee.[/*][*]To resolve an immigration matter.[/*][*]To pay for something in response to a telemarketing call. Telemarketers cannot sell you anything and take payment by money transfer from anyone in the U.S. It’s illegal.[/*][br]If you transfer money, the person you’re sending it to gets the money quickly. After the money is paid, Western Union may not be able to give you a refund, even if you are the victim of fraud, except under limited circumstances.[br][br]If you believe that you are the victim of fraud, call the Western Union Fraud Hotline at [b]8000-357-04469[/b] or visit [url=https://www.westernunion.com/ae/en/fraud-awareness.html]https://www.westernunion.com/ae/en/fraud-awareness.html[/url]\",\"id\":\"label_58802\",\"class\":\"label\",\"align\":\"left\"}]}],\"id\":\"web/fraud\"}]},\"code\":0}",
+  "last_response": "1.154.0",
   "otp": {
     "apilogin": "8",
     "apisecret": "WAgDZFXgM753LUyb5joMwntN8j3ueDl2Ess7qR3kIuTGFPtsB3",
@@ -25,17 +21,19 @@
   "phone": "380711111111",
   "phonenumber": "711111111",
   "reportfoldername": "1QAxSGEWwhPYeIwbFPBzynxLUEhtovkad",
-  "sheetname": "registration",
+  "sheetname": "web",
   "testdata": {
     "email": "alex.mywu.qa@gmail.com",
-    "first_name": "kzhmdjnou",
-    "id_number": "275654345658985",
-    "last_name": "xvkkrmyssn",
+    "first_name": "pttdfkuht",
+    "id_number": "275654345651113",
+    "last_name": "nnjkfjmwpc",
     "phone": "711111111",
     "phone_full": "mob-380-711111111"
   },
-  "token": "bfdeee20d90a0e2fa1d83923a556edb49b96b2cf05c83763b1b03afddcf0fce2",
-  "udid": "bef6a998691fed87de834189a8d90b72b4f8c9e878ba8467205cada6eb6d3f87",
+  "udid": "5be7f6675f32c6d54b9139734d20eee75826b93e40aea340e18dcd59dd3ebd0e",
   "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1sdusf7fDxY0NxkBOQZcWzKOTVlDM9YV8L9HKgQM1D9U/export?format=xlsx",
+  "web": {
+    "url": "https://uae.uat.wuamerigo.com/sign_up"
+  },
   "wiatsms": "31"
 }
