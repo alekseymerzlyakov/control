@@ -1,11 +1,11 @@
 {
   "apitestname": "registration",
-  "apiversion": "1.154.0",
+  "apiversion": "1.155.0",
   "countryname": "uae",
   "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
   "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
   "email": "alex.mywu.qa@gmail.com",
-  "last_response": "1.154.0",
+  "last_response": "1.155.0",
   "otp": {
     "apilogin": "8",
     "apisecret": "WAgDZFXgM753LUyb5joMwntN8j3ueDl2Ess7qR3kIuTGFPtsB3",
@@ -24,13 +24,13 @@
   "sheetname": "web",
   "testdata": {
     "email": "alex.mywu.qa@gmail.com",
-    "first_name": "pttdfkuht",
+    "first_name": "uaqcwfqui",
     "id_number": "275654345651113",
-    "last_name": "nnjkfjmwpc",
+    "last_name": "hqdqvqlcmo",
     "phone": "711111111",
     "phone_full": "mob-380-711111111"
   },
-  "udid": "5be7f6675f32c6d54b9139734d20eee75826b93e40aea340e18dcd59dd3ebd0e",
+  "udid": "5f4e7601b00262e5fc21a2f84fe83aa3cf9bf32a7ebf2e34bcc138814259b31a",
   "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1sdusf7fDxY0NxkBOQZcWzKOTVlDM9YV8L9HKgQM1D9U/export?format=xlsx",
   "web": {
     "url": "https://uae.uat.wuamerigo.com/sign_up"

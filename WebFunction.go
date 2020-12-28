@@ -228,34 +228,89 @@ func (a Data) Properties(path string, text string) {
 
 // Select
 func (a Data) Select(path string, text string) {
-
 	for zIdx := 0; zIdx < 60; zIdx++ {
 		xpathText := RendomData.page.FindByXPath(path)
 		count, _ := xpathText.Count()
 		if count == 0 {
 			log.Println("Select - Failed to find Path:", count)
 			time.Sleep(1 * time.Second)
+		}
+		if count == 1 {
+			break
+		}
+	}
 
+	xpathText := RendomData.page.FindByXPath(path)
+	count, _ := xpathText.Count()
+
+	if count >= 1 {
+		xpathText.Click()
+		xpathText2 := RendomData.page.FindByXPath("//div[@class='select__box active']")
+
+		for aIdx := 0; aIdx < 60; aIdx++ {
+			visible, _ := xpathText2.Visible()
+			log.Println("Visible   ->   ", visible)
+			if visible {
+				break
+			}
+			RendomData.page.RunScript("window.scrollTo(250,250);", nil, nil)
+		}
+		//
+
+		xpathText2.FindByName(string(text)).ScrollFinger(12, 12)
+		xpathText2.FindByName(string(text)).Click()
+		//time.Sleep(5 * time.Second)
+		//xpathText.Fill(text)
+		RendomData.MessageWeb = RendomData.MessageWeb + "Select -> PASS\n"
+		a.SetSell(PassFail, NewcurrentRow, RendomData.MessageWeb)
+		//break
+	}
+
+	if count == 0 {
+		RendomData.MessageWeb = RendomData.MessageWeb + "Select ->  " + path + " значение не выбрано из списка\n" +
+			"\nВыполнение теста остановленно" +
+			"\n - Web Test Name --->  " + RendomData.ApiTestName +
+			"\n - Api Sheet Name --->  " + RendomData.ApiSheetName +
+			"\nCountry --->   " + RendomData.Countryname
+		a.Errors(RendomData.MessageWeb)
+	}
+}
+
+// Check
+func (a Data) Check(path string, text string) {
+	// Find path
+	for zIdx := 0; zIdx < 60; zIdx++ {
+		xpathText := RendomData.page.FindByXPath(path)
+		count, _ := xpathText.Count()
+		if count == 0 {
+			log.Println("Check - Failed to find Path:", count)
+			time.Sleep(1 * time.Second)
 		}
 
 		if count >= 1 {
+			if text == "Check" {
+				xpathText.Check()
+				RendomData.MessageWeb = RendomData.MessageWeb + "Checked  -> PASS\n"
+				a.SetSell(PassFail, NewcurrentRow, RendomData.MessageWeb)
+				break
+			}
+		} // Enabled
 
-			xpathText.Click()
-			xpathText2 := RendomData.page.FindByXPath("//div[@class='select__box active']")
-			xpathText2.FindByName(string(text)).Click()
-			//time.Sleep(1 * time.Second)
-
-			//xpathText.Fill(text)
-			RendomData.MessageWeb = RendomData.MessageWeb + "Select -> PASS\n"
+		if text == "UnCheck" {
+			xpathText.Uncheck()
+			RendomData.MessageWeb = RendomData.MessageWeb + "UnChecked -> PASS\n"
 			a.SetSell(PassFail, NewcurrentRow, RendomData.MessageWeb)
 			break
 		}
+
+		break
 	}
 
 	xpathText2 := RendomData.page.FindByXPath(path)
 	count, _ := xpathText2.Count()
 	if count == 0 {
-		RendomData.MessageWeb = RendomData.MessageWeb + "Select ->  " + path + " значение не выбрано из списка\n" +
+		RendomData.MessageWeb = RendomData.MessageWeb + "Check box  ->  " + string(count) +
+			" путь не найден\n" +
 			"\nВыполнение теста остановленно" +
 			"\n - Web Test Name --->  " + RendomData.ApiTestName +
 			"\n - Api Sheet Name --->  " + RendomData.ApiSheetName +

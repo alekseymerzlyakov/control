@@ -78,6 +78,12 @@ func (a Data) WebTest(ApiSheetName string, startRow int) {
 				data := strings.Split(data_[1], "::")
 				a.Select(data[0], data[1])
 
+			case strings.Contains(Func, "<<Check>>"):
+				fmt.Println("<<Check>> --->   ", Func)
+				data_ := strings.Split(Func, ">>")
+				data := strings.Split(data_[1], "::")
+				a.Check(data[0], data[1])
+
 			//
 			default:
 			}
