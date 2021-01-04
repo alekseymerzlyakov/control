@@ -7,7 +7,7 @@ import (
 
 func Reports(data *Starts, t string) {
 	reportUrl := "https://drive.google.com/drive/u/1/folders/" + data.ReportFolderName
-	fmt.Println("a.errorCount ->  ", ErrorCount)
+	fmt.Println("ErrorCount ->  ", ErrorCount)
 
 	if ErrorCount >= 1 {
 		msg := "Report for ->  " + Filename + " Country" +

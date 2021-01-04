@@ -189,6 +189,7 @@ func main() {
 
 		if GetAPIList[rIdx][2] == "Web" {
 			fmt.Println("  ------->     Web")
+			RendomData.sheetBefoAftTest = RendomData.XL.SheetByName("BefoAftTest")
 			RendomData.WebTest(RendomData.ApiSheetName, getNumTestLine)
 		} else {
 			RendomData.sheetBefoAftTest = RendomData.XL.SheetByName("BefoAftTest")
@@ -208,7 +209,7 @@ func main() {
 	//Save report
 	upload(startData, t)
 
-	fmt.Println("\nError Count ->  ", ErrorCount)
+	fmt.Println("\nRendomData.errorCount ->  ", RendomData.errorCount)
 	RendomData.mail(RendomData.Filename) //Send Email with report
 	//telegram("mes string")
 

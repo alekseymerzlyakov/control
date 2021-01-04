@@ -1,17 +1,20 @@
 {
-  "apitestname": "registration",
-  "apiversion": "1.155.0",
+  "apitestname": "receiver_page",
+  "apiversion": "1.156.0",
   "countryname": "uae",
   "developer_key": "df81a5132a0c8e14d3a531475933b0f8a76b2b4271616083283deca2b0111669",
   "developerkey": "30d9c37d7fa3a9ea534c90251771a3c272571e69924b318e9f13a87105bb31b6",
   "email": "alex.mywu.qa@gmail.com",
-  "last_response": "1.155.0",
+  "last_response": "{\"request_proc\":\"ok\",\"ops\":[{\"id\":\"\",\"obj\":\"node\",\"obj_id\":\"5f048df609a8af26c1e4f34c\",\"count\":6413,\"proc\":\"ok\",\"list\":[{\"obj\":\"task\",\"obj_id\":\"5ff3909009a8af5317abbe1e\",\"ref\":null,\"status\":\"processed\",\"user_id\":4,\"create_time\":1609797776,\"change_time\":1609797776,\"node_prev_id\":\"5fa12e9d09a8af5317434df1\",\"data\":{\"answerParam\":\"ok\",\"phone\":\"380711111111\",\"routerobot\":{\"state\":\"ok\",\"packetId\":\"52653\",\"created\":1609797776077},\"sys\":{\"ref\":\"c11209_n5ff32854a4a2712d75014bfd_t5ff3908fb8ef6327304e8d17\",\"obj_id\":\"5ff3908fb8ef6327304e8d18\",\"conv_id\":11210,\"node_id\":\"5ff32854a4a2712d75014c3e\"},\"text\":\"6800 is your Western Union verification code.\"}},{\"obj\":\"task\",\"obj_id\":\"5ff38f8b09a8af5317abbd1c\",\"ref\":null,\"status\":\"processed\",\"user_id\":4,\"create_time\":1609797515,\"change_time\":1609797515,\"node_prev_id\":\"5fa12e9d09a8af5317434df1\",\"data\":{\"answerParam\":\"ok\",\"phone\":\"380711111111\",\"routerobot\":{\"state\":\"ok\",\"packetId\":\"52652\",\"created\":1609797515758},\"sys\":{\"ref\":\"c11209_n5ff32854a4a2712d75014bfd_t5ff38f8bb8ef6327304e8c33\",\"obj_id\":\"5ff38f8bb8ef6327304e8c34\",\"conv_id\":11210,\"node_id\":\"5ff32854a4a2712d75014c3e\"},\"text\":\"3841 is your Western Union verification code.\"}},{\"obj\":\"task\",\"obj_id\":\"5ff38bd609a8af5317abb8c7\",\"ref\":null,\"status\":\"processed\",\"user_id\":4,\"create_time\":1609796566,\"change_time\":1609796566,\"node_prev_id\":\"5fa12e9d09a8af5317434df1\",\"data\":{\"answerParam\":\"ok\",\"phone\":\"380711111111\",\"routerobot\":{\"state\":\"ok\",\"packetId\":\"52651\",\"created\":1609796566834},\"sys\":{\"ref\":\"c11209_n5ff32854a4a2712d75014bfd_t5ff38bd6b8ef6327304e8929\",\"obj_id\":\"5ff38bd6b8ef6327304e892a\",\"conv_id\":11210,\"node_id\":\"5ff32854a4a2712d75014c3e\"},\"text\":\"0453 is your Western Union verification code.\"}},{\"obj\":\"task\",\"obj_id\":\"5ff38a5609a8af5317abb708\",\"ref\":null,\"status\":\"processed\",\"user_id\":4,\"create_time\":1609796182,\"change_time\":1609796182,\"node_prev_id\":\"5fa12e9d09a8af5317434df1\",\"data\":{\"answerParam\":\"ok\",\"phone\":\"380711111111\",\"routerobot\":{\"state\":\"ok\",\"packetId\":\"52650\",\"created\":1609796182814},\"sys\":{\"ref\":\"c11209_n5ff32854a4a2712d75014bfd_t5ff38a56b8ef6327304e87a2\",\"obj_id\":\"5ff38a56b8ef6327304e87a3\",\"conv_id\":11210,\"node_id\":\"5ff32854a4a2712d75014c3e\"},\"text\":\"5335 is your Western Union verification code.\"}},{\"obj\":\"task\",\"obj_id\":\"5ff3897b09a8af5317abb60f\",\"ref\":null,\"status\":\"processed\",\"user_id\":4,\"create_time\":1609795963,\"change_time\":1609795963,\"node_prev_id\":\"5fa12e9d09a8af5317434df1\",\"data\":{\"answerParam\":\"ok\",\"phone\":\"380711111111\",\"routerobot\":{\"state\":\"ok\",\"packetId\":\"52649\",\"created\":1609795963468},\"sys\":{\"ref\":\"c11209_n5ff32854a4a2712d75014bfd_t5ff3897bda6fe210a750b987\",\"obj_id\":\"5ff3897bb8ef6327304e8627\",\"conv_id\":11210,\"node_id\":\"5ff32854a4a2712d75014c3e\"},\"text\":\"6517 is your Western Union verification code.\"}},{\"obj\":\"task\",\"obj_id\":\"5ff387be09a8af5317abb403\",\"ref\":null,\"status\":\"processed\",\"user_id\":4,\"create_time\":1609795518,\"change_time\":1609795518,\"node_prev_id\":\"5fa12e9d09a8af5317434df1\",\"data\":{\"answerParam\":\"ok\",\"phone\":\"380711111111\",\"routerobot\":{\"state\":\"ok\",\"packetId\":\"52648\",\"created\":1609795518662},\"sys\":{\"ref\":\"c11209_n5ff32854a4a2712d75014bfd_t5ff387beb8ef6327304e84c1\",\"obj_id\":\"5ff387beb8ef6327304e84c2\",\"conv_id\":11210,\"node_id\":\"5ff32854a4a2712d75014c3e\"},\"text\":\"3562 is your Western Union verification code.\"}},{\"obj\":\"task\",\"obj_id\":\"5ff3874909a8af5317abb368\",\"ref\":null,\"status\":\"processed\",\"user_id\":4,\"create_time\":1609795401,\"change_time\":1609795401,\"node_prev_id\":\"5fa12e9d09a8af5317434df1\",\"data\":{\"answerParam\":\"ok\",\"phone\":\"380711111111\",\"routerobot\":{\"state\":\"ok\",\"packetId\":\"52647\",\"created\":1609795401611},\"sys\":{\"ref\":\"c11209_n5ff32854a4a2712d75014bfd_t5ff38749da6fe210a750b71a\",\"obj_id\":\"5ff38749da6fe210a750b71b\",\"conv_id\":11210,\"node_id\":\"5ff32854a4a2712d75014c3e\"},\"text\":\"3403 is your Western Union verification code.\"}},{\"obj\":\"task\",\"obj_id\":\"5ff3837409a8af5317abaeea\",\"ref\":null,\"status\":\"processed\",\"user_id\":4,\"create_time\":1609794420,\"change_time\":1609794420,\"node_prev_id\":\"5fa12e9d09a8af5317434df1\",\"data\":{\"answerParam\":\"ok\",\"phone\":\"380711111111\",\"routerobot\":{\"state\":\"ok\",\"packetId\":\"52646\",\"created\":1609794420374},\"sys\":{\"ref\":\"c11209_n5ff32854a4a2712d75014bfd_t5ff38374b8ef6327304e80ad\",\"obj_id\":\"5ff38374b8ef6327304e80ae\",\"conv_id\":11210,\"node_id\":\"5ff32854a4a2712d75014c3e\"},\"text\":\"4968 is your Western Union verification code.\"}},{\"obj\":\"task\",\"obj_id\":\"5ff3828209a8af5317abadbe\",\"ref\":null,\"status\":\"processed\",\"user_id\":4,\"create_time\":1609794178,\"change_time\":1609794178,\"node_prev_id\":\"5fa12e9d09a8af5317434df1\",\"data\":{\"answerParam\":\"ok\",\"phone\":\"380711111111\",\"routerobot\":{\"state\":\"ok\",\"packetId\":\"52645\",\"created\":1609794178732},\"sys\":{\"ref\":\"c11209_n5ff32854a4a2712d75014bfd_t5ff38282b8ef6327304e7ecf\",\"obj_id\":\"5ff38282b8ef6327304e7ed0\",\"conv_id\":11210,\"node_id\":\"5ff32854a4a2712d75014c3e\"},\"text\":\"1108 is your Western Union verification code.\"}},{\"obj\":\"task\",\"obj_id\":\"5ff3821409a8af5317abad57\",\"ref\":null,\"status\":\"processed\",\"user_id\":4,\"create_time\":1609794068,\"change_time\":1609794068,\"node_prev_id\":\"5fa12e9d09a8af5317434df1\",\"data\":{\"answerParam\":\"ok\",\"phone\":\"380711111111\",\"routerobot\":{\"state\":\"ok\",\"packetId\":\"52644\",\"created\":1609794068728},\"sys\":{\"ref\":\"c11209_n5ff32854a4a2712d75014bfd_t5ff38214da6fe210a750b067\",\"obj_id\":\"5ff38214da6fe210a750b068\",\"conv_id\":11210,\"node_id\":\"5ff32854a4a2712d75014c3e\"},\"text\":\"6810 is your Western Union verification code.\"}}]}]}",
   "otp": {
     "apilogin": "8",
     "apisecret": "WAgDZFXgM753LUyb5joMwntN8j3ueDl2Ess7qR3kIuTGFPtsB3",
     "body": "{\"ops\":[{\"limit\":10,\"offset\":0,\"type\":\"list\",\"obj\":\"node\",\"conv_id\":\"50\",\"obj_id\":\"5f048df609a8af26c1e4f34c\"}]}",
     "conv_id": "50",
-    "obj_id": "5f048df609a8af26c1e4f34b"
+    "obj_id": "5f048df609a8af26c1e4f34b",
+    "otp1": {
+      "text": "6800"
+    }
   },
   "password": "Password_01",
   "payment": {
@@ -24,16 +27,16 @@
   "sheetname": "web",
   "testdata": {
     "email": "alex.mywu.qa@gmail.com",
-    "first_name": "uaqcwfqui",
+    "first_name": "srzxlacdy",
     "id_number": "275654345651113",
-    "last_name": "hqdqvqlcmo",
+    "last_name": "lvtkdvijpv",
     "phone": "711111111",
     "phone_full": "mob-380-711111111"
   },
-  "udid": "5f4e7601b00262e5fc21a2f84fe83aa3cf9bf32a7ebf2e34bcc138814259b31a",
+  "udid": "4eb4ccd16245154f47c714d185fd16eed28f987ea5c642289f6b3b51b0cfcfb1",
   "urlxlsxfile": "https://docs.google.com/spreadsheets/d/1sdusf7fDxY0NxkBOQZcWzKOTVlDM9YV8L9HKgQM1D9U/export?format=xlsx",
   "web": {
-    "url": "https://uae.uat.wuamerigo.com/sign_up"
+    "url": "https://uae.uat.wuamerigo.com/send_money/review"
   },
   "wiatsms": "31"
 }

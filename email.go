@@ -19,6 +19,7 @@ func (a Data) mail(countryname string) {
 	switch {
 	case ErrorCount >= 1 || RendomData.errorCount >= 1:
 		passFail = "FAILL"
+		e.AttachFile("./error.png")
 
 	default:
 		passFail = "PASS"
@@ -27,7 +28,6 @@ func (a Data) mail(countryname string) {
 	e.Subject = "Report " + countryname + " - " + passFail
 	e.Text = []byte("Text Body is, of course, supported!")
 	e.HTML = []byte("<h1>Report Web/API testing!</h1>")
-	e.AttachFile("./error.png")
 	e.Send("smtp.gmail.com:587", smtp.PlainAuth("", " alex.mywu.uae@gmail.com", "zxczxc12", "smtp.gmail.com"))
 
 }

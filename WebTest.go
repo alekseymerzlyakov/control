@@ -36,7 +36,9 @@ func (a Data) WebTest(ApiSheetName string, startRow int) {
 
 			// Выполняем дейтстия перед и/или после выполнения основного теста
 			before_header := a.GetCell(BeforeColumn, rIdx)
-			before_after(before_header)
+			if len(before_header) >= 4 {
+				before_after(before_header)
+			}
 			before_header = ""
 
 			//Generate test data
@@ -66,6 +68,11 @@ func (a Data) WebTest(ApiSheetName string, startRow int) {
 				data := strings.Split(Func, ">>")
 				a.ClickButton(data[1])
 
+			case strings.Contains(Func, "<<PageToTop>>"):
+				fmt.Println("<<PageToTop>> --->   ", Func)
+				//data := strings.Split(Func, ">>")
+				a.PageToTop()
+
 			case strings.Contains(Func, "<<FillField>>"):
 				fmt.Println("<<FillField>> --->   ", Func)
 				data_ := strings.Split(Func, ">>")
@@ -87,6 +94,12 @@ func (a Data) WebTest(ApiSheetName string, startRow int) {
 			//
 			default:
 			}
+
+			after_header := a.GetCell(BeforeColumn+1, startRow)
+			if len(before_header) >= 4 {
+				before_after(after_header)
+			}
+			after_header = ""
 
 		}
 

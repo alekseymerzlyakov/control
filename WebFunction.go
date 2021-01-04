@@ -25,7 +25,13 @@ func (a Data) OpenPage(url string) {
 	driver.Start()
 	page, err := driver.NewPage()
 	if err != nil {
-		log.Fatal("Failed to open page:", err)
+		log.Println("Failed to open page:", err)
+		RendomData.MessageWeb = "Страница ->  " + url + " не открылась" +
+			"\nВыполнение теста остановленно" +
+			"\n - Web Test Name --->  " + RendomData.ApiTestName +
+			"\n - Api Sheet Name --->  " + RendomData.ApiSheetName +
+			"\nCountry --->   " + RendomData.Countryname
+		a.Errors(RendomData.MessageWeb)
 	}
 
 	RendomData.page = page
@@ -44,17 +50,16 @@ func (a Data) WaitURL(url string) {
 	for zIdx := 0; zIdx < 120; zIdx++ {
 		currentUrl, _ := RendomData.page.URL()
 		SetPropValue("web.url", currentUrl)
-		fmt.Println("WaitURL -->  ", currentUrl)
+		fmt.Println("WaitURL -->  ", url)
+		fmt.Println("\ncurrentUrl -->  ", currentUrl)
 		if strings.Contains(currentUrl, url) {
-			RendomData.MessageWeb = RendomData.MessageWeb + "WaitURL -> PASS\n"
-			fmt.Println("MessageWeb -->  ", RendomData.MessageWeb)
-			a.SetSell(PassFail, NewcurrentRow, RendomData.MessageWeb)
 			break
 		}
-
 		time.Sleep(1 * time.Second)
 	}
+
 	currentUrl, _ := RendomData.page.URL()
+
 	fmt.Println("WaitURL -->  ", currentUrl)
 	if !strings.Contains(currentUrl, url) {
 		RendomData.MessageWeb = "Страница ->  " + url + " не открылась" +
@@ -63,6 +68,10 @@ func (a Data) WaitURL(url string) {
 			"\n - Api Sheet Name --->  " + RendomData.ApiSheetName +
 			"\nCountry --->   " + RendomData.Countryname
 		a.Errors(RendomData.MessageWeb)
+	} else {
+		RendomData.MessageWeb = RendomData.MessageWeb + "WaitURL -> PASS\n"
+		fmt.Println("MessageWeb -->  ", RendomData.MessageWeb)
+		a.SetSell(PassFail, NewcurrentRow, RendomData.MessageWeb)
 	}
 
 }
@@ -78,7 +87,6 @@ func (a Data) WaitPath(path string) {
 			time.Sleep(1 * time.Second)
 		}
 
-		RendomData.page.Screenshot("qew")
 		if err == nil {
 			RendomData.MessageWeb = RendomData.MessageWeb + "WaitPath -> PASS\n"
 			a.SetSell(PassFail, NewcurrentRow, RendomData.MessageWeb)
@@ -139,10 +147,10 @@ func (a Data) FillField(path string, text string) {
 		if count == 0 {
 			log.Println("FillField - Failed to find Path:", count)
 			time.Sleep(1 * time.Second)
-
 		}
 
 		if count >= 1 {
+			xpathText := RendomData.page.FindByXPath(path)
 			xpathText.Click()
 			xpathText.Fill(text)
 			RendomData.MessageWeb = RendomData.MessageWeb + "FillField -> PASS\n"
@@ -245,18 +253,21 @@ func (a Data) Select(path string, text string) {
 
 	if count >= 1 {
 		xpathText.Click()
-		xpathText2 := RendomData.page.FindByXPath("//div[@class='select__box active']")
 
 		for aIdx := 0; aIdx < 60; aIdx++ {
+			xpathText2 := RendomData.page.FindByXPath("//div[@class='select__box active']")
 			visible, _ := xpathText2.Visible()
-			log.Println("Visible   ->   ", visible)
+			log.Println("Visible1   ->   ", visible)
 			if visible {
 				break
 			}
-			RendomData.page.RunScript("window.scrollTo(250,250);", nil, nil)
+			RendomData.page.FindByXPath("//div[@class='select__box active']").ScrollFinger(100, 100)
+			//RendomData.page.RunScript("window.scrollTo(250,250);", nil, nil)
+			time.Sleep(500 * time.Millisecond)
 		}
 		//
 
+		xpathText2 := RendomData.page.FindByXPath("//div[@class='select__box active']")
 		xpathText2.FindByName(string(text)).ScrollFinger(12, 12)
 		xpathText2.FindByName(string(text)).Click()
 		//time.Sleep(5 * time.Second)
@@ -320,6 +331,11 @@ func (a Data) Check(path string, text string) {
 }
 
 //
+
+// Select
+func (a Data) PageToTop() {
+	a.page.RunScript("window.scrollTo(0,250);", nil, nil)
+}
 
 func (a Data) MessageW(message string) {
 	a.SetSell(PassFail, NewcurrentRow, message)
