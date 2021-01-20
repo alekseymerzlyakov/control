@@ -11,6 +11,7 @@ import (
 )
 
 var PassFail int = 11
+var TextVisible bool
 
 // Open Page
 func (a Data) OpenPage(url string) {
@@ -18,7 +19,11 @@ func (a Data) OpenPage(url string) {
 	//driver :=  agouti.ChromeDriver()
 
 	driver := agouti.ChromeDriver(
+
+		//С запуском браузера для запуска без докера для отладки
 		agouti.ChromeOptions("args", []string{"--kiosk"}),
+
+		//Без запуска браузера для запуска в докере
 		//agouti.ChromeOptions("args", []string{"--headless", "--disable-gpu", "--no-sandbox"}),
 	)
 
@@ -150,7 +155,18 @@ func (a Data) FillField(path string, text string) {
 		}
 
 		if count >= 1 {
-			xpathText := RendomData.page.FindByXPath(path)
+
+			visible := a.Visibled(path)
+
+			if  visible == false {
+				RendomData.MessageWeb = RendomData.MessageWeb + "FillField ->  " + path + " field not Visible\n" +
+					"\nВыполнение теста остановленно" +
+					"\n - Web Test Name --->  " + RendomData.ApiTestName +
+					"\n - Api Sheet Name --->  " + RendomData.ApiSheetName +
+					"\nCountry --->   " + RendomData.Countryname
+				a.Errors(RendomData.MessageWeb)
+			}
+
 			xpathText.Click()
 			xpathText.Fill(text)
 			RendomData.MessageWeb = RendomData.MessageWeb + "FillField -> PASS\n"
@@ -234,6 +250,12 @@ func (a Data) Properties(path string, text string) {
 	}
 }
 
+
+
+
+
+
+
 // Select
 func (a Data) Select(path string, text string) {
 	for zIdx := 0; zIdx < 60; zIdx++ {
@@ -252,13 +274,26 @@ func (a Data) Select(path string, text string) {
 	count, _ := xpathText.Count()
 
 	if count >= 1 {
+
+		//visible := a.Visibled(path)
+		//
+		//if  visible == false {
+		//	RendomData.MessageWeb = RendomData.MessageWeb + "Select ->  " + path + " значение not Visible\n" +
+		//		"\nВыполнение теста остановленно" +
+		//		"\n - Web Test Name --->  " + RendomData.ApiTestName +
+		//		"\n - Api Sheet Name --->  " + RendomData.ApiSheetName +
+		//		"\nCountry --->   " + RendomData.Countryname
+		//	a.Errors(RendomData.MessageWeb)
+		//}
+
+
 		xpathText.Click()
 
-		for aIdx := 0; aIdx < 60; aIdx++ {
+		for aIdx := 0; aIdx < 120; aIdx++ {
 			xpathText2 := RendomData.page.FindByXPath("//div[@class='select__box active']")
-			visible, _ := xpathText2.Visible()
-			log.Println("Visible1   ->   ", visible)
-			if visible {
+			visibled, _ := xpathText2.Visible()
+			log.Println("Visible1   ->   ", visibled)
+			if visibled == true  {
 				break
 			}
 			RendomData.page.FindByXPath("//div[@class='select__box active']").ScrollFinger(100, 100)
@@ -269,8 +304,9 @@ func (a Data) Select(path string, text string) {
 
 		xpathText2 := RendomData.page.FindByXPath("//div[@class='select__box active']")
 		xpathText2.FindByName(string(text)).ScrollFinger(12, 12)
+		time.Sleep(300 * time.Millisecond)
 		xpathText2.FindByName(string(text)).Click()
-		//time.Sleep(5 * time.Second)
+		time.Sleep(200 * time.Millisecond)
 		//xpathText.Fill(text)
 		RendomData.MessageWeb = RendomData.MessageWeb + "Select -> PASS\n"
 		a.SetSell(PassFail, NewcurrentRow, RendomData.MessageWeb)
@@ -286,6 +322,12 @@ func (a Data) Select(path string, text string) {
 		a.Errors(RendomData.MessageWeb)
 	}
 }
+
+
+
+
+
+
 
 // Check
 func (a Data) Check(path string, text string) {
@@ -332,9 +374,9 @@ func (a Data) Check(path string, text string) {
 
 //
 
-// Select
+
 func (a Data) PageToTop() {
-	a.page.RunScript("window.scrollTo(0,250);", nil, nil)
+	a.page.RunScript("window.scrollTo(top,250);", nil, nil)
 }
 
 func (a Data) MessageW(message string) {
@@ -353,4 +395,27 @@ func (a Data) Errors(message string) {
 	a.MessageW(message)
 	CloseWindow()
 	os.Exit(0)
+}
+
+
+func (a Data) Visibled(path string) bool {
+
+	//Путь есть - проверяем видимость
+	var scroll = 0
+	for sIdx := 0; sIdx < 400; sIdx++ {
+		scroll = scroll + 250
+		TextVisible, _ = RendomData.page.FindByXPath(path).Visible()
+		log.Println("TextVisible ->  ", TextVisible)
+
+		if TextVisible == false {
+			a.page.RunScript("window.scrollTo(scroll,250);", nil, nil)
+			log.Println("TextVisible2 ->  ", TextVisible)
+			time.Sleep(200 * time.Millisecond)
+		}
+		if TextVisible == true {
+			break
+		}
+
+	}
+	return TextVisible
 }

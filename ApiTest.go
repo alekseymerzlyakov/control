@@ -9,8 +9,16 @@ const (
 func (a Data) ApiTest(ApiSheetName string, numTestLine int) {
 	startRow := numTestLine
 
+	//before_header := a.GetCell(BeforeColumn, startRow)
+	//before_after(before_header)
+	//before_header = ""
+
+
+	// Выполняем дейтстия перед и/или после выполнения основного теста
 	before_header := a.GetCell(BeforeColumn, startRow)
-	before_after(before_header)
+	if len(before_header) >= 4 || before_header == "" {
+		before_after(before_header)
+	}
 	before_header = ""
 
 	// получаем данные  Metod	Protocol	Domain	Path
@@ -29,8 +37,15 @@ func (a Data) ApiTest(ApiSheetName string, numTestLine int) {
 	a.DataForRequest(numTestLine, getHeader, RequestParameters) // создание запроса
 
 	// After function
+	//after_header := a.GetCell(BeforeColumn+1, startRow)
+	//before_after(after_header)
+	//after_header = ""
+
+
 	after_header := a.GetCell(BeforeColumn+1, startRow)
-	before_after(after_header)
+	if len(after_header) >= 2  || after_header == "" {
+		before_after(after_header)
+	}
 	after_header = ""
 
 	//// Если в PATH есть }/reg? то генерируем токен

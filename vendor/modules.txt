@@ -1,18 +1,11 @@
 # cloud.google.com/go v0.74.0
 cloud.google.com/go/compute/metadata
-# github.com/BurntSushi/xgb v0.0.0-20201008132610-5f9e7b3c49cd
-github.com/BurntSushi/xgb
-github.com/BurntSushi/xgb/shm
-github.com/BurntSushi/xgb/xinerama
-github.com/BurntSushi/xgb/xproto
 # github.com/antchfx/htmlquery v1.2.3
 github.com/antchfx/htmlquery
 # github.com/antchfx/xpath v1.1.11
 github.com/antchfx/xpath
 # github.com/fsnotify/fsnotify v1.4.9
 github.com/fsnotify/fsnotify
-# github.com/gen2brain/shm v0.0.0-20200228170931-49f9650110c5
-github.com/gen2brain/shm
 # github.com/go-telegram-bot-api/telegram-bot-api v4.6.4+incompatible
 github.com/go-telegram-bot-api/telegram-bot-api
 # github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e
@@ -38,12 +31,6 @@ github.com/hashicorp/hcl/json/scanner
 github.com/hashicorp/hcl/json/token
 # github.com/jordan-wright/email v4.0.1-0.20200917010138-e1c00e156980+incompatible
 github.com/jordan-wright/email
-# github.com/kbinani/screenshot v0.0.0-20191211154542-3a185f1ce18f
-github.com/kbinani/screenshot
-github.com/kbinani/screenshot/internal/util
-github.com/kbinani/screenshot/internal/xwindow
-# github.com/lxn/win v0.0.0-20201111105847-2a20daff6a55
-github.com/lxn/win
 # github.com/magiconair/properties v1.8.4
 github.com/magiconair/properties
 # github.com/mitchellh/mapstructure v1.4.0

@@ -10,7 +10,7 @@ require (
 	github.com/gen2brain/shm v0.0.0-20200228170931-49f9650110c5 // indirect
 	github.com/go-telegram-bot-api/telegram-bot-api v4.6.4+incompatible
 	github.com/jordan-wright/email v4.0.1-0.20200917010138-e1c00e156980+incompatible
-	github.com/kbinani/screenshot v0.0.0-20191211154542-3a185f1ce18f
+	github.com/kbinani/screenshot v0.0.0-20191211154542-3a185f1ce18f // indirect
 	github.com/lxn/win v0.0.0-20201111105847-2a20daff6a55 // indirect
 	github.com/magiconair/properties v1.8.4 // indirect
 	github.com/mitchellh/mapstructure v1.4.0 // indirect

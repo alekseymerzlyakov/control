@@ -35,11 +35,13 @@ func (a Data) WebTest(ApiSheetName string, startRow int) {
 			Func := strings.Replace(funcLine[zIdx], ";", "", -1)
 
 			// Выполняем дейтстия перед и/или после выполнения основного теста
-			before_header := a.GetCell(BeforeColumn, rIdx)
-			if len(before_header) >= 4 {
+			before_header := ""
+			before_header = a.GetCell(BeforeColumn, rIdx)
+			if len(before_header) >= 4 || before_header == "" {
 				before_after(before_header)
+				before_header = ""
 			}
-			before_header = ""
+
 
 			//Generate test data
 			generateTestData := GetColumn(GenerateTestData, rIdx, a) //
@@ -94,12 +96,16 @@ func (a Data) WebTest(ApiSheetName string, startRow int) {
 			//
 			default:
 			}
-
-			after_header := a.GetCell(BeforeColumn+1, startRow)
-			if len(before_header) >= 4 {
+			after_header := ""
+			fmt.Println("after_header --->   ", after_header)
+			after_header = a.GetCell(BeforeColumn+1, rIdx)
+			fmt.Println("after_header2 --->   ", after_header)
+			if len(after_header) >= 2  || after_header == "" {
 				before_after(after_header)
+				after_header = ""
+				fmt.Println("after_header3 --->   ", after_header)
 			}
-			after_header = ""
+
 
 		}
 
